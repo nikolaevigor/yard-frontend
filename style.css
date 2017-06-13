@@ -13,7 +13,7 @@
 }
 
 .header-nav-link {
-  color: #3e4247;
+  color: #3E4247;
   text-decoration: none;
   font-size: 16px;
   font-family: 'Fira Sans', sans-serif;
@@ -60,7 +60,7 @@
   font-weight: 700;
   font-size: 24px;
   margin: 0 0 4px 0;
-  color: #3e4247;
+  color: #3E4247;
 }
 
 .main-text {
@@ -70,7 +70,7 @@
   font-size: 16px;
   margin: 4px 325px 0 325px;
   line-height: 1.5;
-  color: #3e4247;
+  color: #3E4247;
 }
 
 .main-contact-team {
@@ -91,4 +91,55 @@
 
 .main-contact-team-button:hover {
   background-color: #404040;
+}
+
+.cards {
+  display: flex;
+  flex-flow: column;
+  margin: 64px 120px;
+}
+
+.card {
+  display: flex;
+  background: white;
+  text-decoration: none;
+  margin: 48px 0;
+}
+
+.card:first-child {
+  margin-top: 0;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card-content {
+  display: flex;
+  flex-flow: column;
+  margin: 24px 0 0 32px;
+}
+
+.card-geo {
+  color: #646971;
+  font-family: Monaco;
+  margin: 0 382px 0 0;
+}
+
+.card-title {
+  color: black;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  margin: 24px 178px 0 0;
+}
+
+.card-info {
+  color: #3E4247;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 8px 32px 0 0;
 }
