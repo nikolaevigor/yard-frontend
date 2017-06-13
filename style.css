@@ -107,6 +107,11 @@ body {
   background: white;
   text-decoration: none;
   margin: 0 0 48px 0;
+  border-bottom: solid 2px #646971;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .card:first-child {
@@ -148,5 +153,63 @@ body {
 }
 
 .footer {
-  color: #111111;
+  background-color: #111111;
+}
+
+.grid-wrapper {
+  padding: 32px 120px 32px 120px;
+  background: #111111;
+}
+
+.footer-line {
+  height: 2px;
+  border-style: none;
+  background-color: #3E4247;
+  margin: 0 21px 0 0;
+}
+
+.footer-title {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #646971;
+  margin: 16px 0 0 0;
+}
+
+.footer-credentials-title {
+  margin: 0;
+}
+
+.footer-credentials {
+  margin: 4px 0 0 0;
+}
+
+.footer-credentials:last-child {
+  margin: 16px 0 0 0;
+}
+
+.footer-link, .footer-credentials {
+  display: block;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.footer-apartment-link {
+  margin: 8px 0 0 0;
+}
+
+.footer-apartment-link:last-child {
+  margin-top: 16px;
+}
+
+.footer-legal {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  color: #a9afb6;
+  margin: 92px 0 0 0;
 }
