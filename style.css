@@ -1,3 +1,10 @@
+body {
+  background: url('./img/background.png');
+  background-size: 2%;
+  background-color: #EAEBF0;
+  background-repeat: repeat;
+}
+
 .header {
   display: flex;
   background: white;
@@ -44,14 +51,6 @@
   width: 418.9px;
 	height: 131px;
   margin: 80px 511px;
-}
-
-.main {
-  background: url('./img/background.png');
-  background-size: 2%;
-  background-color: #EAEBF0;
-  background-repeat: repeat;
-  overflow: auto;
 }
 
 .intro {
@@ -146,4 +145,8 @@
   font-size: 16px;
   line-height: 24px;
   margin: 8px 0 0 0;
+}
+
+.footer {
+  color: #111111;
 }
