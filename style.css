@@ -99,7 +99,7 @@ body {
 .cards {
   display: flex;
   flex-flow: column;
-  margin: 64px 120px;
+  margin: 64px 128px;
 }
 
 .card {
@@ -157,7 +157,7 @@ body {
 }
 
 .grid-wrapper {
-  padding: 32px 120px 32px 120px;
+  padding: 32px 128px 28px 128px;
   background: #111111;
 }
 
@@ -211,5 +211,5 @@ body {
   font-weight: 300;
   font-size: 11px;
   color: #a9afb6;
-  margin: 92px 0 0 0;
+  margin: 96px 0 0 0;
 }
