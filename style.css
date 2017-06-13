@@ -7,7 +7,7 @@
 .header-nav {
   display: flex;
   line-height: 16px;
-  margin: 30px 120px 30px 0;
+  margin: 20px 120px 20px 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -32,7 +32,7 @@
 }
 
 .header-compass-logo {
-  margin: 30px 0 30px 120px;
+  margin: 20px 0 20px 120px;
 }
 
 .compass-development-block {
@@ -51,10 +51,14 @@
   background-size: 2%;
   background-color: #EAEBF0;
   background-repeat: repeat;
-  padding: 64px 0 64px 0;
+  overflow: auto;
 }
 
-.main-title {
+.intro {
+  margin-top: 64px;
+}
+
+.intro-title {
   text-align: center;
   font-family: 'Fira Sans', sans-serif;
   font-weight: 700;
@@ -63,7 +67,7 @@
   color: #3E4247;
 }
 
-.main-text {
+.intro-text {
   text-align: center;
   font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
@@ -73,12 +77,12 @@
   color: #3E4247;
 }
 
-.main-contact-team {
+.intro-contact-team {
   text-align: center;
   margin: 16px 0 0 0;
 }
 
-.main-contact-team-button {
+.intro-contact-team-button {
   background-color: black;
   color: white;
   font-family: 'Fira Sans', sans-serif;
@@ -89,7 +93,7 @@
   border-radius: 2px;
 }
 
-.main-contact-team-button:hover {
+.intro-contact-team-button:hover {
   background-color: #404040;
 }
 
@@ -103,7 +107,7 @@
   display: flex;
   background: white;
   text-decoration: none;
-  margin: 48px 0;
+  margin: 0 0 48px 0;
 }
 
 .card:first-child {
@@ -117,13 +121,13 @@
 .card-content {
   display: flex;
   flex-flow: column;
-  margin: 24px 0 0 32px;
+  padding: 24px 32px 0 32px;
 }
 
 .card-geo {
   color: #646971;
   font-family: Monaco;
-  margin: 0 382px 0 0;
+  margin: 0;
 }
 
 .card-title {
@@ -132,7 +136,7 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 56px;
-  margin: 24px 178px 0 0;
+  margin: 24px 0 0 0;
 }
 
 .card-info {
@@ -141,5 +145,5 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  margin: 8px 32px 0 0;
+  margin: 8px 0 0 0;
 }
