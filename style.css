@@ -1,0 +1,94 @@
+.header {
+  display: flex;
+  background: white;
+  justify-content: space-between;
+}
+
+.header-nav {
+  display: flex;
+  line-height: 16px;
+  margin: 30px 120px 30px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav-link {
+  color: #3e4247;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Fira Sans', sans-serif;
+  margin: 0 16px 0 16px;
+  line-height: 1.0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header-nav-link:first-child {
+  margin: 0 16px 0 0;
+}
+
+.header-nav-link:last-child {
+  margin: 0 0 0 16px;
+}
+
+.header-compass-logo {
+  margin: 30px 0 30px 120px;
+}
+
+.compass-development-block {
+  display: flex;
+  background: #161616;
+}
+
+.compass-development-logo {
+  width: 418.9px;
+	height: 131px;
+  margin: 80px 511px;
+}
+
+.main {
+  background: url('./img/background.png');
+  background-size: 2%;
+  background-color: #EAEBF0;
+  background-repeat: repeat;
+  padding: 64px 0 64px 0;
+}
+
+.main-title {
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0 0 4px 0;
+  color: #3e4247;
+}
+
+.main-text {
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 4px 325px 0 325px;
+  line-height: 1.5;
+  color: #3e4247;
+}
+
+.main-contact-team {
+  text-align: center;
+  margin: 16px 0 0 0;
+}
+
+.main-contact-team-button {
+  background-color: black;
+  color: white;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 13px 31px;
+  border-style: none;
+  border-radius: 2px;
+}
+
+.main-contact-team-button:hover {
+  background-color: #404040;
+}
