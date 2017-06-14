@@ -1,6 +1,6 @@
 body {
   background: url('./img/background.png');
-  background-size: 2%;
+  background-size: 1%;
   background-color: #EAEBF0;
   background-repeat: repeat;
 }
@@ -199,6 +199,10 @@ body {
   margin-top: 8px;
 }
 
+.footer-credentials {
+  color: #A9AFB6;
+}
+
 .footer-all-apartment-link {
   margin-top: 16px;
 }
@@ -208,6 +212,6 @@ body {
   font-weight: 300;
   font-size: 11px;
   line-height: 16px;
-  color: #a9afb6;
+  color: #A9AFB6;
   margin: 96px 0 0 0;
 }
