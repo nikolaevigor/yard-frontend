@@ -31,18 +31,20 @@ body {
   text-decoration: none;
   font-size: 16px;
   font-family: 'Fira Sans', sans-serif;
-  margin: 0 16px 0 16px;
+  margin: 0 16px;
   line-height: 1.0;
   text-align: center;
   vertical-align: middle;
 }
 
 .global-header-nav-link:first-child {
-  margin: 0 16px 0 0;
+  margin-left: 0;
+  margin-right: 16px;
 }
 
 .global-header-nav-link:last-child {
-  margin: 0 0 0 16px;
+  margin-left: 16px;
+  margin-right: 0;
 }
 
 .global-header-compass-logo {
@@ -56,7 +58,7 @@ body {
 }
 
 .compass-development-logo {
-  width: 418.9px;
+  width: 419px;
 	height: 131px;
   margin: 80px auto;
 }
@@ -79,14 +81,14 @@ body {
   font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  margin: 8px 128px 0 128px;
+  margin: 8px 200px 0 200px;
   line-height: 1.5;
   color: #3e4247;
 }
 
 .intro-contact-team {
   text-align: center;
-  margin: 16px 0 0 0;
+  margin-top: 16px;
 }
 
 .intro-contact-team-button {
@@ -114,7 +116,7 @@ body {
   display: flex;
   background: #fff;
   text-decoration: none;
-  margin: 0 0 48px 0;
+  margin-bottom: 48px;
   border-bottom: solid 2px #646971;
 }
 
@@ -153,7 +155,7 @@ body {
   font-weight: 700;
   font-size: 40px;
   line-height: 56px;
-  margin: 24px 0 0 0;
+  margin-top: 24px;
 }
 
 .card-info {
@@ -162,7 +164,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  margin: 8px 0 0 0;
+  margin-top: 8px;
 }
 
 .footer {
@@ -187,7 +189,7 @@ body {
   font-weight: 700;
   font-size: 14px;
   color: #646971;
-  margin: 16px 0 0 0;
+  margin-top: 16px;
 }
 
 .footer-credentials-title {
@@ -195,11 +197,11 @@ body {
 }
 
 .footer-credentials {
-  margin: 4px 0 0 0;
+  margin-top: 4px;
 }
 
 .footer-credentials:last-child {
-  margin: 16px 0 0 0;
+  margin-top: 16px;
 }
 
 .footer-link,
