@@ -8,21 +8,25 @@ body {
   -webkit-line-break: after-white-space;
 }
 
-.header {
-  display: flex;
+.global-header {
   background: #fff;
+}
+
+.global-header-wrapper {
+  display: flex;
   justify-content: space-between;
 }
 
-.header-nav {
+.global-header-nav {
   display: flex;
   line-height: 16px;
-  margin: 20px 120px 20px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
   justify-content: space-between;
   align-items: center;
 }
 
-.header-nav-link {
+.global-header-nav-link {
   color: #3e4247;
   text-decoration: none;
   font-size: 16px;
@@ -33,16 +37,17 @@ body {
   vertical-align: middle;
 }
 
-.header-nav-link:first-child {
+.global-header-nav-link:first-child {
   margin: 0 16px 0 0;
 }
 
-.header-nav-link:last-child {
+.global-header-nav-link:last-child {
   margin: 0 0 0 16px;
 }
 
-.header-compass-logo {
-  margin: 20px 0 20px 120px;
+.global-header-compass-logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .compass-development-block {
@@ -53,7 +58,7 @@ body {
 .compass-development-logo {
   width: 418.9px;
 	height: 131px;
-  margin: 80px 511px;
+  margin: 80px auto;
 }
 
 .intro {
@@ -133,7 +138,7 @@ body {
 .card-content {
   display: flex;
   flex-flow: column;
-  padding: 24px 32px 0 32px;
+  padding: 24px 32px;
 }
 
 .card-geo {
@@ -165,7 +170,8 @@ body {
 }
 
 .grid-wrapper {
-  padding: 32px 128px 28px 128px;
+  padding-top: 32px;
+  padding-bottom: 28px;
   background: #111;
 }
 
@@ -222,5 +228,5 @@ body {
   font-size: 11px;
   line-height: 16px;
   color: #a9afb6;
-  margin: 96px 0 0 0;
+  margin-top: 96px;
 }
