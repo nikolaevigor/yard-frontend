@@ -125,6 +125,11 @@ body {
   margin-bottom: 0;
 }
 
+.card-thumbnail {
+  width: 484px;
+  height: 350px;
+}
+
 .card-content {
   display: flex;
   flex-flow: column;
