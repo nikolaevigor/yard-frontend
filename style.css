@@ -114,7 +114,7 @@ body {
 }
 
 .card:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0,0,0,.3);
 }
 
 .card:first-child {
@@ -161,18 +161,18 @@ body {
 }
 
 .footer {
-  background-color: #111111;
+  background-color: #111;
 }
 
 .grid-wrapper {
   padding: 32px 128px 28px 128px;
-  background: #111111;
+  background: #111;
 }
 
 .footer-line {
   height: 2px;
   border-style: none;
-  background-color: #3E4247;
+  background-color: #3e4247;
   margin: 0;
 }
 
@@ -196,7 +196,8 @@ body {
   margin: 16px 0 0 0;
 }
 
-.footer-link, .footer-credentials {
+.footer-link,
+.footer-credentials {
   display: block;
   font-family: 'Fira Sans', sans-serif;
   font-weight: 300;
@@ -208,7 +209,7 @@ body {
 }
 
 .footer-credentials {
-  color: #A9AFB6;
+  color: #a9afb6;
 }
 
 .footer-all-apartment-link {
@@ -220,6 +221,6 @@ body {
   font-weight: 300;
   font-size: 11px;
   line-height: 16px;
-  color: #A9AFB6;
+  color: #a9afb6;
   margin: 96px 0 0 0;
 }
