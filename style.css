@@ -3,6 +3,9 @@ body {
   background-size: 1%;
   background-color: #EAEBF0;
   background-repeat: repeat;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased;
+  -webkit-line-break: after-white-space;
 }
 
 .header {
