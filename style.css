@@ -198,11 +198,7 @@ body {
   margin-top: 8px;
 }
 
-.footer-apartment-link {
-  margin: 8px 0 0 0;
-}
-
-.footer-apartment-link:last-child {
+.footer-all-apartment-link {
   margin-top: 16px;
 }
 
@@ -210,6 +206,7 @@ body {
   font-family: 'Fira Sans', sans-serif;
   font-weight: 300;
   font-size: 11px;
+  line-height: 16px;
   color: #a9afb6;
   margin: 96px 0 0 0;
 }
