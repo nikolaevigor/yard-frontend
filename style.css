@@ -232,3 +232,57 @@ body {
   color: #a9afb6;
   margin-top: 96px;
 }
+
+/* complex page styles */
+
+.header-separation-row {
+  margin: 0;
+  border: solid 1px #eaebf0;
+}
+
+.apartment-header {
+  background-color: #fff;
+}
+
+.apartment-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apartment-header-info-wrapper {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+
+.apartment-header-title {
+  font-family: 'Philosopher';
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 45px;
+  color: #3e4247;
+  margin: 0 auto;
+}
+
+.apartment-header-geo {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  color: #a9afb6;
+}
+
+.apartment-header-favourites-button {
+  background-color: transparent;
+  margin-top: 24px;
+  margin-bottom: 56px;
+  padding: 8px 16px;
+  border-radius: 2px;
+	border: solid 1px #e0e0e1;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 10px;
+  line-height: 10px;
+  color: #00779a;
+  font-weight: 300;
+}
