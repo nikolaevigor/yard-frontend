@@ -560,19 +560,19 @@ body {
 }
 
 .nearby-image {
-  width: 583px;
+  width: 100%;
   height: 560px;
   margin-top: 64px;
   margin-bottom: 218px;
 }
 
-.geo-wrapper {
+.complex-directions-wrapper {
   display: flex;
   margin-top: -153px;
   margin-bottom: 64px;
 }
 
-.geo-map {
+.complex-directions-map {
   height: 306px;
   width: 583px;
   flex: 1 1 0;
@@ -580,7 +580,7 @@ body {
 	box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
 }
 
-.geo-places {
+.complex-directions-places {
   display: flex;
   flex-flow: column;
   flex: 1 1 0;
@@ -590,21 +590,19 @@ body {
   padding: 0;
 }
 
-.geo-places-separation-line {
+.complex-directions-places-separation-line {
   margin: 0;
   border: 0;
   height: 1px;
   background-color: #e0e0e1;
 }
 
-.geo-places-place {
-  display: flex;
-  flex-flow: column;
+.complex-directions-places-place {
   padding: 24px;
   background-color: #fff;
 }
 
-.geo-place-name {
+.complex-directions-place-name {
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -612,7 +610,7 @@ body {
   color: #3e4247;
 }
 
-.geo-place-value {
+.complex-directions-place-value {
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
