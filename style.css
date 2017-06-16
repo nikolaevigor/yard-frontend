@@ -298,6 +298,7 @@ body {
 
 .carousel-wrapper {
   display: flex;
+  position: relative;
   justify-content: flex-start;
   overflow: scroll;
 }
@@ -308,6 +309,16 @@ body {
 
 .carousel-button {
   position: absolute;
+  padding: 8px 16px;
+  margin-top: -42px;
+  border-radius: 2px;
+  border: 0;
+  background-color: #00779a;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1.0;
+  color: #fff;
 }
 
 .summary {
