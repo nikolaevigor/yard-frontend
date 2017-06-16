@@ -1,11 +1,14 @@
 body {
-  background: url('./img/background.png');
-  background-size: 1%;
-  background-color: #eaebf0;
-  background-repeat: repeat;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased;
   -webkit-line-break: after-white-space;
+}
+
+.complexes-body {
+  background: url("./img/background.png");
+  background-size: 1%;
+  background-color: #eaebf0;
+  background-repeat: repeat;
 }
 
 .global-header {
@@ -30,7 +33,7 @@ body {
   color: #3e4247;
   text-decoration: none;
   font-size: 16px;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   margin: 0 16px;
   line-height: 1.0;
   text-align: center;
@@ -69,7 +72,7 @@ body {
 
 .intro-title {
   text-align: center;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: 24px;
   margin: 0;
@@ -78,7 +81,7 @@ body {
 
 .intro-text {
   text-align: center;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
   margin: 8px 200px 0 200px;
@@ -94,7 +97,7 @@ body {
 .intro-contact-team-button {
   background-color: #000;
   color: #fff;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
   padding: 13px 31px;
@@ -151,7 +154,7 @@ body {
 
 .card-title {
   color: #000;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 56px;
@@ -160,7 +163,7 @@ body {
 
 .card-info {
   color: #3E4247;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -185,7 +188,7 @@ body {
 }
 
 .footer-title {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: 14px;
   color: #646971;
@@ -207,7 +210,7 @@ body {
 .footer-link,
 .footer-credentials {
   display: block;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
@@ -225,7 +228,7 @@ body {
 }
 
 .footer-legal {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 300;
   font-size: 11px;
   line-height: 16px;
@@ -235,7 +238,11 @@ body {
 
 /* complex page styles */
 
-.header-separation-row {
+.complexes-body {
+  background-color: #fff;
+}
+
+.separation-row {
   margin: 0;
   border: solid 1px #eaebf0;
 }
@@ -255,9 +262,9 @@ body {
 }
 
 .apartment-header-title {
-  font-family: 'Philosopher';
+  font-family: "Philosopher";
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 45px;
   color: #3e4247;
   margin: 0 auto;
@@ -266,7 +273,7 @@ body {
 .apartment-header-geo {
   margin-top: 8px;
   margin-bottom: 0;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 20px;
@@ -280,9 +287,262 @@ body {
   padding: 8px 16px;
   border-radius: 2px;
 	border: solid 1px #e0e0e1;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 10px;
   line-height: 10px;
   color: #00779a;
   font-weight: 300;
+}
+
+.carousel {
+  display: flex;
+  justify-content: flex-start;
+  overflow: scroll;
+}
+
+.carousel-image {
+  height: 400px;
+}
+
+.summary {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.summary-header {
+  display: block;
+  margin-left: 48px;
+  font-family: "Philosopher";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  color: #3e4247;
+}
+
+.summary-header:first-child {
+  margin-left: 0;
+}
+
+.summary-small {
+  display: block;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #a9afb6;
+}
+
+.features {
+  margin-top: 32px;
+}
+
+.features-title,
+.description-title,
+.infrastructure-title {
+  font-family: "Philosopher";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  color: #3e4247;
+  margin: 0 auto;
+}
+
+.feature-records {
+  margin-top: 16px;
+}
+
+.feature-record {
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.feature-record:first-child {
+  margin-top: 0;
+}
+
+.feature-name {
+  width: 50%;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #a9afb6;
+}
+
+.feature-value {
+  width: 50%;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #3e4247;
+  margin-left: 48px;
+}
+
+.description {
+  margin-top: 48px;
+}
+
+.description-wrapper {
+  display: flex;
+}
+
+.description-text {
+  white-space: pre-line;
+  text-indent: 0;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin-left: 91px;
+  margin-bottom: 24px;
+  color: #3e4247;
+}
+
+.infrastructure {
+  margin-top: 32px;
+  margin-bottom: 64px;
+}
+
+.infrastructure-wrapper {
+  margin-top: 16px;
+}
+
+.infrastructure-row-wrapper {
+  margin-top: 8px;
+}
+
+.infrastructure-row-wrapper:first-child {
+  margin-top: 0;
+}
+
+.infrastructure-record {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #3e4247;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.offers {
+  background-color: #f4f5f9;
+}
+
+.offers-title {
+  padding-top: 64px;
+  text-align: center;
+  font-family: "Philosopher";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 45px;
+  color: #3e4247;
+  margin: 0 auto;
+}
+
+.offers-cards-wrapper {
+  padding-top: 24px;
+  padding-bottom: 64px;
+}
+
+.offers-card {
+  display: flex;
+  flex-flow: column;
+  background-color: #fff;
+}
+
+.offers-card-title {
+  font-family: "Philosopher";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  margin: 24px 32px 0 32px;
+}
+
+.offers-card-param-record {
+  display: flex;
+  flex-flow: column;
+  margin: 24px 32px 0 32px;
+}
+
+.offers-card-param-name {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.38;
+  color: #a9afb6;
+}
+
+.offers-card-param-value {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #3e4247;
+  margin-top: 8px;
+  margin-left: 0;
+}
+
+.offers-card-button {
+  background-color: #000;
+  color: #fff;
+  white-space: nowrap;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.0;
+  border-style: none;
+  border-radius: 2px;
+  padding: 12px 42px;
+  margin: 32px 64px 24px 64px;
+}
+
+.nearby {
+  background-color: #3e4247;
+}
+
+.nearby-wrapper {
+  display: flex;
+}
+
+.nearby-info-wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  margin-right: 16px;
+}
+
+.nearby-info-subtitle {
+  font-family: "Philosopher";
+  font-size: 24px;
+  font-weight: bold;
+  color: #a9afb6;
+  margin-top: 181px;
+  margin-bottom: 0px;
+}
+
+.nearby-info-title {
+  font-family: "Philosopher";
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #fff;
+  margin-top: 48px;
+  margin-bottom: 0;
+}
+
+.nearby-info-link {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  color: #00779a;
+  text-decoration: none;
+  margin-top: 48px;
+}
+
+.nearby-image {
+  width: 583px;
+  height: 560px;
+  margin-top: 64px;
+  margin-bottom: 218px;
 }
