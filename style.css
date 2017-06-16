@@ -296,7 +296,7 @@ body {
   font-weight: 300;
 }
 
-.carousel {
+.carousel-wrapper {
   display: flex;
   justify-content: flex-start;
   overflow: scroll;
@@ -304,6 +304,10 @@ body {
 
 .carousel-image {
   height: 400px;
+}
+
+.carousel-button {
+  position: absolute;
 }
 
 .summary {
@@ -522,7 +526,7 @@ body {
   font-weight: bold;
   color: #a9afb6;
   margin-top: 181px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .nearby-info-title {
@@ -548,4 +552,60 @@ body {
   height: 560px;
   margin-top: 64px;
   margin-bottom: 218px;
+}
+
+.geo-wrapper {
+  display: flex;
+  margin-top: -153px;
+  margin-bottom: 64px;
+}
+
+.geo-map {
+  height: 306px;
+  width: 583px;
+  flex: 1 1 0;
+  margin-right: 8px;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
+}
+
+.geo-places {
+  display: flex;
+  flex-flow: column;
+  flex: 1 1 0;
+  margin-left: 8px;
+  border: solid 1px #e0e0e1;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
+  padding: 0;
+}
+
+.geo-places-separation-line {
+  margin: 0;
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e1;
+}
+
+.geo-places-place {
+  display: flex;
+  flex-flow: column;
+  padding: 24px;
+  background-color: #fff;
+}
+
+.geo-place-name {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.38;
+  color: #3e4247;
+}
+
+.geo-place-value {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.38;
+  color: #a9afb6;
+  margin-left: 0;
+  margin-top: 8px;
 }
