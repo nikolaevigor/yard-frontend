@@ -200,7 +200,8 @@ body {
 }
 
 .footer-credentials {
-  margin-top: 4px;
+  margin-top: 8px;
+  margin-bottom: 0;
 }
 
 .footer-credentials:last-child {
@@ -328,7 +329,7 @@ body {
 
 .summary-header {
   display: block;
-  margin-left: 48px;
+  margin: 24px 0 24px 48px;
   font-family: "Philosopher";
   font-size: 24px;
   font-weight: 700;
@@ -451,9 +452,9 @@ body {
   padding-top: 64px;
   text-align: center;
   font-family: "Philosopher";
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
-  line-height: 45px;
+  line-height: 1.12;
   color: #3e4247;
   margin: 0 auto;
 }
@@ -505,14 +506,14 @@ body {
 .offers-card-button {
   background-color: #000;
   color: #fff;
-  white-space: nowrap;
+  text-align: center;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.0;
   border-style: none;
   border-radius: 2px;
-  padding: 12px 42px;
+  padding: 12px 32px;
   margin: 32px 64px 24px 64px;
 }
 
