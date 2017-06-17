@@ -67,7 +67,13 @@ body {
 }
 
 .intro {
+  text-align: center;
   margin-top: 64px;
+}
+
+.intro-content {
+  display: flex;
+  justify-content: center;
 }
 
 .intro-title {
@@ -84,7 +90,8 @@ body {
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  margin: 8px 200px 0 200px;
+  margin-top: 8px;
+  margin-bottom: 0;
   line-height: 1.5;
   color: #3e4247;
 }
