@@ -109,6 +109,7 @@ body {
   padding: 13px 31px;
   border-style: none;
   border-radius: 2px;
+  line-height: 1;
 }
 
 .intro-contact-team-button:hover {
