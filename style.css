@@ -239,32 +239,32 @@ body {
 
 /* complex page styles */
 
-.complexes-body {
+.complex-body {
   background-color: #fff;
 }
 
-.separation-line {
+.complex-separation-line {
   margin: 0;
   border: 0;
   height: 1px;
   background-color: #e0e0e1;
 }
 
-.apartment-header {
+.complex-apartment-header {
   background-color: #fff;
 }
 
-.apartment-header-wrapper {
+.complex-apartment-header-wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.apartment-header-info-wrapper {
+.complex-apartment-header-info-wrapper {
   padding-top: 24px;
   padding-bottom: 16px;
 }
 
-.apartment-header-title {
+.complex-apartment-header-title {
   font-family: "Philosopher";
   font-size: 32px;
   font-weight: 700;
@@ -273,7 +273,7 @@ body {
   margin: 0 auto;
 }
 
-.apartment-header-geo {
+.complex-apartment-header-geo {
   margin-top: 8px;
   margin-bottom: 0;
   font-family: "Fira Sans", sans-serif;
@@ -283,7 +283,7 @@ body {
   color: #a9afb6;
 }
 
-.apartment-header-favourites-button {
+.complex-apartment-header-favourites-button {
   background-color: transparent;
   margin-top: 24px;
   margin-bottom: 56px;
@@ -297,18 +297,18 @@ body {
   font-weight: 300;
 }
 
-.carousel-wrapper {
+.complex-carousel-wrapper {
   display: flex;
   position: relative;
   justify-content: flex-start;
   overflow: scroll;
 }
 
-.carousel-image {
+.complex-carousel-image {
   height: 400px;
 }
 
-.carousel-button {
+.complex-carousel-button {
   position: absolute;
   padding: 8px 16px;
   margin-top: -42px;
@@ -322,12 +322,12 @@ body {
   color: #fff;
 }
 
-.summary {
+.complex-summary {
   display: flex;
   justify-content: flex-start;
 }
 
-.summary-header {
+.complex-summary-header {
   display: block;
   margin: 24px 0 24px 48px;
   font-family: "Philosopher";
@@ -337,11 +337,11 @@ body {
   color: #3e4247;
 }
 
-.summary-header:first-child {
+.complex-summary-header:first-child {
   margin-left: 0;
 }
 
-.summary-small {
+.complex-summary-small {
   display: block;
   font-family: "Fira Sans", sans-serif;
   font-size: 14px;
@@ -349,13 +349,13 @@ body {
   color: #a9afb6;
 }
 
-.features {
+.complex-features {
   margin-top: 32px;
 }
 
-.features-title,
-.description-title,
-.infrastructure-title {
+.complex-features-title,
+.complex-description-title,
+.complex-infrastructure-title {
   font-family: "Philosopher";
   font-size: 24px;
   font-weight: 700;
@@ -364,21 +364,21 @@ body {
   margin: 0 auto;
 }
 
-.feature-records {
+.complex-feature-records {
   margin-top: 16px;
 }
 
-.feature-record {
+.complex-feature-record {
   display: flex;
   margin-top: 8px;
   margin-bottom: 0;
 }
 
-.feature-record:first-child {
+.complex-feature-record:first-child {
   margin-top: 0;
 }
 
-.feature-name {
+.complex-feature-name {
   width: 50%;
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
@@ -387,7 +387,7 @@ body {
   color: #a9afb6;
 }
 
-.feature-value {
+.complex-feature-value {
   width: 50%;
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
@@ -397,15 +397,15 @@ body {
   margin-left: 48px;
 }
 
-.description {
+.complex-description {
   margin-top: 48px;
 }
 
-.description-wrapper {
+.complex-description-wrapper {
   display: flex;
 }
 
-.description-text {
+.complex-description-text {
   white-space: pre-line;
   text-indent: 0;
   font-family: "Fira Sans", sans-serif;
@@ -417,24 +417,24 @@ body {
   color: #3e4247;
 }
 
-.infrastructure {
+.complex-infrastructure {
   margin-top: 32px;
   margin-bottom: 64px;
 }
 
-.infrastructure-wrapper {
+.complex-infrastructure-wrapper {
   margin-top: 16px;
 }
 
-.infrastructure-row-wrapper {
+.complex-infrastructure-row-wrapper {
   margin-top: 8px;
 }
 
-.infrastructure-row-wrapper:first-child {
+.complex-infrastructure-row-wrapper:first-child {
   margin-top: 0;
 }
 
-.infrastructure-record {
+.complex-infrastructure-record {
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -444,11 +444,11 @@ body {
   margin-bottom: 0;
 }
 
-.offers {
+.complex-offers {
   background-color: #f4f5f9;
 }
 
-.offers-title {
+.complex-offers-title {
   padding-top: 64px;
   text-align: center;
   font-family: "Philosopher";
@@ -459,18 +459,18 @@ body {
   margin: 0 auto;
 }
 
-.offers-cards-wrapper {
+.complex-offers-cards-wrapper {
   padding-top: 24px;
   padding-bottom: 64px;
 }
 
-.offers-card {
+.complex-offers-card {
   display: flex;
   flex-flow: column;
   background-color: #fff;
 }
 
-.offers-card-title {
+.complex-offers-card-title {
   font-family: "Philosopher";
   font-size: 20px;
   font-weight: 700;
@@ -479,13 +479,13 @@ body {
   color: #3e4247;
 }
 
-.offers-card-param-record {
+.complex-offers-card-param-record {
   display: flex;
   flex-flow: column;
   margin: 24px 32px 0 32px;
 }
 
-.offers-card-param-name {
+.complex-offers-card-param-name {
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -493,7 +493,7 @@ body {
   color: #a9afb6;
 }
 
-.offers-card-param-value {
+.complex-offers-card-param-value {
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -503,7 +503,7 @@ body {
   margin-left: 0;
 }
 
-.offers-card-button {
+.complex-offers-card-button {
   background-color: #000;
   color: #fff;
   text-align: center;
@@ -517,22 +517,22 @@ body {
   margin: 32px 64px 24px 64px;
 }
 
-.nearby {
+.complex-nearby {
   background-color: #3e4247;
 }
 
-.nearby-wrapper {
+.complex-nearby-wrapper {
   display: flex;
 }
 
-.nearby-info-wrapper {
+.complex-nearby-info-wrapper {
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
   margin-right: 16px;
 }
 
-.nearby-info-subtitle {
+.complex-nearby-info-subtitle {
   font-family: "Philosopher";
   font-size: 24px;
   font-weight: bold;
@@ -541,7 +541,7 @@ body {
   margin-bottom: 0;
 }
 
-.nearby-info-title {
+.complex-nearby-info-title {
   font-family: "Philosopher";
   font-size: 48px;
   font-weight: bold;
@@ -551,7 +551,7 @@ body {
   margin-bottom: 0;
 }
 
-.nearby-info-link {
+.complex-nearby-info-link {
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   color: #00779a;
@@ -559,7 +559,7 @@ body {
   margin-top: 48px;
 }
 
-.nearby-image {
+.complex-nearby-image {
   width: 100%;
   height: 560px;
   margin-top: 64px;
