@@ -120,7 +120,7 @@ body {
 .cards {
   display: flex;
   flex-flow: column;
-  margin: 64px 128px;
+  margin: 64px 128px 96px 128px;
 }
 
 .card {
