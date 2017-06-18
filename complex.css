@@ -20,6 +20,7 @@
 .complex-apartment-header-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .complex-apartment-header-info-wrapper {
@@ -31,7 +32,7 @@
   font-family: "Philosopher";
   font-size: 32px;
   font-weight: 700;
-  line-height: 45px;
+  line-height: 36px;
   color: #3e4247;
   margin: 0 auto;
 }
@@ -42,14 +43,13 @@
   font-family: "Fira Sans", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  line-height: 20px;
+  line-height: 22px;
   color: #a9afb6;
 }
 
 .complex-apartment-header-favourites-button {
   background-color: transparent;
   margin-top: 24px;
-  margin-bottom: 56px;
   padding: 8px 16px;
   border-radius: 2px;
 	border: solid 1px #e0e0e1;
@@ -139,7 +139,7 @@
   margin-bottom: 0;
 }
 
-.complex-feature-record:first-child {
+.complex-feature:first-child {
   margin-top: 0;
 }
 
@@ -176,7 +176,7 @@
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.56;
+  line-height: 25px;
   margin-left: 91px;
   margin-bottom: 24px;
   color: #3e4247;
