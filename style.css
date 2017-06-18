@@ -80,6 +80,7 @@ body {
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: 24px;
+  line-height: 1.5;
   margin: 0;
   color: #3e4247;
 }
@@ -106,9 +107,10 @@ body {
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  padding: 13px 31px;
+  padding: 12px 32px;
   border-style: none;
   border-radius: 2px;
+  line-height: 1;
 }
 
 .intro-contact-team-button:hover {
@@ -118,7 +120,7 @@ body {
 .cards {
   display: flex;
   flex-flow: column;
-  margin: 64px 128px;
+  margin: 64px 128px 96px 128px;
 }
 
 .card {
@@ -196,15 +198,20 @@ body {
   font-size: 14px;
   color: #646971;
   margin-top: 16px;
+  margin-bottom: 0;
+  line-height: 1.6;
 }
 
 .footer-credentials-title {
   margin: 0;
+  line-height: 1.6;
 }
 
 .footer-credentials {
   margin-top: 8px;
   margin-bottom: 0;
+  line-height: 1.6;
+  color: #a9afb6;
 }
 
 .footer-credentials:last-child {
@@ -217,18 +224,15 @@ body {
   font-family: "Fira Sans", sans-serif;
   font-weight: 300;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1.6;
   color: #fff;
   text-decoration: none;
   margin-top: 8px;
 }
 
-.footer-credentials {
-  color: #a9afb6;
-}
-
 .footer-all-apartment-link {
   margin-top: 16px;
+  line-height: 1.6;
 }
 
 .footer-legal {
