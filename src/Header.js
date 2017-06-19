@@ -30,17 +30,17 @@ const GlobalHeaderNavLink = styled.a `
   line-height: 1.0;
   text-align: center;
   vertical-align: middle;
-`;
 
-// const globalHeaderNavLink:first-child = styled.a `
-//   margin-left: 0;
-//   margin-right: 16px;
-// `;
-//
-// const global-header-nav-link:last-child = styled.a`
-//   margin-left: 16px;
-//   margin-right: 0;
-// `;
+  &:first-child {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+
+  &:last-child {
+    margin-left: 16px;
+    margin-right: 0;
+  }
+`;
 
 const GlobalHeaderCompassLogo = styled.img`
   margin-top: 20px;

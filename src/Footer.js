@@ -17,6 +17,7 @@ const FooterLine = styled.hr`
 `;
 
 const FooterTitle = styled.h4`
+  text-align: left;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: 14px;
@@ -37,6 +38,7 @@ const FooterCredentialsTitle = FooterTitle.extend`
 
 const FooterLink = styled.a`
   display: block;
+  text-align: left;
   font-family: "Fira Sans", sans-serif;
   font-weight: 300;
   font-size: 14px;
@@ -54,12 +56,12 @@ const FooterCredentials = FooterLink.withComponent('p').extend`
 `;
 
 const FooterAllApartmentLink = FooterLink.extend`
-  display: inline;
   margin-top: 16px;
   line-height: 1.6;
 `;
 
 const FooterLegal = styled.p`
+  text-align: left;
   font-family: "Fira Sans", sans-serif;
   font-weight: 300;
   font-size: 11px;
@@ -90,7 +92,7 @@ export default () => {
           <FooterLink href="#">Садовые кварталы</FooterLink>
           <FooterLink href="#">Резиденция Монэ</FooterLink>
           <FooterAllApartmentLink href="#">
-                <FooterAllApartmentLink>Все ЖК Москвы</FooterAllApartmentLink>
+                Все ЖК Москвы
                 <ArrowImg src={ArrowImage} alt="Arrow" />
           </FooterAllApartmentLink>
         </Col>

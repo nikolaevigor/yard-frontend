@@ -1,3 +1,10 @@
+body {
+  background: url("./img/background.png");
+  background-size: 1%;
+  background-color: #eaebf0;
+  background-repeat: repeat;
+}
+
 .App {
   text-align: center;
 }
