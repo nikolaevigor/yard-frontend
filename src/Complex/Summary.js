@@ -1,13 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from "react";
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
+
+import Line from "./SeparationLine";
 
 const Summary = styled.div`
   display: flex;
   justify-content: flex-start;
 `;
 
-const SummaryHeading = styled.h2`
+const Heading = styled.h2`
   display: block;
   margin: 24px 0 24px 48px;
   font-family: "Philosopher";
@@ -21,7 +23,7 @@ const SummaryHeading = styled.h2`
   }
 `;
 
-const SummarySmall = styled.small`
+const Small = styled.small`
   display: block;
   font-family: "Fira Sans", sans-serif;
   font-size: 14px;
@@ -33,25 +35,28 @@ const SummarySmall = styled.small`
 
 export default () => {
   return (
-    <Summary>
-      <SummaryHeading>
-        950
-        <SummarySmall>
-          предложений
-        </SummarySmall>
-      </SummaryHeading>
-      <SummaryHeading>
-        John McAslan + Partners
-        <SummarySmall>
-          архитектор
-        </SummarySmall>
-      </SummaryHeading>
-      <SummaryHeading>
-        Группа «ПСН»
-        <SummarySmall>
-          застройщик
-        </SummarySmall>
-      </SummaryHeading>
-    </Summary>
+    <Grid>
+      <Summary>
+        <Heading>
+          950
+          <Small>
+            предложений
+          </Small>
+        </Heading>
+        <Heading>
+          John McAslan + Partners
+          <Small>
+            архитектор
+          </Small>
+        </Heading>
+        <Heading>
+          Группа «ПСН»
+          <Small>
+            застройщик
+          </Small>
+        </Heading>
+      </Summary>
+      <Line />
+    </Grid>
   );
 };

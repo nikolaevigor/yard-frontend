@@ -3,7 +3,7 @@ import logo from '../img/compass-logo.svg'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-import Card from './Card.js'
+import Card from './Card'
 
 const Cards = styled.div`
   display: flex;

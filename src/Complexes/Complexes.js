@@ -8,8 +8,6 @@ import CompassDevelopmentBlock from "./CompassDevelopmentBlock";
 import Intro from "./Intro";
 import Cards from "./Cards";
 
-import "../App.css";
-
 class Complexes extends Component {
   render() {
     return (

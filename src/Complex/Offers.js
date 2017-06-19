@@ -6,7 +6,7 @@ const Offers = styled.div`
   background-color: #f4f5f9;
 `;
 
-const OffersTitle = styled.h2`
+const Title = styled.h2`
   padding-top: 64px;
   text-align: center;
   font-family: "Philosopher";
@@ -79,7 +79,7 @@ export default () => {
   return (
     <Offers>
       <Grid>
-        <OffersTitle>Предложения в ЖК «Полянка/44»</OffersTitle>
+        <Title>Предложения в ЖК «Полянка/44»</Title>
         <Cards>
           <Row>
             <Col lg={4}>

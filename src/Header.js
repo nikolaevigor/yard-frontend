@@ -2,18 +2,19 @@ import React from 'react'
 import logo from './img/compass-logo.svg'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Link } from 'react-router-dom'
 
-const GlobalHeader = styled.header`
+const Header = styled.header`
   background: #fff;
   border-bottom: solid 1px #e0e0e1;
 `;
 
-const GlobalHeaderWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-const GlobalHeaderNav = styled.nav`
+const Nav = styled.nav`
   display: flex;
   line-height: 16px;
   margin-top: 20px;
@@ -22,7 +23,7 @@ const GlobalHeaderNav = styled.nav`
   align-items: center;
 `;
 
-const GlobalHeaderNavLink = styled.a `
+const NavLink = styled.a `
   color: #3e4247;
   text-decoration: none;
   font-size: 16px;
@@ -43,24 +44,28 @@ const GlobalHeaderNavLink = styled.a `
   }
 `;
 
-const GlobalHeaderCompassLogo = styled.img`
+const LogoLink = styled(Link)``
+
+const CompassLogo = styled.img`
   margin-top: 20px;
   margin-bottom: 20px;
 `;
 
 export default () => {
   return (
-    <GlobalHeader>
+    <Header>
       <Grid>
-        <GlobalHeaderWrapper>
-          <GlobalHeaderCompassLogo src={logo} alt="@Compass Logo" />
-          <GlobalHeaderNav>
-            <GlobalHeaderNavLink href="#buy">Купить</GlobalHeaderNavLink>
-            <GlobalHeaderNavLink href="#rent">Снять</GlobalHeaderNavLink>
-            <GlobalHeaderNavLink href="#our_agents">Наши агенты</GlobalHeaderNavLink>
-          </GlobalHeaderNav>
-        </GlobalHeaderWrapper>
+        <Wrapper>
+          <LogoLink to={'/'}>
+            <CompassLogo src={logo} alt="@Compass Logo" />
+          </LogoLink>
+          <Nav>
+            <NavLink href="#buy">Купить</NavLink>
+            <NavLink href="#rent">Снять</NavLink>
+            <NavLink href="#our_agents">Наши агенты</NavLink>
+          </Nav>
+        </Wrapper>
       </Grid>
-    </GlobalHeader>
+    </Header>
   );
 };

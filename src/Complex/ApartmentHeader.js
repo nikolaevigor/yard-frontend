@@ -2,22 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const ComplexApartmentHeader = styled.div`
+const ApartmentHeader = styled.div`
   background-color: #fff;
 `;
 
-const ComplexApartmentHeaderWrapper = styled.div`
+const ApartmentHeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 `;
 
-const ComplexApartmentHeaderInfo = styled.div`
+const ApartmentHeaderInfo = styled.div`
   padding-top: 24px;
   padding-bottom: 16px;
 `;
 
-const ComplexApartmentHeaderTitle = styled.h1`
+const ApartmentHeaderTitle = styled.h1`
   font-family: "Philosopher";
   font-size: 32px;
   font-weight: 700;
@@ -26,7 +26,7 @@ const ComplexApartmentHeaderTitle = styled.h1`
   margin: 0 auto;
 `;
 
-const ComplexApartmentHeaderGeo = styled.p`
+const ApartmentHeaderGeo = styled.p`
   margin-top: 8px;
   margin-bottom: 0;
   font-family: "Fira Sans", sans-serif;
@@ -36,7 +36,7 @@ const ComplexApartmentHeaderGeo = styled.p`
   color: #a9afb6;
 `;
 
-const ComplexApartmentHeaderFavouritesButton = styled.button`
+const ApartmentHeaderFavouritesButton = styled.button`
   background-color: transparent;
   margin-top: 24px;
   padding: 8px 16px;
@@ -51,16 +51,16 @@ const ComplexApartmentHeaderFavouritesButton = styled.button`
 
 export default () => {
   return (
-    <ComplexApartmentHeader>
+    <ApartmentHeader>
       <Grid>
-        <ComplexApartmentHeaderWrapper>
-          <ComplexApartmentHeaderInfo>
-            <ComplexApartmentHeaderTitle>Жилой комплекс «Полянка/44»</ComplexApartmentHeaderTitle>
-            <ComplexApartmentHeaderGeo>Район Якиманка, улица Большая Полянка, дом 44 • 119180</ComplexApartmentHeaderGeo>
-          </ComplexApartmentHeaderInfo>
-          <ComplexApartmentHeaderFavouritesButton>В избранное</ComplexApartmentHeaderFavouritesButton>
-        </ComplexApartmentHeaderWrapper>
+        <ApartmentHeaderWrapper>
+          <ApartmentHeaderInfo>
+            <ApartmentHeaderTitle>Жилой комплекс «Полянка/44»</ApartmentHeaderTitle>
+            <ApartmentHeaderGeo>Район Якиманка, улица Большая Полянка, дом 44 • 119180</ApartmentHeaderGeo>
+          </ApartmentHeaderInfo>
+          <ApartmentHeaderFavouritesButton>В избранное</ApartmentHeaderFavouritesButton>
+        </ApartmentHeaderWrapper>
       </Grid>
-    </ComplexApartmentHeader>
+    </ApartmentHeader>
   );
 };

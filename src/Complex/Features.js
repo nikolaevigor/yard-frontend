@@ -8,7 +8,7 @@ const Features = styled.div`
   margin-top: 32px;
 `;
 
-const FeatureRecords = styled.div`
+const Records = styled.div`
   margin-top: 16px;
 `
 
@@ -46,17 +46,49 @@ export default () => {
     <Features>
       <Grid>
         <Title>Характеристики></Title>
-        <FeatureRecords>
+        <Records>
           <Row>
             <Col lg={4}>
               <Feature>
                 <FeatureName>Количество квартир:</FeatureName>
                 <FeatureValue>1503</FeatureValue>
               </Feature>
+            </Col>
+            <Col lg={4}>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+            </Col>
+            <Col lg={4}>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={4}>
               <Feature>
                 <FeatureName>Статус:</FeatureName>
                 <FeatureValue>Квартиры</FeatureValue>
               </Feature>
+            </Col>
+            <Col lg={4}>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+            </Col>
+            <Col lg={4}>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={4}>
               <Feature>
                 <FeatureName>Цены:</FeatureName>
                 <FeatureValue>от 5.3 до 143.5 млн</FeatureValue>
@@ -67,31 +99,15 @@ export default () => {
                 <FeatureName>Количество квартир:</FeatureName>
                 <FeatureValue>1503</FeatureValue>
               </Feature>
-              <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
-              </Feature>
-              <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
-              </Feature>
             </Col>
             <Col lg={4}>
               <Feature>
                 <FeatureName>Количество квартир:</FeatureName>
                 <FeatureValue>1503</FeatureValue>
               </Feature>
-              <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
-              </Feature>
-              <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
-              </Feature>
             </Col>
           </Row>
-        </FeatureRecords>
+        </Records>
       </Grid>
     </Features>
   );

@@ -14,8 +14,6 @@ import Offers from "./Offers";
 import Nearby from "./Nearby";
 import Directions from "./Directions";
 
-import "../App.css";
-
 class Complex extends Component {
   render() {
     return (
@@ -23,9 +21,7 @@ class Complex extends Component {
         <div>
           <ApartmentHeader />
           <ImageCarouesel />
-          <Grid>
-            <Summary />
-          </Grid>
+          <Summary />
           <Features />
           <Description />
           <Infrastructure />
