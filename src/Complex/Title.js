@@ -6,7 +6,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Title = styled.h2`
   font-family: "Philosopher";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 27px;
   color: #3e4247;

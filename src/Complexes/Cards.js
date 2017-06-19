@@ -8,7 +8,7 @@ import Card from './Card'
 const Cards = styled.div`
   display: flex;
   flex-flow: column;
-  margin: 64px 128px 96px 128px;
+  margin: 4rem 8rem 6rem 8rem;
 `;
 
 export default () => {

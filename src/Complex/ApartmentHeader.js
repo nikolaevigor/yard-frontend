@@ -13,13 +13,13 @@ const ApartmentHeaderWrapper = styled.div`
 `;
 
 const ApartmentHeaderInfo = styled.div`
-  padding-top: 24px;
-  padding-bottom: 16px;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
 `;
 
 const ApartmentHeaderTitle = styled.h1`
   font-family: "Philosopher";
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 36px;
   color: #3e4247;
@@ -27,7 +27,7 @@ const ApartmentHeaderTitle = styled.h1`
 `;
 
 const ApartmentHeaderGeo = styled.p`
-  margin-top: 8px;
+  margin-top: 0.5rem;
   margin-bottom: 0;
   font-family: "Fira Sans", sans-serif;
   font-size: 14px;
@@ -38,8 +38,8 @@ const ApartmentHeaderGeo = styled.p`
 
 const ApartmentHeaderFavouritesButton = styled.button`
   background-color: transparent;
-  margin-top: 24px;
-  padding: 8px 16px;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 2px;
   border: solid 1px #e0e0e1;
   font-family: "Fira Sans", sans-serif;

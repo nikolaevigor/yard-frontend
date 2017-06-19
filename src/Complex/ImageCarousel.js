@@ -15,7 +15,7 @@ const Image = styled.img`
 
 const FavButton = styled.button`
   position: absolute;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   margin-top: -42px;
   border-radius: 2px;
   border: 0;

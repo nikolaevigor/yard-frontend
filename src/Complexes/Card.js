@@ -8,7 +8,7 @@ const Card = styled(Link)`
   display: flex;
   background: #fff;
   text-decoration: none;
-  margin-bottom: 48px;
+  margin-bottom: 3rem;
   border-bottom: solid 2px #646971;
 
   &:hover {
@@ -34,7 +34,7 @@ const CardTitle = styled.h3`
   font-weight: 700;
   font-size: 40px;
   line-height: 56px;
-  margin-top: 24px;
+  margin-top: 1.5rem;
   margin-bottom: 0;
 `;
 
@@ -43,15 +43,15 @@ const CardInfo = styled.p`
   color: #3E4247;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  margin-top: 8px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 0.5rem;
 `;
 
 const CardContent = styled.div`
   display: flex;
   flex-flow: column;
-  padding: 24px 32px;
+  padding: 1.5rem 2rem;
 `;
 
 const CardThumbnail = styled.img`

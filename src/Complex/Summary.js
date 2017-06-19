@@ -11,9 +11,9 @@ const Summary = styled.div`
 
 const Heading = styled.h2`
   display: block;
-  margin: 24px 0 24px 48px;
+  margin: 1.5rem 0 1.5rem 3rem;
   font-family: "Philosopher";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.12;
   color: #3e4247;

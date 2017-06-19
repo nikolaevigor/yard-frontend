@@ -7,10 +7,10 @@ const Offers = styled.div`
 `;
 
 const Title = styled.h2`
-  padding-top: 64px;
+  padding-top: 4rem;
   text-align: center;
   font-family: "Philosopher";
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.12;
   color: #3e4247;
@@ -18,8 +18,8 @@ const Title = styled.h2`
 `;
 
 const Cards = styled.div`
-  padding-top: 24px;
-  padding-bottom: 64px;
+  padding-top: 1.5rem;
+  padding-bottom: 4rem;
 `;
 
 const Card = styled.div`
@@ -33,19 +33,19 @@ const CardTitle = styled.h3`
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
-  margin: 24px 32px 0 32px;
+  margin: 1.5rem 2rem 0 2rem;
   color: #3e4247;
 `;
 
 const CardParam = styled.dl`
   display: flex;
   flex-flow: column;
-  margin: 24px 32px 0 32px;
+  margin: 1.5rem 2rem 0 2rem;
 `;
 
 const CardParamName = styled.dt`
   font-family: "Fira Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.38;
   color: #a9afb6;
@@ -53,11 +53,11 @@ const CardParamName = styled.dt`
 
 const CardParamValue = styled.dd`
   font-family: "Fira Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 22px;
   color: #3e4247;
-  margin-top: 8px;
+  margin-top: 0.5rem;
   margin-left: 0;
 `;
 
@@ -67,12 +67,12 @@ const CardButton = styled.button`
   text-align: center;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.0;
   border-style: none;
   border-radius: 2px;
-  padding: 12px 32px;
-  margin: 32px 64px 24px 64px;
+  padding: 0.75rem 2rem;
+  margin: 2rem 4rem 1.5rem 4rem;
 `;
 
 export default () => {

@@ -7,7 +7,7 @@ const IntroTitle = styled.h2`
   text-align: center;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.5;
   margin: 0;
   color: #3e4247;
@@ -17,8 +17,8 @@ const IntroText = styled.p`
   text-align: center;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  margin-top: 8px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 0;
   line-height: 1.5;
   color: #3e4247;
@@ -26,7 +26,7 @@ const IntroText = styled.p`
 
 const IntroContactTeam = styled.div`
   text-align: center;
-  margin-top: 16px;
+  margin-top: 2rem;
 `;
 
 const IntroContactTeamButton = styled.button`
@@ -34,8 +34,8 @@ const IntroContactTeamButton = styled.button`
   color: #fff;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  padding: 12px 32px;
+  font-size: 2rem;
+  padding: 0.75rem 2rem;
   border-style: none;
   border-radius: 2px;
   line-height: 1;
@@ -51,7 +51,7 @@ const IntroContent = styled.div`
 `;
 
 const Intro = styled.div`
-  margin-top: 64px;
+  margin-top: 4rem;
 `;
 
 

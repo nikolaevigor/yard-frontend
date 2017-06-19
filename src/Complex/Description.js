@@ -6,7 +6,7 @@ import Title from './Title'
 import Line from './SeparationLine'
 
 const Description = styled.div`
-  margin-top: 48px;
+  margin-top: 3rem;
 `;
 
 const Wrapper = styled.div`
@@ -18,10 +18,10 @@ const Text = styled.article`
   text-indent: 0;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 25px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   margin-left: 91px;
-  margin-bottom: 24px;
+  margin-bottom: 0.5rem;
   color: #3e4247;
 `;
 

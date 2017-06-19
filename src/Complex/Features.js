@@ -5,16 +5,16 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import Title from './Title'
 
 const Features = styled.div`
-  margin-top: 32px;
+  margin-top: 2rem;
 `;
 
 const Records = styled.div`
-  margin-top: 16px;
+  margin-top: 1rem;
 `
 
 const Feature = styled.dl`
   display: flex;
-  margin-top: 8px;
+  margin-top: 0.5rem;
   margin-bottom: 0;
 
   &:first-child {
@@ -25,7 +25,7 @@ const Feature = styled.dl`
 const FeatureName = styled.dt`
   width: 50%;
   font-family: "Fira Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.38;
   color: #a9afb6;
@@ -34,7 +34,7 @@ const FeatureName = styled.dt`
 const FeatureValue = styled.dd`
   width: 50%;
   font-family: "Fira Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.56;
   color: #3e4247;
