@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const GlobalHeader = styled.header`
   background: #fff;
+  border-bottom: solid 1px #e0e0e1;
 `;
 
 const GlobalHeaderWrapper = styled.div`

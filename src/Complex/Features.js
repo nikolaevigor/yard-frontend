@@ -1,54 +1,98 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-<div class="complex-features">
-  <div class="container">
-    <h2 class="complex-features-title">Характеристики</h2>
-    <div class="complex-feature-records">
-      <div class="row">
-        <div class="col-lg-4">
-          <dl class="complex-feature">
-            <dt class="complex-feature-name">Количество квартир:</dt>
-            <dd class="complex-feature-value">1503</dd>
-          </dl>
-          <dl class="complex-feature">
-            <dt class="complex-feature-name">Статус:</dt>
-            <dd class="complex-feature-value">Квартиры</dd>
-          </dl>
-          <dl class="complex-feature">
-            <dt class="complex-feature-name">Цены:</dt>
-            <dd class="complex-feature-value">от 5.3 до 143.5 млн</dd>
-          </dl>
-        </div>
-        <div class="col-lg-4">
-          <dl class="complex-feature">
-            <dt class="complex-feature-name">Количество квартир:</dt>
-            <dd class="complex-feature-value">1503</dd>
-          </dl>
-          <dl class="complex-feature">
-            <dt class="complex-feature-name">Количество квартир:</dt>
-            <dd class="complex-feature-value">1503</dd>
-          </dl>
-          <dl class="complex-feature">
-            <dt class="complex-feature-name">Количество квартир:</dt>
-            <dd class="complex-feature-value">1503</dd>
-          </dl>
-        </div>
-        <div class="col-lg-4">
-          <dl class="complex-feature">
-            <dt class="complex-feature-name">Количество квартир:</dt>
-            <dd class="complex-feature-value">1503</dd>
-          </dl>
-          <dl class="complex-feature">
-            <dt class="complex-feature-name">Количество квартир:</dt>
-            <dd class="complex-feature-value">1503</dd>
-          </dl>
-          <dl class="complex-feature">
-            <dt class="complex-feature-name">Количество квартир:</dt>
-            <dd class="complex-feature-value">1503</dd>
-          </dl>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+import Title from './Title'
+
+const Features = styled.div`
+  margin-top: 32px;
+`;
+
+const FeatureRecords = styled.div`
+  margin-top: 16px;
+`
+
+const Feature = styled.dl`
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+`;
+
+const FeatureName = styled.dt`
+  width: 50%;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.38;
+  color: #a9afb6;
+`;
+
+const FeatureValue = styled.dd`
+  width: 50%;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.56;
+  color: #3e4247;
+  margin-left: 34px;
+`;
+
+export default () => {
+  return (
+    <Features>
+      <Grid>
+        <Title>Характеристики></Title>
+        <FeatureRecords>
+          <Row>
+            <Col lg={4}>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+              <Feature>
+                <FeatureName>Статус:</FeatureName>
+                <FeatureValue>Квартиры</FeatureValue>
+              </Feature>
+              <Feature>
+                <FeatureName>Цены:</FeatureName>
+                <FeatureValue>от 5.3 до 143.5 млн</FeatureValue>
+              </Feature>
+            </Col>
+            <Col lg={4}>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+            </Col>
+            <Col lg={4}>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+              <Feature>
+                <FeatureName>Количество квартир:</FeatureName>
+                <FeatureValue>1503</FeatureValue>
+              </Feature>
+            </Col>
+          </Row>
+        </FeatureRecords>
+      </Grid>
+    </Features>
+  );
+};

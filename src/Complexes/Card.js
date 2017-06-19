@@ -57,6 +57,7 @@ const CardContent = styled.div`
 const CardThumbnail = styled.img`
   width: 484px;
   height: 350px;
+  flex-shrink: 0;
 `;
 
 

@@ -1,26 +1,78 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-  <div class="complex-directions">
-    <div class="container">
-      <div class="complex-directions-wrapper">
-        <img class="complex-directions-map" src="./img/map.png" alt="Map">
-        <div class="complex-directions-places">
-          <div class="complex-directions-places-place">
-            <dt class="complex-directions-place-name">Красный Октябрь</dt>
-            <dd class="complex-directions-place-value">24 минуты, 6 км</dd>
-          </div>
-          <hr class="complex-directions-places-separation-line">
-          <div class="complex-directions-places-place">
-            <dt class="complex-directions-place-name">World Class</dt>
-            <dd class="complex-directions-place-value">2 минуты, 300 м</dd>
-          </div>
-          <hr class="complex-directions-places-separation-line">
-          <div class="complex-directions-places-place">
-            <dt class="complex-directions-place-name">Третьяковская галерея</dt>
-            <dd class="complex-directions-place-value">14 минут, 4 км</dd>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+import SeparationLine from './SeparationLine'
+
+const Wrapper = styled.div`
+  display: flex;
+  margin-top: -153px;
+  margin-bottom: 64px;
+`;
+
+const MapImage = styled.img`
+  height: 306px;
+  width: 583px;
+  flex: 1 1 0;
+  margin-right: 8px;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
+`;
+
+const Places = styled.div`
+  display: flex;
+  flex-flow: column;
+  flex: 1 1 0;
+  margin-left: 8px;
+  border: solid 1px #e0e0e1;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
+  padding: 0;
+`;
+
+const Place = styled.div`
+  padding: 24px;
+  background-color: #fff;
+`;
+
+const PlaceName = styled.dt`
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.38;
+  color: #3e4247;
+`;
+
+const PlaceValue = styled.dd`
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.38;
+  color: #a9afb6;
+  margin-left: 0;
+  margin-top: 8px;
+`;
+
+export default () => {
+  return (
+    <Grid>
+      <Wrapper>
+        <MapImage src={process.env.PUBLIC_URL + '/img/map.png'} alt="Map" />
+        <Places>
+          <Place>
+            <PlaceName>Красный Октябрь</PlaceName>
+            <PlaceValue>24 минуты, 6 км</PlaceValue>
+          </Place>
+          <SeparationLine />
+          <Place>
+            <PlaceName>World Class</PlaceName>
+            <PlaceValue>2 минуты, 300 м</PlaceValue>
+          </Place>
+          <SeparationLine />
+          <Place>
+            <PlaceName>Третьяковская галерея</PlaceName>
+            <PlaceValue>14 минут, 4 км</PlaceValue>
+          </Place>
+        </Places>
+      </Wrapper>
+    </Grid>
+  );
+}

@@ -1,19 +1,69 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-<div class="complex-nearby">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="complex-nearby-info-wrapper">
-          <p class="complex-nearby-info-subtitle">Якиманка</p>
-          <h1 class="complex-nearby-info-title">Исторический центр Москвы в двух километрах от Кремля</h1>
-          <a class="complex-nearby-info-link" href="#">Гид по Якиманке →</a>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <img class="complex-nearby-image" src="./img/polyanka-photo.png" alt="Полянка">
-      </div>
-    </div>
-  </div>
-</div>
+const Nearby = styled.div`
+  background-color: #3e4247;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  margin-right: 16px;
+`;
+
+const SubTitle = styled.p`
+  font-family: "Philosopher";
+  font-size: 24px;
+  font-weight: bold;
+  color: #a9afb6;
+  margin-top: 181px;
+  margin-bottom: 0;
+`;
+
+const Title = styled.h1`
+  font-family: "Philosopher";
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #fff;
+  margin-top: 48px;
+  margin-bottom: 0;
+`;
+
+const InfoLink = styled.a`
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  color: #00779a;
+  text-decoration: none;
+  margin-top: 48px;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 560px;
+  margin-top: 64px;
+  margin-bottom: 218px;
+`;
+
+export default () => {
+  return (
+    <Nearby>
+      <Grid>
+        <Row>
+          <Col lg={6}>
+            <Wrapper>
+              <SubTitle>Якиманка</SubTitle>
+              <Title>Исторический центр Москвы в двух километрах от Кремля</Title>
+              <InfoLink>Гид по Якиманке →</InfoLink>
+            </Wrapper>
+          </Col>
+          <Col lg={6}>
+            <Image src={process.env.PUBLIC_URL + '/img/polyanka-photo.png'} alt="Полянка"></Image>
+          </Col>
+        </Row>
+      </Grid>
+    </Nearby>
+  );
+};
