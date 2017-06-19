@@ -35,7 +35,7 @@ export default () => {
   return (
     <Infrastructure>
       <Grid>
-        <Title text="Инфарструктура"/>
+        <Title>Инфарструктура</Title>
         <Content>
           <RowWrapper>
             <Row>

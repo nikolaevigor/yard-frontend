@@ -45,7 +45,7 @@ export default () => {
   return (
     <Features>
       <Grid>
-        <Title>Характеристики></Title>
+        <Title>Характеристики</Title>
         <Records>
           <Row>
             <Col lg={4}>

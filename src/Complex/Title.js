@@ -15,6 +15,6 @@ const Title = styled.h2`
 
 export default (props) => {
   return (
-    <Title>{props.text}</Title>
+    <Title>{props.children}</Title>
   );
 };
