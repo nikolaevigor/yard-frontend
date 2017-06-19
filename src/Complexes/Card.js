@@ -1,11 +1,10 @@
 import React from 'react'
-import logo from './img/compass-logo.svg'
+import logo from '../img/compass-logo.svg'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Link } from 'react-router-dom'
 
-import Thumbnail from './img/apartment_1.png'
-
-const Card = styled.div`
+const Card = styled(Link)`
   display: flex;
   background: #fff;
   text-decoration: none;
@@ -60,22 +59,15 @@ const CardThumbnail = styled.img`
   height: 350px;
 `;
 
-// {/* <a class="card" href="#card1">
-//     <img class="card-thumbnail" src="./img/apartment_2.jpg" alt="100 East 53rd Street apt. picture">
-//     <div class="card-content">
-//       <p class="card-geo">MIDTOWN EAST, MANHATTAN</p>
-//       <h3 class="card-title">100 East 53rd Street</h3>
-//       <p class="card-info">One Hundred East Fifty Third Street by Foster + Partners is a limited collection of modern residences in Midtown Manhattan's Cultural District. The 94 residences ranging from alcove lofts to four bedrooms within the 63-story tower are generously proportioned.</p>
-//     </div>
-// </a> */}
 
-export default () => {
+
+export default (props) => {
   return (
-    <Card>
-      <CardThumbnail src={Thumbnail}/>
+    <Card to={`/complex/${props.id}`}>
+      <CardThumbnail src={process.env.PUBLIC_URL + '/img/apartment_' + props.id +'.png'}/>
       <CardContent>
-        <CardGeo>MIDTOWN EAST, MANHATTAN</CardGeo>
-        <CardTitle>100 East 53rd Street</CardTitle>
+        <CardGeo>{props.geo}</CardGeo>
+        <CardTitle>{props.title}</CardTitle>
         <CardInfo>One Hundred East Fifty Third Street by Foster + Partners is a limited collection of modern residences in Midtown Manhattan's Cultural District. The 94 residences ranging from alcove lofts to four bedrooms within the 63-story tower are generously proportioned.</CardInfo>
       </CardContent>
     </Card>
