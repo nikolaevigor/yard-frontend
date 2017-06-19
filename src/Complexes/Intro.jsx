@@ -34,7 +34,7 @@ const IntroContactTeamButton = styled.button`
   color: #fff;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1rem;
   padding: 0.75rem 2rem;
   border-style: none;
   border-radius: 2px;
