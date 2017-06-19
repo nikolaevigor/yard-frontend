@@ -1,36 +1,39 @@
-import React, {Component} from 'react'
-import styled from 'styled-components'
+import React, { Component } from "react";
+import styled from "styled-components";
 
-import BodyClassName from 'react-body-classname';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import BodyClassName from "react-body-classname";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
-import ApartmentHeader from './ApartmentHeader'
-import ImageCarouesel from './ImageCarousel'
-import Summary from './Summary'
-import Features from './Features'
-import Description from './Description'
-import Infrastructure from './Infrastructure'
-import Offers from './Offers'
-import Nearby from './Nearby'
-import Directions from './Directions'
+import ApartmentHeader from "./ApartmentHeader";
+import ImageCarouesel from "./ImageCarousel";
+import Summary from "./Summary";
+import Features from "./Features";
+import Description from "./Description";
+import Infrastructure from "./Infrastructure";
+import Offers from "./Offers";
+import Nearby from "./Nearby";
+import Directions from "./Directions";
+
+import "../App.css";
 
 class Complex extends Component {
-
   render() {
     return (
-      <div>
-        <ApartmentHeader />
-        <ImageCarouesel />
-        <Grid>
-          <Summary />
-        </Grid>
-        <Features />
-        <Description />
-        <Infrastructure />
-        <Offers />
-        <Nearby />
-        <Directions />
-      </div>
+      <BodyClassName className="complex">
+        <div>
+          <ApartmentHeader />
+          <ImageCarouesel />
+          <Grid>
+            <Summary />
+          </Grid>
+          <Features />
+          <Description />
+          <Infrastructure />
+          <Offers />
+          <Nearby />
+          <Directions />
+        </div>
+      </BodyClassName>
     );
   }
 }
