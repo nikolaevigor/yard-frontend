@@ -9,8 +9,8 @@ import {
 import Header from './Header'
 import Footer from './Footer'
 
-import Complexes from './Complexes/Complexes'
-import Complex from './Complex/Complex'
+import Complexes from './Complexes'
+import Complex from './Complex'
 
 class App extends Component {
   render() {
