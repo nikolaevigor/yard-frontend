@@ -23,7 +23,7 @@ const Nav = styled.nav`
   align-items: center;
 `;
 
-const NavLink = styled.a `
+const NavLink = styled(Link) `
   color: #3e4247;
   text-decoration: none;
   font-size: 16px;
@@ -44,8 +44,6 @@ const NavLink = styled.a `
   }
 `;
 
-const LogoLink = styled(Link)``
-
 const CompassLogo = styled.img`
   margin-top: 20px;
   margin-bottom: 20px;
@@ -56,13 +54,13 @@ export default () => {
     <Header>
       <Grid>
         <Wrapper>
-          <LogoLink to={'/'}>
-            <CompassLogo src={logo} alt="@Compass Logo" />
-          </LogoLink>
+          <Link to={'/'}>
+            <CompassLogo src={logo} alt="Compass Logo" />
+          </Link>
           <Nav>
-            <NavLink href="#buy">Купить</NavLink>
-            <NavLink href="#rent">Снять</NavLink>
-            <NavLink href="#our_agents">Наши агенты</NavLink>
+            <NavLink to="#buy">Купить</NavLink>
+            <NavLink to="#rent">Снять</NavLink>
+            <NavLink to="#our_agents">Наши агенты</NavLink>
           </Nav>
         </Wrapper>
       </Grid>

@@ -2,22 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const ApartmentHeader = styled.div`
+const Header = styled.div`
   background-color: #fff;
 `;
 
-const ApartmentHeaderWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 `;
 
-const ApartmentHeaderInfo = styled.div`
+const Info = styled.div`
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 `;
 
-const ApartmentHeaderTitle = styled.h1`
+const Title = styled.h1`
   font-family: "Philosopher";
   font-size: 2rem;
   font-weight: 700;
@@ -26,7 +26,7 @@ const ApartmentHeaderTitle = styled.h1`
   margin: 0 auto;
 `;
 
-const ApartmentHeaderGeo = styled.p`
+const Geo = styled.p`
   margin-top: 0.5rem;
   margin-bottom: 0;
   font-family: "Fira Sans", sans-serif;
@@ -36,7 +36,7 @@ const ApartmentHeaderGeo = styled.p`
   color: #a9afb6;
 `;
 
-const ApartmentHeaderFavouritesButton = styled.button`
+const FavouritesButton = styled.button`
   background-color: transparent;
   margin-top: 1.5rem;
   padding: 0.5rem 1rem;
@@ -51,16 +51,16 @@ const ApartmentHeaderFavouritesButton = styled.button`
 
 export default () => {
   return (
-    <ApartmentHeader>
+    <Header>
       <Grid>
-        <ApartmentHeaderWrapper>
-          <ApartmentHeaderInfo>
-            <ApartmentHeaderTitle>Жилой комплекс «Полянка/44»</ApartmentHeaderTitle>
-            <ApartmentHeaderGeo>Район Якиманка, улица Большая Полянка, дом 44 • 119180</ApartmentHeaderGeo>
-          </ApartmentHeaderInfo>
-          <ApartmentHeaderFavouritesButton>В избранное</ApartmentHeaderFavouritesButton>
-        </ApartmentHeaderWrapper>
+        <Wrapper>
+          <Info>
+            <Title>Жилой комплекс «Полянка/44»</Title>
+            <Geo>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Geo>
+          </Info>
+          <FavouritesButton>В избранное</FavouritesButton>
+        </Wrapper>
       </Grid>
-    </ApartmentHeader>
+    </Header>
   );
 };

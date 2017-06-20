@@ -22,7 +22,7 @@ const Feature = styled.dl`
   }
 `;
 
-const FeatureName = styled.dt`
+const Name = styled.dt`
   width: 50%;
   font-family: "Fira Sans", sans-serif;
   font-size: 1rem;
@@ -31,7 +31,7 @@ const FeatureName = styled.dt`
   color: #a9afb6;
 `;
 
-const FeatureValue = styled.dd`
+const Value = styled.dd`
   width: 50%;
   font-family: "Fira Sans", sans-serif;
   font-size: 1rem;
@@ -50,60 +50,60 @@ export default () => {
           <Row>
             <Col lg={4}>
               <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
+                <Name>Количество квартир:</Name>
+                <Value>1503</Value>
               </Feature>
             </Col>
             <Col lg={4}>
               <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
+                <Name>Количество квартир:</Name>
+                <Value>1503</Value>
               </Feature>
             </Col>
             <Col lg={4}>
               <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
-              </Feature>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={4}>
-              <Feature>
-                <FeatureName>Статус:</FeatureName>
-                <FeatureValue>Квартиры</FeatureValue>
-              </Feature>
-            </Col>
-            <Col lg={4}>
-              <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
-              </Feature>
-            </Col>
-            <Col lg={4}>
-              <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
+                <Name>Количество квартир:</Name>
+                <Value>1503</Value>
               </Feature>
             </Col>
           </Row>
           <Row>
             <Col lg={4}>
               <Feature>
-                <FeatureName>Цены:</FeatureName>
-                <FeatureValue>от 5.3 до 143.5 млн</FeatureValue>
+                <Name>Статус:</Name>
+                <Value>Квартиры</Value>
               </Feature>
             </Col>
             <Col lg={4}>
               <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
+                <Name>Количество квартир:</Name>
+                <Value>1503</Value>
               </Feature>
             </Col>
             <Col lg={4}>
               <Feature>
-                <FeatureName>Количество квартир:</FeatureName>
-                <FeatureValue>1503</FeatureValue>
+                <Name>Количество квартир:</Name>
+                <Value>1503</Value>
+              </Feature>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={4}>
+              <Feature>
+                <Name>Цены:</Name>
+                <Value>от 5.3 до 143.5 млн</Value>
+              </Feature>
+            </Col>
+            <Col lg={4}>
+              <Feature>
+                <Name>Количество квартир:</Name>
+                <Value>1503</Value>
+              </Feature>
+            </Col>
+            <Col lg={4}>
+              <Feature>
+                <Name>Количество квартир:</Name>
+                <Value>1503</Value>
               </Feature>
             </Col>
           </Row>
