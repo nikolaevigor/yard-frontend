@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const IntroTitle = styled.h2`
+const Title = styled.h2`
   text-align: center;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
@@ -12,7 +12,7 @@ const IntroTitle = styled.h2`
   color: #3e4247;
 `;
 
-const IntroText = styled.p`
+const Text = styled.p`
   text-align: center;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
@@ -23,12 +23,12 @@ const IntroText = styled.p`
   color: #3e4247;
 `;
 
-const IntroContactTeam = styled.div`
+const ContactTeam = styled.div`
   text-align: center;
   margin-top: 2rem;
 `;
 
-const IntroContactTeamButton = styled.button`
+const Button = styled.button`
   background-color: #000;
   color: #fff;
   font-family: "Fira Sans", sans-serif;
@@ -44,7 +44,7 @@ const IntroContactTeamButton = styled.button`
   }
 `;
 
-const IntroContent = styled.div`
+const Content = styled.div`
   display: flex;
   justify-content: center;
 `;
@@ -58,15 +58,15 @@ export default () => {
   return (
     <Intro>
       <Grid>
-        <IntroContent>
+        <Content>
           <Col lg={8}>
-            <IntroTitle>Discover Our New Developments</IntroTitle>
-            <IntroText>Compass brings a modern approach to new development marketing and sales. From boutique rental conversions to luxurious ground-up condominiums, browse our portfolio of current offerings.</IntroText>
-            <IntroContactTeam>
-              <IntroContactTeamButton>Contact The Team</IntroContactTeamButton>
-            </IntroContactTeam>
+            <Title>Discover Our New Developments</Title>
+            <Text>Compass brings a modern approach to new development marketing and sales. From boutique rental conversions to luxurious ground-up condominiums, browse our portfolio of current offerings.</Text>
+            <ContactTeam>
+              <Button>Contact The Team</Button>
+            </ContactTeam>
           </Col>
-        </IntroContent>
+        </Content>
       </Grid>
     </Intro>
   );

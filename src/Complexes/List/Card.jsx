@@ -19,14 +19,14 @@ const Card = styled(Link)`
   }
 `;
 
-const CardGeo = styled.p`
+const Geo = styled.p`
   text-align: left;
   color: #646971;
   font-family: Monaco;
   margin: 0;
 `;
 
-const CardTitle = styled.h3`
+const Title = styled.h3`
   text-align: left;
   color: #000;
   font-family: "Fira Sans", sans-serif;
@@ -37,7 +37,7 @@ const CardTitle = styled.h3`
   margin-bottom: 0;
 `;
 
-const CardInfo = styled.p`
+const Info = styled.p`
   text-align: left;
   color: #3E4247;
   font-family: "Fira Sans", sans-serif;
@@ -47,13 +47,13 @@ const CardInfo = styled.p`
   margin-top: 0.5rem;
 `;
 
-const CardContent = styled.div`
+const Content = styled.div`
   display: flex;
   flex-flow: column;
   padding: 1.5rem 2rem;
 `;
 
-const CardThumbnail = styled.img`
+const Thumbnail = styled.img`
   width: 484px;
   height: 350px;
   flex-shrink: 0;
@@ -64,12 +64,12 @@ const CardThumbnail = styled.img`
 export default (props) => {
   return (
     <Card to={`/complex/${props.id}`}>
-      <CardThumbnail src={process.env.PUBLIC_URL + '/img/apartment_' + props.id +'.png'}/>
-      <CardContent>
-        <CardGeo>{props.geo}</CardGeo>
-        <CardTitle>{props.title}</CardTitle>
-        <CardInfo>One Hundred East Fifty Third Street by Foster + Partners is a limited collection of modern residences in Midtown Manhattan's Cultural District. The 94 residences ranging from alcove lofts to four bedrooms within the 63-story tower are generously proportioned.</CardInfo>
-      </CardContent>
+      <Thumbnail src={process.env.PUBLIC_URL + '/img/apartment_' + props.id +'.png'}/>
+      <Content>
+        <Geo>{props.geo}</Geo>
+        <Title>{props.title}</Title>
+        <Info>One Hundred East Fifty Third Street by Foster + Partners is a limited collection of modern residences in Midtown Manhattan's Cultural District. The 94 residences ranging from alcove lofts to four bedrooms within the 63-story tower are generously proportioned.</Info>
+      </Content>
     </Card>
   )
 };

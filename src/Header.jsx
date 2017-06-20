@@ -54,7 +54,7 @@ export default () => {
     <Header>
       <Grid>
         <Wrapper>
-          <Link to={'/'}>
+          <Link to='/'>
             <CompassLogo src={logo} alt="Compass Logo" />
           </Link>
           <Nav>
