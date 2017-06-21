@@ -78,8 +78,8 @@ const ArrowImg = styled.img`
   margin-left: 8px;
 `;
 
-export default () => (
-  <Footer>
+export default () =>
+  (<Footer>
     <Grid>
       <Row>
         <Col lg={2}>
@@ -95,8 +95,8 @@ export default () => (
           <Link href="#">Садовые кварталы</Link>
           <Link href="#">Резиденция Монэ</Link>
           <ArrowLink href="#">
-              Все ЖК Москвы
-              <ArrowImg src={ArrowImage} alt="Arrow" />
+            Все ЖК Москвы
+            <ArrowImg src={ArrowImage} alt="Arrow" />
           </ArrowLink>
         </Col>
         <Col lg={2}>
@@ -109,13 +109,12 @@ export default () => (
       <Row>
         <Col lgOffset={4} lg={8}>
           <Legal>
-              Любая информация, представленная на данном сайте, носит исключительно информационный
-              характер и ни при
-              каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК
-              РФ. © ООО «Ярд», 2017
-            </Legal>
+            Любая информация, представленная на данном сайте, носит исключительно информационный
+            характер и ни при
+            каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК
+            РФ. © ООО «Ярд», 2017
+          </Legal>
         </Col>
       </Row>
     </Grid>
-  </Footer>
-  );
+  </Footer>);

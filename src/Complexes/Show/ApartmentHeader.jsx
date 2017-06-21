@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid } from 'react-flexbox-grid';
 
 const Header = styled.div`
   background-color: #fff;
@@ -49,18 +49,15 @@ const FavouritesButton = styled.button`
   font-weight: 300;
 `;
 
-export default () => {
-  return (
-    <Header>
-      <Grid>
-        <Wrapper>
-          <Info>
-            <Title>Жилой комплекс «Полянка/44»</Title>
-            <Geo>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Geo>
-          </Info>
-          <FavouritesButton>В избранное</FavouritesButton>
-        </Wrapper>
-      </Grid>
-    </Header>
-  );
-};
+export default () =>
+  (<Header>
+    <Grid>
+      <Wrapper>
+        <Info>
+          <Title>Жилой комплекс «Полянка/44»</Title>
+          <Geo>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Geo>
+        </Info>
+        <FavouritesButton>В избранное</FavouritesButton>
+      </Wrapper>
+    </Grid>
+  </Header>);

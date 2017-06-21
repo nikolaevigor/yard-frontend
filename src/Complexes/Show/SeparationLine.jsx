@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Line = styled.hr`
   margin: 0;
@@ -8,6 +8,4 @@ const Line = styled.hr`
   background-color: #e0e0e1;
 `;
 
-export default () => {
-  return <Line />;
-};
+export default () => <Line />;

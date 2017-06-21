@@ -53,22 +53,21 @@ const Intro = styled.div`
   margin-top: 4rem;
 `;
 
-export default () => (
-  <Intro>
+export default () =>
+  (<Intro>
     <Grid>
       <Content>
         <Col lg={8}>
           <Title>Discover Our New Developments</Title>
           <Text>
-              Compass brings a modern approach to new development marketing and sales. From boutique
-              rental conversions
-              to luxurious ground-up condominiums, browse our portfolio of current offerings.
-            </Text>
+            Compass brings a modern approach to new development marketing and sales. From boutique
+            rental conversions
+            to luxurious ground-up condominiums, browse our portfolio of current offerings.
+          </Text>
           <ContactTeam>
             <Button>Contact The Team</Button>
           </ContactTeam>
         </Col>
       </Content>
     </Grid>
-  </Intro>
-  );
+  </Intro>);

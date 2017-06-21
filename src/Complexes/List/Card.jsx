@@ -1,7 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Card = styled(Link)`
   display: flex;
@@ -59,19 +58,18 @@ const Thumbnail = styled.img`
   flex-shrink: 0;
 `;
 
-export default props => {
-  return (
-    <Card to={`/complex/${props.id}`}>
-      <Thumbnail src={process.env.PUBLIC_URL + "/img/apartment_" + props.id + ".png"} />
-      <Content>
-        <Geo>{props.geo}</Geo>
-        <Title>{props.title}</Title>
-        <Info>
-          One Hundred East Fifty Third Street by Foster + Partners is a limited collection of modern residences in
-          Midtown Manhattan's Cultural District. The 94 residences ranging from alcove lofts to four bedrooms within the
-          63-story tower are generously proportioned.
-        </Info>
-      </Content>
-    </Card>
-  );
-};
+export default props =>
+  (<Card to={`/complex/${props.id}`}>
+    <Thumbnail src={`${process.env.PUBLIC_URL}/img/apartment_${props.id}.png`} />
+    <Content>
+      <Geo>{props.geo}</Geo>
+      <Title>{props.title}</Title>
+      <Info>
+        One Hundred East Fifty Third Street by Foster + Partners is a limited collection of modern
+        residences in
+        Midtown Manhattan's Cultural District. The 94 residences ranging from alcove lofts to four
+        bedrooms within the
+        63-story tower are generously proportioned.
+      </Info>
+    </Content>
+  </Card>);

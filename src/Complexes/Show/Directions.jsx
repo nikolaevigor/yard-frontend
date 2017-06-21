@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid } from 'react-flexbox-grid';
 
-import SeparationLine from "./SeparationLine";
+import SeparationLine from './SeparationLine';
 
 const Wrapper = styled.div`
   display: flex;
@@ -51,28 +51,25 @@ const PlaceValue = styled.dd`
   margin-top: 0.5rem;
 `;
 
-export default () => {
-  return (
-    <Grid>
-      <Wrapper>
-        <MapImage src={process.env.PUBLIC_URL + "/img/map.png"} alt="Map" />
-        <Places>
-          <Place>
-            <PlaceName>Красный Октябрь</PlaceName>
-            <PlaceValue>24 минуты, 6 км</PlaceValue>
-          </Place>
-          <SeparationLine />
-          <Place>
-            <PlaceName>World Class</PlaceName>
-            <PlaceValue>2 минуты, 300 м</PlaceValue>
-          </Place>
-          <SeparationLine />
-          <Place>
-            <PlaceName>Третьяковская галерея</PlaceName>
-            <PlaceValue>14 минут, 4 км</PlaceValue>
-          </Place>
-        </Places>
-      </Wrapper>
-    </Grid>
-  );
-};
+export default () =>
+  (<Grid>
+    <Wrapper>
+      <MapImage src={`${process.env.PUBLIC_URL}/img/map.png`} alt="Map" />
+      <Places>
+        <Place>
+          <PlaceName>Красный Октябрь</PlaceName>
+          <PlaceValue>24 минуты, 6 км</PlaceValue>
+        </Place>
+        <SeparationLine />
+        <Place>
+          <PlaceName>World Class</PlaceName>
+          <PlaceValue>2 минуты, 300 м</PlaceValue>
+        </Place>
+        <SeparationLine />
+        <Place>
+          <PlaceName>Третьяковская галерея</PlaceName>
+          <PlaceValue>14 минут, 4 км</PlaceValue>
+        </Place>
+      </Places>
+    </Wrapper>
+  </Grid>);

@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid } from 'react-flexbox-grid';
 
-import Line from "./SeparationLine";
+import Line from './SeparationLine';
 
 const Summary = styled.div`
   display: flex;
@@ -33,30 +33,28 @@ const Small = styled.small`
   margin-top: 10px;
 `;
 
-export default () => {
-  return (
-    <Grid>
-      <Summary>
-        <Heading>
+export default () => (
+  <Grid>
+    <Summary>
+      <Heading>
           950
           <Small>
             предложений
           </Small>
-        </Heading>
-        <Heading>
+      </Heading>
+      <Heading>
           John McAslan + Partners
           <Small>
             архитектор
           </Small>
-        </Heading>
-        <Heading>
+      </Heading>
+      <Heading>
           Группа «ПСН»
           <Small>
             застройщик
           </Small>
-        </Heading>
-      </Summary>
-      <Line />
-    </Grid>
+      </Heading>
+    </Summary>
+    <Line />
+  </Grid>
   );
-};
