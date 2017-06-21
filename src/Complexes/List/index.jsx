@@ -10,8 +10,6 @@ import Intro from "./Intro";
 import Card from "./Card";
 
 const Cards = styled.div`
-  display: flex;
-  flex-flow: column;
   margin: 4rem 8rem 6rem 8rem;
 `;
 
