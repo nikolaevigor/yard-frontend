@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from "react";
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
-import SeparationLine from './SeparationLine'
+import SeparationLine from "./SeparationLine";
 
 const Wrapper = styled.div`
   display: flex;
@@ -55,7 +55,7 @@ export default () => {
   return (
     <Grid>
       <Wrapper>
-        <MapImage src={process.env.PUBLIC_URL + '/img/map.png'} alt="Map" />
+        <MapImage src={process.env.PUBLIC_URL + "/img/map.png"} alt="Map" />
         <Places>
           <Place>
             <PlaceName>Красный Октябрь</PlaceName>
@@ -75,4 +75,4 @@ export default () => {
       </Wrapper>
     </Grid>
   );
-}
+};

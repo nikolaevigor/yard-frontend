@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from "react";
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
-import Title from './Title'
+import Title from "./Title";
 
 const Features = styled.div`
   margin-top: 2rem;
@@ -10,7 +10,7 @@ const Features = styled.div`
 
 const Records = styled.div`
   margin-top: 1rem;
-`
+`;
 
 const Feature = styled.dl`
   display: flex;

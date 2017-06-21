@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Line = styled.hr`
   margin: 0;
@@ -9,7 +9,5 @@ const Line = styled.hr`
 `;
 
 export default () => {
-  return (
-    <Line />
-  );
+  return <Line />;
 };

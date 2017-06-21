@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from "react";
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const Offers = styled.div`
   background-color: #f4f5f9;

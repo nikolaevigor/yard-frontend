@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from "react";
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const Nearby = styled.div`
   background-color: #3e4247;
@@ -60,7 +60,7 @@ export default () => {
             </Wrapper>
           </Col>
           <Col lg={6}>
-            <Image src={process.env.PUBLIC_URL + '/img/polyanka-photo.png'} alt="Полянка"></Image>
+            <Image src={process.env.PUBLIC_URL + "/img/polyanka-photo.png"} alt="Полянка" />
           </Col>
         </Row>
       </Grid>

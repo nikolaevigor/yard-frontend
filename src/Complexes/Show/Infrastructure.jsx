@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from "react";
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
-import Title from './Title'
+import Title from "./Title";
 
 const Infrastructure = styled.div`
   margin-top: 2rem;

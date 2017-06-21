@@ -1,8 +1,8 @@
-import React from 'react'
-import logo from './img/compass-logo.svg'
-import styled from 'styled-components'
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import { Link } from 'react-router-dom'
+import React from "react";
+import logo from "./img/compass-logo.svg";
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
   background: #fff;
@@ -23,7 +23,7 @@ const Nav = styled.nav`
   align-items: center;
 `;
 
-const NavLink = styled(Link) `
+const NavLink = styled(Link)`
   color: #3e4247;
   text-decoration: none;
   font-size: 16px;
@@ -54,7 +54,7 @@ export default () => {
     <Header>
       <Grid>
         <Wrapper>
-          <Link to='/'>
+          <Link to="/">
             <CompassLogo src={logo} alt="Compass Logo" />
           </Link>
           <Nav>
