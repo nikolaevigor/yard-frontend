@@ -9,14 +9,14 @@ const Footer = styled.footer`
   background-color: #111;
 `;
 
-const FooterLine = styled.hr`
+const Line = styled.hr`
   height: 2px;
   border-style: none;
   background-color: #3e4247;
   margin: 0;
 `;
 
-const FooterTitle = styled.h4`
+const Title = styled.h4`
   text-align: left;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
@@ -27,16 +27,16 @@ const FooterTitle = styled.h4`
   line-height: 1.6;
 `;
 
-const FooterCredentialsTitle = FooterTitle.extend`
+const CredentialsTitle = Title.extend`
   margin: 0;
   line-height: 1.6;
+
+  &:last-child {
+    margin-top: 16px;
+  }
 `;
 
-// const FooterCredentials:last-child = styled.p`
-//   margin-top: 16px;
-// `
-
-const FooterLink = styled.a`
+const Link = styled.a`
   display: block;
   text-align: left;
   font-family: "Fira Sans", sans-serif;
@@ -48,19 +48,19 @@ const FooterLink = styled.a`
   margin-top: 8px;
 `;
 
-const FooterCredentials = FooterLink.withComponent('p').extend`
+const Credentials = Link.withComponent('p').extend`
   margin-top: 8px;
   margin-bottom: 0;
   line-height: 1.6;
   color: #a9afb6;
 `;
 
-const FooterAllApartmentLink = FooterLink.extend`
+const AllApartmentLink = Link.extend`
   margin-top: 16px;
   line-height: 1.6;
 `;
 
-const FooterLegal = styled.p`
+const Legal = styled.p`
   text-align: left;
   font-family: "Fira Sans", sans-serif;
   font-weight: 300;
@@ -80,32 +80,32 @@ export default () => {
     <Grid>
       <Row>
         <Col lg={2}>
-          <FooterCredentialsTitle>ООО «Ярд»</FooterCredentialsTitle>
-          <FooterCredentials>ОГРН 1175074002531</FooterCredentials>
-          <FooterCredentials>ИНН 5036165365</FooterCredentials>
-          <FooterCredentials>+7 (999) 821-14-88</FooterCredentials>
+          <CredentialsTitle>ООО «Ярд»</CredentialsTitle>
+          <Credentials>ОГРН 1175074002531</Credentials>
+          <Credentials>ИНН 5036165365</Credentials>
+          <Credentials>+7 (999) 821-14-88</Credentials>
         </Col>
         <Col lgOffset={2} lg={2}>
-          <FooterLine />
-          <FooterTitle>Жилые комплексы</FooterTitle>
-          <FooterLink href="#">ВТБ Арена Парк</FooterLink>
-          <FooterLink href="#">Садовые кварталы</FooterLink>
-          <FooterLink href="#">Резиденция Монэ</FooterLink>
-          <FooterAllApartmentLink href="#">
+          <Line />
+          <Title>Жилые комплексы</Title>
+          <Link href="#">ВТБ Арена Парк</Link>
+          <Link href="#">Садовые кварталы</Link>
+          <Link href="#">Резиденция Монэ</Link>
+          <AllApartmentLink href="#">
                 Все ЖК Москвы
                 <ArrowImg src={ArrowImage} alt="Arrow" />
-          </FooterAllApartmentLink>
+          </AllApartmentLink>
         </Col>
         <Col lg={2}>
-          <FooterLine />
-          <FooterTitle>Компания</FooterTitle>
-          <FooterLink href="#">Команда</FooterLink>
-          <FooterLink href="#">О компании</FooterLink>
+          <Line />
+          <Title>Компания</Title>
+          <Link href="#">Команда</Link>
+          <Link href="#">О компании</Link>
         </Col>
       </Row>
       <Row>
         <Col lgOffset={4} lg={8}>
-          <FooterLegal>Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ. © ООО «Ярд», 2017</FooterLegal>
+          <Legal>Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ. © ООО «Ярд», 2017</Legal>
         </Col>
       </Row>
     </Grid>
