@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-import Title from "./Title";
+import Title from './Title';
 
 const Infrastructure = styled.div`
   margin-top: 2rem;
@@ -31,46 +31,43 @@ const Record = styled.p`
   margin-bottom: 0;
 `;
 
-export default () => {
-  return (
-    <Infrastructure>
-      <Grid>
-        <Title>Инфарструктура</Title>
-        <Content>
-          <RowWrapper>
-            <Row>
-              <Col lg={2}>
-                <Record>Бассейн</Record>
-              </Col>
-              <Col lg={2}>
-                <Record>Детский сад</Record>
-              </Col>
-              <Col lg={2}>
-                <Record>Частная школа</Record>
-              </Col>
-              <Col lg={2}>
-                <Record>Бассейн</Record>
-              </Col>
-              <Col lg={2}>
-                <Record>Детский сад</Record>
-              </Col>
-              <Col lg={2}>
-                <Record>Частная школа</Record>
-              </Col>
-            </Row>
-          </RowWrapper>
-          <RowWrapper>
-            <Row>
-              <Col lg={2}>
-                <Record>Частная школа</Record>
-              </Col>
-              <Col lg={2}>
-                <Record>Частная школа</Record>
-              </Col>
-            </Row>
-          </RowWrapper>
-        </Content>
-      </Grid>
-    </Infrastructure>
-  );
-};
+export default () =>
+  (<Infrastructure>
+    <Grid>
+      <Title>Инфарструктура</Title>
+      <Content>
+        <RowWrapper>
+          <Row>
+            <Col lg={2}>
+              <Record>Бассейн</Record>
+            </Col>
+            <Col lg={2}>
+              <Record>Детский сад</Record>
+            </Col>
+            <Col lg={2}>
+              <Record>Частная школа</Record>
+            </Col>
+            <Col lg={2}>
+              <Record>Бассейн</Record>
+            </Col>
+            <Col lg={2}>
+              <Record>Детский сад</Record>
+            </Col>
+            <Col lg={2}>
+              <Record>Частная школа</Record>
+            </Col>
+          </Row>
+        </RowWrapper>
+        <RowWrapper>
+          <Row>
+            <Col lg={2}>
+              <Record>Частная школа</Record>
+            </Col>
+            <Col lg={2}>
+              <Record>Частная школа</Record>
+            </Col>
+          </Row>
+        </RowWrapper>
+      </Content>
+    </Grid>
+  </Infrastructure>);

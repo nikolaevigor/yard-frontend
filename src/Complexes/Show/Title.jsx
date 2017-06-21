@@ -1,6 +1,5 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
 
 // for features, description and infrastructure
 
@@ -13,6 +12,4 @@ const Title = styled.h2`
   margin: 0 auto;
 `;
 
-export default props => {
-  return <Title>{props.children}</Title>;
-};
+export default props => <Title>{props.children}</Title>;

@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Nearby = styled.div`
   background-color: #3e4247;
@@ -47,23 +47,20 @@ const Image = styled.img`
   margin-bottom: 218px;
 `;
 
-export default () => {
-  return (
-    <Nearby>
-      <Grid>
-        <Row>
-          <Col lg={6}>
-            <Wrapper>
-              <SubTitle>Якиманка</SubTitle>
-              <Title>Исторический центр Москвы в двух километрах от Кремля</Title>
-              <InfoLink>Гид по Якиманке →</InfoLink>
-            </Wrapper>
-          </Col>
-          <Col lg={6}>
-            <Image src={process.env.PUBLIC_URL + "/img/polyanka-photo.png"} alt="Полянка" />
-          </Col>
-        </Row>
-      </Grid>
-    </Nearby>
-  );
-};
+export default () =>
+  (<Nearby>
+    <Grid>
+      <Row>
+        <Col lg={6}>
+          <Wrapper>
+            <SubTitle>Якиманка</SubTitle>
+            <Title>Исторический центр Москвы в двух километрах от Кремля</Title>
+            <InfoLink>Гид по Якиманке →</InfoLink>
+          </Wrapper>
+        </Col>
+        <Col lg={6}>
+          <Image src={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`} alt="Полянка" />
+        </Col>
+      </Row>
+    </Grid>
+  </Nearby>);

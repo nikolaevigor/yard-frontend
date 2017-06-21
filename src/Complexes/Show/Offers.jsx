@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Offers = styled.div`
   background-color: #f4f5f9;
@@ -75,58 +75,55 @@ const CardButton = styled.button`
   margin: 2rem 4rem 1.5rem 4rem;
 `;
 
-export default () => {
-  return (
-    <Offers>
-      <Grid>
-        <Title>Предложения в ЖК «Полянка/44»</Title>
-        <Cards>
-          <Row>
-            <Col lg={4}>
-              <Card>
-                <CardTitle>1-комнатные квартиры</CardTitle>
-                <CardParam>
-                  <CardParamName>Площадь</CardParamName>
-                  <CardParamValue>от 59 до 120 м²</CardParamValue>
-                </CardParam>
-                <CardParam>
-                  <CardParamName>Стоимость</CardParamName>
-                  <CardParamValue>от 20.3 до 84.2 млн руб</CardParamValue>
-                </CardParam>
-                <CardButton>Посмотреть предложения</CardButton>
-              </Card>
-            </Col>
-            <Col lg={4}>
-              <Card>
-                <CardTitle>2-комнатные квартиры</CardTitle>
-                <CardParam>
-                  <CardParamName>Площадь</CardParamName>
-                  <CardParamValue>от 59 до 120 м²</CardParamValue>
-                </CardParam>
-                <CardParam>
-                  <CardParamName>Стоимость</CardParamName>
-                  <CardParamValue>от 20.3 до 84.2 млн руб</CardParamValue>
-                </CardParam>
-                <CardButton>Посмотреть предложения</CardButton>
-              </Card>
-            </Col>
-            <Col lg={4}>
-              <Card>
-                <CardTitle>3-комнатные квартиры</CardTitle>
-                <CardParam>
-                  <CardParamName>Площадь</CardParamName>
-                  <CardParamValue>от 59 до 120 м²</CardParamValue>
-                </CardParam>
-                <CardParam>
-                  <CardParamName>Стоимость</CardParamName>
-                  <CardParamValue>от 20.3 до 84.2 млн руб</CardParamValue>
-                </CardParam>
-                <CardButton>Посмотреть предложения</CardButton>
-              </Card>
-            </Col>
-          </Row>
-        </Cards>
-      </Grid>
-    </Offers>
-  );
-};
+export default () =>
+  (<Offers>
+    <Grid>
+      <Title>Предложения в ЖК «Полянка/44»</Title>
+      <Cards>
+        <Row>
+          <Col lg={4}>
+            <Card>
+              <CardTitle>1-комнатные квартиры</CardTitle>
+              <CardParam>
+                <CardParamName>Площадь</CardParamName>
+                <CardParamValue>от 59 до 120 м²</CardParamValue>
+              </CardParam>
+              <CardParam>
+                <CardParamName>Стоимость</CardParamName>
+                <CardParamValue>от 20.3 до 84.2 млн руб</CardParamValue>
+              </CardParam>
+              <CardButton>Посмотреть предложения</CardButton>
+            </Card>
+          </Col>
+          <Col lg={4}>
+            <Card>
+              <CardTitle>2-комнатные квартиры</CardTitle>
+              <CardParam>
+                <CardParamName>Площадь</CardParamName>
+                <CardParamValue>от 59 до 120 м²</CardParamValue>
+              </CardParam>
+              <CardParam>
+                <CardParamName>Стоимость</CardParamName>
+                <CardParamValue>от 20.3 до 84.2 млн руб</CardParamValue>
+              </CardParam>
+              <CardButton>Посмотреть предложения</CardButton>
+            </Card>
+          </Col>
+          <Col lg={4}>
+            <Card>
+              <CardTitle>3-комнатные квартиры</CardTitle>
+              <CardParam>
+                <CardParamName>Площадь</CardParamName>
+                <CardParamValue>от 59 до 120 м²</CardParamValue>
+              </CardParam>
+              <CardParam>
+                <CardParamName>Стоимость</CardParamName>
+                <CardParamValue>от 20.3 до 84.2 млн руб</CardParamValue>
+              </CardParam>
+              <CardButton>Посмотреть предложения</CardButton>
+            </Card>
+          </Col>
+        </Row>
+      </Cards>
+    </Grid>
+  </Offers>);

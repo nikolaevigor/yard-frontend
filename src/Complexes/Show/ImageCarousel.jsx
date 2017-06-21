@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid } from 'react-flexbox-grid';
 
 const Images = styled.div`
   display: flex;
@@ -27,19 +27,16 @@ const FavButton = styled.button`
   color: #fff;
 `;
 
-export default () => {
-  return (
-    <div>
-      <Images>
-        <Image src={process.env.PUBLIC_URL + "/img/complex_1.png"} alt="1st image" />
-        <Image src={process.env.PUBLIC_URL + "/img/complex_2.png"} alt="2nd image" />
-        <Image src={process.env.PUBLIC_URL + "/img/complex_3.png"} alt="3rd image" />
-        <Image src={process.env.PUBLIC_URL + "/img/complex_4.png"} alt="4th image" />
-        <Image src={process.env.PUBLIC_URL + "/img/complex_5.png"} alt="5th image" />
-      </Images>
-      <Grid>
-        <FavButton>41 фотография</FavButton>
-      </Grid>
-    </div>
-  );
-};
+export default () =>
+  (<div>
+    <Images>
+      <Image src={`${process.env.PUBLIC_URL}/img/complex_1.png`} alt="1st image" />
+      <Image src={`${process.env.PUBLIC_URL}/img/complex_2.png`} alt="2nd image" />
+      <Image src={`${process.env.PUBLIC_URL}/img/complex_3.png`} alt="3rd image" />
+      <Image src={`${process.env.PUBLIC_URL}/img/complex_4.png`} alt="4th image" />
+      <Image src={`${process.env.PUBLIC_URL}/img/complex_5.png`} alt="5th image" />
+    </Images>
+    <Grid>
+      <FavButton>41 фотография</FavButton>
+    </Grid>
+  </div>);
