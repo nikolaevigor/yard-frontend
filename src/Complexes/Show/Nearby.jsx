@@ -47,8 +47,8 @@ const Image = styled.img`
   margin-bottom: 218px;
 `;
 
-export default () => (
-  <Nearby>
+export default () =>
+  (<Nearby>
     <Grid>
       <Row>
         <Col lg={6}>
@@ -63,5 +63,4 @@ export default () => (
         </Col>
       </Row>
     </Grid>
-  </Nearby>
-  );
+  </Nearby>);

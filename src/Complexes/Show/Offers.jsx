@@ -75,8 +75,8 @@ const CardButton = styled.button`
   margin: 2rem 4rem 1.5rem 4rem;
 `;
 
-export default () => (
-  <Offers>
+export default () =>
+  (<Offers>
     <Grid>
       <Title>Предложения в ЖК «Полянка/44»</Title>
       <Cards>
@@ -126,5 +126,4 @@ export default () => (
         </Row>
       </Cards>
     </Grid>
-  </Offers>
-  );
+  </Offers>);

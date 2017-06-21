@@ -31,8 +31,8 @@ const Record = styled.p`
   margin-bottom: 0;
 `;
 
-export default () => (
-  <Infrastructure>
+export default () =>
+  (<Infrastructure>
     <Grid>
       <Title>Инфарструктура</Title>
       <Content>
@@ -70,5 +70,4 @@ export default () => (
         </RowWrapper>
       </Content>
     </Grid>
-  </Infrastructure>
-  );
+  </Infrastructure>);

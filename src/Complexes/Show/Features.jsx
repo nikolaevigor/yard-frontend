@@ -41,8 +41,8 @@ const Value = styled.dd`
   margin-left: 34px;
 `;
 
-export default () => (
-  <Features>
+export default () =>
+  (<Features>
     <Grid>
       <Title>Характеристики</Title>
       <Records>
@@ -108,5 +108,4 @@ export default () => (
         </Row>
       </Records>
     </Grid>
-  </Features>
-  );
+  </Features>);

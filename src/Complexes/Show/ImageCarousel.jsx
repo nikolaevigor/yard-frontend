@@ -27,8 +27,8 @@ const FavButton = styled.button`
   color: #fff;
 `;
 
-export default () => (
-  <div>
+export default () =>
+  (<div>
     <Images>
       <Image src={`${process.env.PUBLIC_URL}/img/complex_1.png`} alt="1st image" />
       <Image src={`${process.env.PUBLIC_URL}/img/complex_2.png`} alt="2nd image" />
@@ -39,5 +39,4 @@ export default () => (
     <Grid>
       <FavButton>41 фотография</FavButton>
     </Grid>
-  </div>
-  );
+  </div>);

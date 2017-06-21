@@ -30,6 +30,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "airbnb"
+    "extends": "airbnb",
+    "react/prop-types": []
   }
 }

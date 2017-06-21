@@ -33,28 +33,27 @@ const Small = styled.small`
   margin-top: 10px;
 `;
 
-export default () => (
-  <Grid>
+export default () =>
+  (<Grid>
     <Summary>
       <Heading>
-          950
-          <Small>
-            предложений
-          </Small>
+        950
+        <Small>
+          предложений
+        </Small>
       </Heading>
       <Heading>
-          John McAslan + Partners
-          <Small>
-            архитектор
-          </Small>
+        John McAslan + Partners
+        <Small>
+          архитектор
+        </Small>
       </Heading>
       <Heading>
-          Группа «ПСН»
-          <Small>
-            застройщик
-          </Small>
+        Группа «ПСН»
+        <Small>
+          застройщик
+        </Small>
       </Heading>
     </Summary>
     <Line />
-  </Grid>
-  );
+  </Grid>);
