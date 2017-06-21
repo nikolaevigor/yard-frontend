@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.complexes {
+  background: url("./img/background.png");
+  background-size: 1%;
+  background-color: #eaebf0;
+  background-repeat: repeat;
+}
+
+.complex {
+  background: #fff;
+}
