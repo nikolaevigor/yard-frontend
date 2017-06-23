@@ -64,12 +64,6 @@ export default props =>
     <Content>
       <Geo>{props.geo}</Geo>
       <Title>{props.title}</Title>
-      <Info>
-        One Hundred East Fifty Third Street by Foster + Partners is a limited collection of modern
-        residences in
-        Midtown Manhattan's Cultural District. The 94 residences ranging from alcove lofts to four
-        bedrooms within the
-        63-story tower are generously proportioned.
-      </Info>
+      <Info>{props.children}</Info>
     </Content>
   </Card>);
