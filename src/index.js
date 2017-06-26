@@ -6,5 +6,5 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './App.css';
 
-ReactDOM.render(<App />, document.getElementById('root')); // eslint-disable-line
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

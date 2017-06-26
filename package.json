@@ -29,11 +29,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "prepush": "eslint src/ —ext .jsx —ext .js",
-    "precommit": "eslint src/ —ext .jsx —ext .js"
+    "prepush": "eslint src/ --ext .jsx, .js",
+    "precommit": "eslint src/ --ext .jsx, .js"
   },
   "eslintConfig": {
     "extends": "airbnb",
-    "react/prop-types": []
+    "rules": {
+      "react/prop-types": "off"
+    },
+    "env": {
+      "browser": true,
+      "jest": true
+    }
   }
 }
