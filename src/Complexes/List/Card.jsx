@@ -62,7 +62,7 @@ export default props =>
   (<Card to={`/complex/${props.id}`}>
     <Thumbnail src={props.imgUrl} />
     <Content>
-      <Geo>{props.geo}</Geo>
+      <Geo>{props.geo.toUpperCase()}</Geo>
       <Title>{props.title}</Title>
       <Info>{props.children}</Info>
     </Content>

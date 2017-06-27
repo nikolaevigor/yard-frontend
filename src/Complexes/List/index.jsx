@@ -17,9 +17,20 @@ function formatLocation(location) {
   return [location.subLocalityName, location.street].join(', ');
 }
 
-class ComplexesList extends Component {
-  componentWillMount() {
-    this.setState({ imageBaseUrl: 'https://images.jqestate.ru/{id}-jqestate-{heightSize}' });
+function getImgBaseUrl() {
+  return 'https://images.jqestate.ru/{id}-jqestate-{heightSize}';
+}
+
+function formatImgUrl(complex) {
+  let imgUrl = getImgBaseUrl().replace('{id}', complex.images[0].id);
+  imgUrl = imgUrl.replace('{heightSize}', 512);
+  return imgUrl;
+}
+
+class List extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
   componentDidMount() {
@@ -30,32 +41,8 @@ class ComplexesList extends Component {
       });
   }
 
-  formatImgUrl(complex) {
-    let imgUrl = this.state.imageBaseUrl.replace('{id}', complex.images[0].id);
-    imgUrl = imgUrl.replace('{heightSize}', 512);
-    return imgUrl;
-  }
-
-  renderCards() {
-    if (this.state.items == null) {
-      return [];
-    }
-    const complexes = this.state.items;
-    if (complexes !== {} && complexes !== undefined && complexes.length > 0) {
-      return complexes.map(complex =>
-        (<Card
-          key={complex.id}
-          id={complex.id}
-          title={complex.name}
-          geo={formatLocation(complex.location)}
-          imgUrl={this.formatImgUrl(complex)}
-        />),
-      );
-    }
-    return [];
-  }
-
   render() {
+    const { items: complexes = [] } = this.state;
     return (
       <BodyClassName className="complexes">
         <div>
@@ -63,7 +50,15 @@ class ComplexesList extends Component {
           <Intro />
           <Cards>
             <Grid>
-              {this.renderCards()}
+              {complexes.map(complex =>
+                (<Card
+                  key={complex.id}
+                  id={complex.id}
+                  title={complex.name}
+                  geo={formatLocation(complex.location)}
+                  imgUrl={formatImgUrl(complex)}
+                />),
+              )}
             </Grid>
           </Cards>
         </div>
@@ -72,4 +67,4 @@ class ComplexesList extends Component {
   }
 }
 
-export default ComplexesList;
+export default List;

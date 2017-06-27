@@ -49,13 +49,13 @@ const FavouritesButton = styled.button`
   font-weight: 300;
 `;
 
-export default () =>
+export default props =>
   (<Header>
     <Grid>
       <Wrapper>
         <Info>
-          <Title>Жилой комплекс «Полянка/44»</Title>
-          <Geo>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Geo>
+          <Title>{props.title}</Title>
+          <Geo>{props.subtitle}</Geo>
         </Info>
         <FavouritesButton>В избранное</FavouritesButton>
       </Wrapper>

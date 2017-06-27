@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import BodyClassName from 'react-body-classname';
 
@@ -12,17 +12,43 @@ import Offers from './Offers';
 import Nearby from './Nearby';
 import Directions from './Directions';
 
-export default () =>
-  (<BodyClassName className="complex">
-    <div>
-      <ApartmentHeader />
-      <ImageCarouesel />
-      <Summary />
-      <Features />
-      <Description />
-      <Infrastructure />
-      <Offers />
-      <Nearby />
-      <Directions />
-    </div>
-  </BodyClassName>);
+class Show extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    fetch(`https://api.jqestate.ru/v1/complexes/${this.props.match.params.id}`)
+      .then(response => response.json())
+      .then(json => this.setState(json));
+  }
+
+  getSubtitle() {
+    const { location = {} } = this.state;
+    const { subLocalityName = '', street = '', house = '', postalCode = '' } = location;
+    return `${[subLocalityName, street, house].join(', ')} • ${postalCode}`;
+  }
+
+  render() {
+    const { images = [], name: title = 'Title is missing', statistics = {} } = this.state;
+    const { propertiesCount = 'N/A' } = statistics;
+    return (
+      <BodyClassName className="complex">
+        <div>
+          <ApartmentHeader title={title} subtitle={this.getSubtitle()} />
+          <ImageCarouesel imageIDs={images.map(image => image.id)} />
+          <Summary />
+          <Features propertiesCount={propertiesCount} />
+          <Description />
+          <Infrastructure />
+          <Offers />
+          <Nearby />
+          <Directions />
+        </div>
+      </BodyClassName>
+    );
+  }
+}
+
+export default Show;

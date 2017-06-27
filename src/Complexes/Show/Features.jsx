@@ -41,7 +41,7 @@ const Value = styled.dd`
   margin-left: 34px;
 `;
 
-export default () =>
+export default props =>
   (<Features>
     <Grid>
       <Title>Характеристики</Title>
@@ -50,19 +50,19 @@ export default () =>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
         </Row>
@@ -76,13 +76,13 @@ export default () =>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
         </Row>
@@ -96,13 +96,13 @@ export default () =>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
         </Row>
