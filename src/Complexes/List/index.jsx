@@ -44,6 +44,7 @@ class ComplexesList extends Component {
     if (complexes !== {} && complexes !== undefined && complexes.length > 0) {
       return complexes.map(complex =>
         (<Card
+          key={complex.id}
           id={complex.id}
           title={complex.name}
           geo={formatLocation(complex.location)}
