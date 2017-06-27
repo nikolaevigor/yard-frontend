@@ -23,6 +23,7 @@ const Geo = styled.p`
   color: #646971;
   font-family: Monaco;
   margin: 0;
+  text-transform: uppercase;
 `;
 
 const Title = styled.h3`
@@ -62,7 +63,7 @@ export default props =>
   (<Card to={`/complex/${props.id}`}>
     <Thumbnail src={props.imgUrl} />
     <Content>
-      <Geo>{props.geo.toUpperCase()}</Geo>
+      <Geo>{props.geo}</Geo>
       <Title>{props.title}</Title>
       <Info>{props.children}</Info>
     </Content>
