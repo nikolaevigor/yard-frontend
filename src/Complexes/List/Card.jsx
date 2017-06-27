@@ -60,7 +60,7 @@ const Thumbnail = styled.img`
 
 export default props =>
   (<Card to={`/complex/${props.id}`}>
-    <Thumbnail src={`${process.env.PUBLIC_URL}/img/apartment_${props.id}.png`} />
+    <Thumbnail src={props.imgUrl} />
     <Content>
       <Geo>{props.geo}</Geo>
       <Title>{props.title}</Title>
