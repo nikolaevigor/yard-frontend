@@ -57,14 +57,15 @@ const Thumbnail = styled.img`
   width: 484px;
   height: 350px;
   flex-shrink: 0;
+  object-fit: cover;
 `;
 
 export default props =>
   (<Card to={`/complex/${props.id}`}>
     <Thumbnail src={props.imgUrl} />
     <Content>
-      <Geo>{props.geo}</Geo>
-      <Title>{props.title}</Title>
+      <Geo>{props.location}</Geo>
+      <Title>{props.name}</Title>
       <Info>{props.children}</Info>
     </Content>
   </Card>);

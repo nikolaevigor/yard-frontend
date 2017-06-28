@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
 
 import ApartmentHeader from './ApartmentHeader';
-import ImageCarouesel from './ImageCarousel';
+import ImageCarousel from './ImageCarousel';
 import Summary from './Summary';
 import Features from './Features';
 import Description from './Description';
@@ -24,20 +24,16 @@ class Show extends Component {
       .then(json => this.setState(json));
   }
 
-  getSubtitle() {
-    const { location = {} } = this.state;
-    const { subLocalityName = '', street = '', house = '', postalCode = '' } = location;
-    return `${[subLocalityName, street, house].join(', ')} • ${postalCode}`;
-  }
-
   render() {
-    const { images = [], name: title = 'Title is missing', statistics = {} } = this.state;
+    const { images = [], name, statistics = {} } = this.state;
     const { propertiesCount = 'N/A' } = statistics;
+    const { location = {} } = this.state;
+
     return (
       <BodyClassName className="complex">
         <div>
-          <ApartmentHeader title={title} subtitle={this.getSubtitle()} />
-          <ImageCarouesel imageIDs={images.map(image => image.id)} />
+          <ApartmentHeader name={name} location={location} />
+          <ImageCarousel imageIds={images.map(image => image.id)} />
           <Summary />
           <Features propertiesCount={propertiesCount} />
           <Description />

@@ -14,17 +14,11 @@ const Cards = styled.div`
 `;
 
 function formatLocation(location) {
-  return [location.subLocalityName, location.street].join(', ');
+  return [location.subLocalityName, location.street].filter(item => !!item).join(', ');
 }
 
-function getImgBaseUrl() {
-  return 'https://images.jqestate.ru/{id}-jqestate-{heightSize}';
-}
-
-function formatImgUrl(complex) {
-  let imgUrl = getImgBaseUrl().replace('{id}', complex.images[0].id);
-  imgUrl = imgUrl.replace('{heightSize}', 512);
-  return imgUrl;
+function getImageUrl(complex) {
+  return `https://images.jqestate.ru/${complex.images[0].id}-jqestate-512`;
 }
 
 class List extends Component {
@@ -37,7 +31,7 @@ class List extends Component {
     fetch('https://api.jqestate.ru/v1/complexes?filter[state]=public')
       .then(response => response.json())
       .then((json) => {
-        this.setState(json);
+        this.setState({ items: json.items });
       });
   }
 
@@ -54,9 +48,9 @@ class List extends Component {
                 (<Card
                   key={complex.id}
                   id={complex.id}
-                  title={complex.name}
-                  geo={formatLocation(complex.location)}
-                  imgUrl={formatImgUrl(complex)}
+                  name={complex.name}
+                  location={formatLocation(complex.location)}
+                  imgUrl={getImageUrl(complex)}
                 />),
               )}
             </Grid>

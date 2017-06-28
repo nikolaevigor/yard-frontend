@@ -27,14 +27,12 @@ const FavButton = styled.button`
   color: #fff;
 `;
 
-function getImageURL(id) {
-  return 'https://images.jqestate.ru/{id}-jqestate-512'.replace('{id}', id);
-}
-
 export default props =>
   (<div>
     <Images>
-      {props.imageIDs.map(id => <Image key={id} src={getImageURL(id)} alt="Image" />)}
+      {props.imageIds.map(id =>
+        <Image key={id} src={`https://images.jqestate.ru/${id}-jqestate-512`} alt="Image" />,
+      )}
     </Images>
     <Grid>
       <FavButton>41 фотография</FavButton>
