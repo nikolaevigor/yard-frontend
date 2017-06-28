@@ -1,11 +1,11 @@
-function performGetRequest(query) {
-  return fetch(`https://api.jqestate.ru/v1${query}`).then(response => response.json());
+const baseUrl = 'https://api.jqestate.ru/v1';
+
+function get(query) {
+  return fetch(`${baseUrl}${query}`).then(res => res.json());
 }
 
-function performPostRequest(query) {
-  return fetch(`https://api.jqestate.ru/v1${query}`, { method: 'POST' }).then(response =>
-    response.json(),
-  );
+function post(query) {
+  return fetch(`${baseUrl}${query}`, { method: 'POST' }).then(res => res.json());
 }
 
-export { performGetRequest as get, performPostRequest as post };
+export { get, post };

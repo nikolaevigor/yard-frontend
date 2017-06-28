@@ -26,8 +26,8 @@ class List extends Component {
   }
 
   componentDidMount() {
-    get('/complexes?filter[state]=public').then((json) => {
-      this.setState({ items: json.items });
+    get('/complexes?filter[state]=public').then(({ items = [] }) => {
+      this.setState({ items });
     });
   }
 
