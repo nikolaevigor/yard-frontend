@@ -8,6 +8,8 @@ import BodyClassName from 'react-body-classname';
 import CompassDevelopmentBlock from './CompassDevelopmentBlock';
 import Intro from './Intro';
 import Card from './Card';
+import { getImageUrl } from '../../utils';
+import { get } from '../../api';
 
 const Cards = styled.div`
   margin: 4rem 8rem 6rem 8rem;
@@ -17,10 +19,6 @@ function formatLocation(location) {
   return [location.subLocalityName, location.street].filter(item => !!item).join(', ');
 }
 
-function getImageUrl(complex) {
-  return `https://images.jqestate.ru/${complex.images[0].id}-jqestate-512`;
-}
-
 class List extends Component {
   constructor(props) {
     super(props);
@@ -28,11 +26,9 @@ class List extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.jqestate.ru/v1/complexes?filter[state]=public')
-      .then(response => response.json())
-      .then((json) => {
-        this.setState({ items: json.items });
-      });
+    get('complexes?filter[state]=public').then((json) => {
+      this.setState({ items: json.items });
+    });
   }
 
   render() {
@@ -50,7 +46,7 @@ class List extends Component {
                   id={complex.id}
                   name={complex.name}
                   location={formatLocation(complex.location)}
-                  imgUrl={getImageUrl(complex)}
+                  imgUrl={getImageUrl(complex.images[0].id)}
                 />),
               )}
             </Grid>

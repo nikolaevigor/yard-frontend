@@ -53,10 +53,10 @@ function formatLocation(location) {
   const locationBase = [location.subLocalityName, location.street, location.house]
     .filter(item => !!item)
     .join(', ');
-  if (location.postalCode != null) {
-    return `${locationBase} • ${location.postalCode}`;
+  if (location.postalCode == null) {
+    return locationBase;
   }
-  return `${locationBase}`;
+  return `${locationBase} • ${location.postalCode}`;
 }
 
 export default props =>

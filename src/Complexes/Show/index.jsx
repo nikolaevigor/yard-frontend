@@ -25,9 +25,8 @@ class Show extends Component {
   }
 
   render() {
-    const { images = [], name, statistics = {} } = this.state;
+    const { images = [], name, statistics = {}, location = {} } = this.state;
     const { propertiesCount = 'N/A' } = statistics;
-    const { location = {} } = this.state;
 
     return (
       <BodyClassName className="complex">

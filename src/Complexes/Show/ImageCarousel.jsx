@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
+import { getImageUrl } from '../../utils';
+
 const Images = styled.div`
   display: flex;
   position: relative;
@@ -30,9 +32,7 @@ const FavButton = styled.button`
 export default props =>
   (<div>
     <Images>
-      {props.imageIds.map(id =>
-        <Image key={id} src={`https://images.jqestate.ru/${id}-jqestate-512`} alt="Image" />,
-      )}
+      {props.imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
     </Images>
     <Grid>
       <FavButton>41 фотография</FavButton>
