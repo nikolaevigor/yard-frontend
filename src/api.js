@@ -1,11 +1,9 @@
 const baseUrl = 'https://api.jqestate.ru/v1';
 
-function get(query) {
-  return fetch(`${baseUrl}${query}`).then(res => res.json());
+export function get(resource) {
+  return fetch(`${baseUrl}${resource}`).then(res => res.json());
 }
 
-function post(query) {
-  return fetch(`${baseUrl}${query}`, { method: 'POST' }).then(res => res.json());
+export function post(resource) {
+  return fetch(`${baseUrl}${resource}`, { method: 'POST' }).then(res => res.json());
 }
-
-export { get, post };

@@ -20,9 +20,7 @@ class Show extends Component {
   }
 
   componentDidMount() {
-    get(`/complexes/${this.props.match.params.id}`)
-      .then(response => response.json())
-      .then(json => this.setState(json));
+    get(`/complexes/${this.props.match.params.id}`).then(json => this.setState(json));
   }
 
   render() {
