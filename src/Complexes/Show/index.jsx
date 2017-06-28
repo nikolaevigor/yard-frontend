@@ -11,6 +11,7 @@ import Infrastructure from './Infrastructure';
 import Offers from './Offers';
 import Nearby from './Nearby';
 import Directions from './Directions';
+import { get } from '../../api';
 
 class Show extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class Show extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://api.jqestate.ru/v1/complexes/${this.props.match.params.id}`)
+    get(`/complexes/${this.props.match.params.id}`)
       .then(response => response.json())
       .then(json => this.setState(json));
   }
