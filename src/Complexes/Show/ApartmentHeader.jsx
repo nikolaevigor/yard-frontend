@@ -26,7 +26,7 @@ const Title = styled.h1`
   margin: 0 auto;
 `;
 
-const Geo = styled.p`
+const Location = styled.p`
   margin-top: 0.5rem;
   margin-bottom: 0;
   font-family: "Fira Sans", sans-serif;
@@ -49,13 +49,22 @@ const FavouritesButton = styled.button`
   font-weight: 300;
 `;
 
-export default () =>
+function formatLocation(location) {
+  const locationBase = [location.subLocalityName, location.street, location.house]
+    .filter(item => !!item)
+    .join(', ');
+
+  if (location.postalCode) return `${locationBase} • ${location.postalCode}`;
+  return locationBase;
+}
+
+export default props =>
   (<Header>
     <Grid>
       <Wrapper>
         <Info>
-          <Title>Жилой комплекс «Полянка/44»</Title>
-          <Geo>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Geo>
+          <Title>{props.name}</Title>
+          <Location>{formatLocation(props.location)}</Location>
         </Info>
         <FavouritesButton>В избранное</FavouritesButton>
       </Wrapper>

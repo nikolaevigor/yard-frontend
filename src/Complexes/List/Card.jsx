@@ -23,6 +23,7 @@ const Geo = styled.p`
   color: #646971;
   font-family: Monaco;
   margin: 0;
+  text-transform: uppercase;
 `;
 
 const Title = styled.h3`
@@ -56,14 +57,15 @@ const Thumbnail = styled.img`
   width: 484px;
   height: 350px;
   flex-shrink: 0;
+  object-fit: cover;
 `;
 
 export default props =>
   (<Card to={`/complex/${props.id}`}>
-    <Thumbnail src={`${process.env.PUBLIC_URL}/img/apartment_${props.id}.png`} />
+    <Thumbnail src={props.imgUrl} />
     <Content>
-      <Geo>{props.geo}</Geo>
-      <Title>{props.title}</Title>
+      <Geo>{props.location}</Geo>
+      <Title>{props.name}</Title>
       <Info>{props.children}</Info>
     </Content>
   </Card>);

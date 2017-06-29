@@ -9,17 +9,13 @@ const Features = styled.div`
 `;
 
 const Records = styled.div`
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 `;
 
 const Feature = styled.dl`
   display: flex;
   margin-top: 0.5rem;
   margin-bottom: 0;
-
-  &:first-child {
-    margin-top: 0;
-  }
 `;
 
 const Name = styled.dt`
@@ -41,7 +37,7 @@ const Value = styled.dd`
   margin-left: 34px;
 `;
 
-export default () =>
+export default props =>
   (<Features>
     <Grid>
       <Title>Характеристики</Title>
@@ -50,19 +46,19 @@ export default () =>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
         </Row>
@@ -76,13 +72,13 @@ export default () =>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
         </Row>
@@ -96,13 +92,13 @@ export default () =>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>1503</Value>
+              <Value>{props.propertiesCount}</Value>
             </Feature>
           </Col>
         </Row>
