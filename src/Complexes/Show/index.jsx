@@ -19,10 +19,6 @@ class Show extends Component {
     this.state = {};
   }
 
-  load() {
-    get(`/complexes/${this.props.match.params.id}`).then(json => this.setState(json));
-  }
-
   componentDidMount() {
     this.load();
   }
@@ -31,6 +27,10 @@ class Show extends Component {
     if (nextProps.match.params.id !== this.props.match.params.id) {
       this.load();
     }
+  }
+
+  load() {
+    get(`/complexes/${this.props.match.params.id}`).then(json => this.setState(json));
   }
 
   render() {

@@ -9,17 +9,13 @@ const Features = styled.div`
 `;
 
 const Records = styled.div`
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 `;
 
 const Feature = styled.dl`
   display: flex;
   margin-top: 0.5rem;
   margin-bottom: 0;
-`;
-
-const FirstRowFeature = Feature.extend`
-  margin-top: 0;
 `;
 
 const Name = styled.dt`
@@ -48,22 +44,22 @@ export default props =>
       <Records>
         <Row>
           <Col lg={4}>
-            <FirstRowFeature>
+            <Feature>
               <Name>Количество квартир:</Name>
               <Value>{props.propertiesCount}</Value>
-            </FirstRowFeature>
+            </Feature>
           </Col>
           <Col lg={4}>
-            <FirstRowFeature>
+            <Feature>
               <Name>Количество квартир:</Name>
               <Value>{props.propertiesCount}</Value>
-            </FirstRowFeature>
+            </Feature>
           </Col>
           <Col lg={4}>
-            <FirstRowFeature>
+            <Feature>
               <Name>Количество квартир:</Name>
               <Value>{props.propertiesCount}</Value>
-            </FirstRowFeature>
+            </Feature>
           </Col>
         </Row>
         <Row>
