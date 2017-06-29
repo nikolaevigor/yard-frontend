@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
+import { getImageUrl } from '../../utils';
+
 const Images = styled.div`
   display: flex;
   position: relative;
@@ -27,14 +29,10 @@ const FavButton = styled.button`
   color: #fff;
 `;
 
-export default () =>
+export default props =>
   (<div>
     <Images>
-      <Image src={`${process.env.PUBLIC_URL}/img/complex_1.png`} alt="1st image" />
-      <Image src={`${process.env.PUBLIC_URL}/img/complex_2.png`} alt="2nd image" />
-      <Image src={`${process.env.PUBLIC_URL}/img/complex_3.png`} alt="3rd image" />
-      <Image src={`${process.env.PUBLIC_URL}/img/complex_4.png`} alt="4th image" />
-      <Image src={`${process.env.PUBLIC_URL}/img/complex_5.png`} alt="5th image" />
+      {props.imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
     </Images>
     <Grid>
       <FavButton>41 фотография</FavButton>
