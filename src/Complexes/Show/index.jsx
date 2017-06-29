@@ -19,8 +19,18 @@ class Show extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
+  load() {
     get(`/complexes/${this.props.match.params.id}`).then(json => this.setState(json));
+  }
+
+  componentDidMount() {
+    this.load();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.params.id !== this.props.match.params.id) {
+      this.load();
+    }
   }
 
   render() {
