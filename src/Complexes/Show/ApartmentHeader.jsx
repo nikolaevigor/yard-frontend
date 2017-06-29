@@ -53,6 +53,7 @@ function formatLocation(location) {
   const locationBase = [location.subLocalityName, location.street, location.house]
     .filter(item => !!item)
     .join(', ');
+
   if (location.postalCode) return `${locationBase} • ${location.postalCode}`;
   return locationBase;
 }
