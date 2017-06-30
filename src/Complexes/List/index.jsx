@@ -30,7 +30,9 @@ class List extends Component {
     super(props);
     this.state = {};
   }
-  state: Object;
+  state: {
+    items: Array<Object>,
+  };
 
   componentDidMount() {
     get('/complexes?filter[state]=public').then(({ items = [] }) => {
