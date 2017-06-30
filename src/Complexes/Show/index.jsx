@@ -16,10 +16,7 @@ import Directions from './Directions';
 import { get } from '../../api';
 
 class Show extends Component {
-  constructor(props: Object) {
-    super(props);
-    this.state = {};
-  }
+  state = {};
   state: Object;
 
   componentDidMount() {

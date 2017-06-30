@@ -26,10 +26,9 @@ function formatLocation({ subLocalityName, street }: Location): string {
 }
 
 class List extends Component {
-  constructor(props: Object) {
-    super(props);
-    this.state = {};
-  }
+  state = {
+    items: [],
+  };
   state: {
     items: Array<Object>,
   };
@@ -39,6 +38,7 @@ class List extends Component {
       this.setState({ items });
     });
   }
+  items: Array<Object>;
 
   render() {
     const { items: complexes = [] } = this.state;
