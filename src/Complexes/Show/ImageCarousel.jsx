@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
@@ -29,10 +31,10 @@ const FavButton = styled.button`
   color: #fff;
 `;
 
-export default props =>
+export default ({ imageIds }: { imageIds: Array<string> }) =>
   (<div>
     <Images>
-      {props.imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
+      {imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
     </Images>
     <Grid>
       <FavButton>41 фотография</FavButton>

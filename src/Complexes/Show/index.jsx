@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 
 import BodyClassName from 'react-body-classname';
@@ -14,16 +16,17 @@ import Directions from './Directions';
 import { get } from '../../api';
 
 class Show extends Component {
-  constructor(props) {
+  constructor(props: Object) {
     super(props);
     this.state = {};
   }
+  state: Object;
 
   componentDidMount() {
     this.load();
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     if (nextProps.match.params.id !== this.props.match.params.id) {
       this.load();
     }

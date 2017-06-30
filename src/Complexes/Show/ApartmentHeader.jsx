@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
@@ -49,22 +51,27 @@ const FavouritesButton = styled.button`
   font-weight: 300;
 `;
 
-function formatLocation(location) {
-  const locationBase = [location.subLocalityName, location.street, location.house]
+type ApartmentHeaderProps = {
+  name: string,
+  location: Object,
+};
+
+function formatLocation({ subLocalityName, street, house, postalCode }: Object): string {
+  const locationBase = [(subLocalityName: string), (street: string), (house: string)]
     .filter(item => !!item)
     .join(', ');
 
-  if (location.postalCode) return `${locationBase} • ${location.postalCode}`;
+  if (postalCode) return `${locationBase} • ${postalCode}`;
   return locationBase;
 }
 
-export default props =>
+export default ({ name, location }: ApartmentHeaderProps) =>
   (<Header>
     <Grid>
       <Wrapper>
         <Info>
-          <Title>{props.name}</Title>
-          <Location>{formatLocation(props.location)}</Location>
+          <Title>{name}</Title>
+          <Location>{formatLocation(location)}</Location>
         </Info>
         <FavouritesButton>В избранное</FavouritesButton>
       </Wrapper>

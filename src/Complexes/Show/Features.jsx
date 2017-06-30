@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -37,7 +39,7 @@ const Value = styled.dd`
   margin-left: 34px;
 `;
 
-export default props =>
+export default ({ propertiesCount }: { propertiesCount: string }) =>
   (<Features>
     <Grid>
       <Title>Характеристики</Title>
@@ -46,19 +48,19 @@ export default props =>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>{props.propertiesCount}</Value>
+              <Value>{propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>{props.propertiesCount}</Value>
+              <Value>{propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>{props.propertiesCount}</Value>
+              <Value>{propertiesCount}</Value>
             </Feature>
           </Col>
         </Row>
@@ -72,13 +74,13 @@ export default props =>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>{props.propertiesCount}</Value>
+              <Value>{propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>{props.propertiesCount}</Value>
+              <Value>{propertiesCount}</Value>
             </Feature>
           </Col>
         </Row>
@@ -92,13 +94,13 @@ export default props =>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>{props.propertiesCount}</Value>
+              <Value>{propertiesCount}</Value>
             </Feature>
           </Col>
           <Col lg={4}>
             <Feature>
               <Name>Количество квартир:</Name>
-              <Value>{props.propertiesCount}</Value>
+              <Value>{propertiesCount}</Value>
             </Feature>
           </Col>
         </Row>

@@ -16,8 +16,13 @@ const Cards = styled.div`
   margin: 4rem 8rem 6rem 8rem;
 `;
 
-function formatLocation(location) {
-  return [location.subLocalityName, location.street].filter(item => !!item).join(', ');
+type Location = {
+  subLocalityName: string,
+  street: string,
+};
+
+function formatLocation({ subLocalityName, street }: Location): string {
+  return [subLocalityName, street].filter(item => !!item).join(', ');
 }
 
 class List extends Component {
