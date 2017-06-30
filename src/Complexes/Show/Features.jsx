@@ -39,7 +39,9 @@ const Value = styled.dd`
   margin-left: 34px;
 `;
 
-export default ({ propertiesCount }: { propertiesCount: string }) =>
+type Props = { propertiesCount: string };
+
+export default ({ propertiesCount }: Props) =>
   (<Features>
     <Grid>
       <Title>Характеристики</Title>

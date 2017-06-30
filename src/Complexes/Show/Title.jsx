@@ -15,4 +15,6 @@ const Title = styled.h2`
   margin: 0 auto;
 `;
 
-export default ({ children }: { children: Children }) => <Title>{children}</Title>;
+type Props = { children: Children };
+
+export default ({ children }: Props) => <Title>{children}</Title>;

@@ -31,7 +31,9 @@ const FavButton = styled.button`
   color: #fff;
 `;
 
-export default ({ imageIds }: { imageIds: Array<string> }) =>
+type Props = { imageIds: Array<string> };
+
+export default ({ imageIds }: Props) =>
   (<div>
     <Images>
       {imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
