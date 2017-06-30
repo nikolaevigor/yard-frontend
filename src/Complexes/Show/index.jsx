@@ -14,12 +14,12 @@ import Offers from './Offers';
 import Nearby from './Nearby';
 import Directions from './Directions';
 import { get } from '../../api';
-import type { item as itemType } from '../types';
+import type { Item as ItemType } from '../types';
 
 class Show extends Component {
   state = {};
 
-  state: itemType;
+  state: ItemType;
 
   componentDidMount() {
     this.load();

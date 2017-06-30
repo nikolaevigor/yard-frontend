@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 // @flow
 
-type item = {
+type Item = {
   commissioningYear: number,
   adjacentTerritory: {
     area: number,
@@ -103,4 +103,4 @@ type item = {
   accreditors: Array<string>,
 };
 
-export type { item };
+export type { Item };
