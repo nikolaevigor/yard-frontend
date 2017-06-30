@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+// @flow
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
@@ -20,10 +21,11 @@ function formatLocation(location) {
 }
 
 class List extends Component {
-  constructor(props) {
+  constructor(props: Object) {
     super(props);
     this.state = {};
   }
+  state: Object;
 
   componentDidMount() {
     get('/complexes?filter[state]=public').then(({ items = [] }) => {
@@ -47,7 +49,9 @@ class List extends Component {
                   name={complex.name}
                   location={formatLocation(complex.location)}
                   imgUrl={getImageUrl(complex.images[0].id)}
-                />),
+                >
+                  Так падажжжи
+                </Card>),
               )}
             </Grid>
           </Cards>

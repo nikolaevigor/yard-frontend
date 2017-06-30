@@ -1,6 +1,9 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import type { Children } from 'react';
 
 const Card = styled(Link)`
   display: flex;
@@ -60,12 +63,20 @@ const Thumbnail = styled.img`
   object-fit: cover;
 `;
 
-export default props =>
-  (<Card to={`/complex/${props.id}`}>
-    <Thumbnail src={props.imgUrl} />
+type CardProps = {
+  id: string,
+  imgUrl: string,
+  location: string,
+  name: string,
+  children: Children,
+};
+
+export default ({ id, imgUrl, location, name, children }: CardProps) =>
+  (<Card to={`/complex/${id}`}>
+    <Thumbnail src={imgUrl} />
     <Content>
-      <Geo>{props.location}</Geo>
-      <Title>{props.name}</Title>
-      <Info>{props.children}</Info>
+      <Geo>{location}</Geo>
+      <Title>{name}</Title>
+      <Info>{children}</Info>
     </Content>
   </Card>);
