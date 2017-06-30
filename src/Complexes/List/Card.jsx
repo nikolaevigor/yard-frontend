@@ -64,7 +64,7 @@ const Thumbnail = styled.img`
 `;
 
 type CardProps = {
-  id: string,
+  id: number,
   imgUrl: string,
   location: string,
   name: string,

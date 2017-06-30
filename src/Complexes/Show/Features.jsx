@@ -39,7 +39,7 @@ const Value = styled.dd`
   margin-left: 34px;
 `;
 
-type Props = { propertiesCount: string };
+type Props = { propertiesCount: number };
 
 export default ({ propertiesCount }: Props) =>
   (<Features>
