@@ -11,6 +11,7 @@ import Intro from './Intro';
 import Card from './Card';
 import { getImageUrl } from '../../utils';
 import { get } from '../../api';
+import type { item as itemType } from '../types';
 
 const Cards = styled.div`
   margin: 4rem 8rem 6rem 8rem;
@@ -30,107 +31,7 @@ class List extends Component {
     items: [],
   };
   state: {
-    items: Array<{
-      commissioningYear: number,
-      adjacentTerritory: {
-        area: number,
-        isAccessOpen: boolean,
-        isAllowedCars: boolean,
-        isGreeneryPlanted: boolean,
-        playgrounds: number,
-      },
-      name: string,
-      updatedAt: string,
-      location: {
-        latitude: number,
-        localityId: number,
-        subLocalityName: string,
-        subwayIds: Array<string>,
-        countryName: string,
-        longitude: number,
-        postalCode: number,
-        countryId: number,
-        house: number,
-        localityName: string,
-        street: string,
-        regionId: number,
-        regionName: string,
-      },
-      state: string,
-      statistics: {
-        resalePropertiesCount: number,
-        price: {
-          from: {
-            usd: number,
-            eur: number,
-            rub: number,
-          },
-          to: {
-            usd: number,
-            eur: number,
-            rub: number,
-          },
-        },
-        totalResaleArea: {
-          from: number,
-          to: number,
-        },
-        resalePrice: {
-          from: {
-            usd: number,
-            eur: number,
-            rub: number,
-          },
-          to: {
-            usd: number,
-            eur: number,
-            rub: number,
-          },
-        },
-        propertiesCount: number,
-        totalPrimaryArea: {
-          from: number,
-          to: number,
-        },
-        primaryPrice: {
-          from: {
-            usd: number,
-            eur: number,
-            rub: number,
-          },
-          to: {
-            usd: number,
-            eur: number,
-            rub: number,
-          },
-        },
-        primaryPropertiesCount: number,
-        totalArea: {
-          from: number,
-          to: number,
-        },
-      },
-      keysIssueDate: string,
-      purchaseTimeConditions: {
-        agreementPreparation: number,
-        oralReservation: number,
-      },
-      commissioningQuarter: number,
-      linkedContactIds: Array<string>,
-      responsibleUser: {
-        id: number,
-        departmentId: number,
-      },
-      createdByUserId: number,
-      id: number,
-      updatedByUserId: number,
-      createdAt: string,
-      images: Array<{
-        id: string,
-        isPublic: boolean,
-      }>,
-      accreditors: Array<string>,
-    }>,
+    items: Array<itemType>,
     pagination: {
       total: number,
       limit: number,
