@@ -1,31 +1,31 @@
 /* eslint-disable import/prefer-default-export */
 // @flow
 
-type Item = {
+type Complex = {
   commissioningYear: number,
   adjacentTerritory: {
-    area: number,
-    isAccessOpen: boolean,
-    isAllowedCars: boolean,
-    isGreeneryPlanted: boolean,
-    playgrounds: number,
+    area: ?number,
+    isAccessOpen: ?boolean,
+    isAllowedCars: ?boolean,
+    isGreeneryPlanted: ?boolean,
+    playgrounds: ?number,
   },
   name: string,
   updatedAt: string,
   location: {
-    latitude: number,
-    localityId: number,
+    latitude: ?number,
+    localityId: ?number,
     subLocalityName: string,
-    subwayIds: Array<string>,
-    countryName: string,
-    longitude: number,
-    postalCode: number,
-    countryId: number,
-    house: number,
-    localityName: string,
+    subwayIds: Array<number>,
+    countryName: ?string,
+    longitude: ?number,
+    postalCode: ?number,
+    countryId: ?number,
+    house: ?number,
+    localityName: ?string,
     street: string,
-    regionId: number,
-    regionName: string,
+    regionId: ?number,
+    regionName: ?string,
   },
   state: string,
   statistics: {
@@ -83,8 +83,8 @@ type Item = {
   },
   keysIssueDate: string,
   purchaseTimeConditions: {
-    agreementPreparation: number,
-    oralReservation: number,
+    agreementPreparation: ?number,
+    oralReservation: ?number,
   },
   commissioningQuarter: number,
   linkedContactIds: Array<string>,
@@ -100,7 +100,7 @@ type Item = {
     id: string,
     isPublic: boolean,
   }>,
-  accreditors: Array<string>,
+  accreditors: Array<number>,
 };
 
-export type { Item };
+export type { Complex };

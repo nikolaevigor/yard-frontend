@@ -11,7 +11,7 @@ import Intro from './Intro';
 import Card from './Card';
 import { getImageUrl } from '../../utils';
 import { get } from '../../api';
-import type { Item as ItemType } from '../types';
+import type { Complex as ComplexType } from '../types';
 
 const Cards = styled.div`
   margin: 4rem 8rem 6rem 8rem;
@@ -31,7 +31,7 @@ class List extends Component {
     items: [],
   };
   state: {
-    items: Array<ItemType>,
+    items: Array<ComplexType>,
     pagination: {
       total: number,
       limit: number,
