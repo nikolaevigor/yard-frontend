@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -47,6 +49,8 @@ const Image = styled.img`
   margin-bottom: 218px;
 `;
 
+const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+
 export default () =>
   (<Nearby>
     <Grid>
@@ -59,7 +63,7 @@ export default () =>
           </Wrapper>
         </Col>
         <Col lg={6}>
-          <Image src={`${process.env.PUBLIC_URL}/img/polyanka-photo.png`} alt="Полянка" />
+          <Image src={`${PUBLIC_URL}/img/polyanka-photo.png`} alt="Полянка" />
         </Col>
       </Row>
     </Grid>

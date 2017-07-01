@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 
 import BodyClassName from 'react-body-classname';
@@ -12,18 +14,18 @@ import Offers from './Offers';
 import Nearby from './Nearby';
 import Directions from './Directions';
 import { get } from '../../api';
+import type { Complex as ComplexType } from '../types';
 
 class Show extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  state = {};
+
+  state: ComplexType;
 
   componentDidMount() {
     this.load();
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     if (nextProps.match.params.id !== this.props.match.params.id) {
       this.load();
     }
@@ -35,7 +37,7 @@ class Show extends Component {
 
   render() {
     const { images = [], name, statistics = {}, location = {} } = this.state;
-    const { propertiesCount = 'N/A' } = statistics;
+    const { propertiesCount } = statistics;
 
     return (
       <BodyClassName className="complex">

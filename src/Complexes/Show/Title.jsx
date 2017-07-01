@@ -1,5 +1,8 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
+import type { Children } from 'react';
 
 // for features, description and infrastructure
 
@@ -12,4 +15,6 @@ const Title = styled.h2`
   margin: 0 auto;
 `;
 
-export default props => <Title>{props.children}</Title>;
+type Props = { children: Children };
+
+export default ({ children }: Props) => <Title>{children}</Title>;

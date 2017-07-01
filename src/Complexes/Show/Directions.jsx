@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
@@ -51,10 +53,12 @@ const PlaceValue = styled.dd`
   margin-top: 0.5rem;
 `;
 
+const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+
 export default () =>
   (<Grid>
     <Wrapper>
-      <MapImage src={`${process.env.PUBLIC_URL}/img/map.png`} alt="Map" />
+      <MapImage src={`${PUBLIC_URL}/img/map.png`} alt="Map" />
       <Places>
         <Place>
           <PlaceName>Красный Октябрь</PlaceName>
