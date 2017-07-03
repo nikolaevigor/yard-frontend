@@ -21,3 +21,11 @@ Also project uses:
 Собрать проект
 
     yarn build
+
+Прогнать линтер
+
+    yarn run eslint src/ -- --ext .jsx,.js
+
+Прогнать flow
+
+    yarn flow
