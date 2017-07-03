@@ -1,5 +1,15 @@
+# Tech stack
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-[cra original README](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
+Also project uses:
+* styled-components
+* flow
+* eslint with aribnb config
 
-This repo is for my course project
+
+# Setting up
+
+Установить зависимости
+
+    yarn install
