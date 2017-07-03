@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "7"
+
+script:
+  - if [ "$TRAVIS_BRANCH" != "master" ]; then eslint --ext .jsx,.js src/; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then yarn build; now deploy --public; fi
