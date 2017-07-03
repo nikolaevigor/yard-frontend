@@ -26,6 +26,20 @@ function formatLocation({ subLocalityName, street }: Location): string {
   return [subLocalityName, street].filter(item => !!item).join(', ');
 }
 
+function createCard(complex, imageUrl) {
+  return (
+    <Card
+      key={complex.id}
+      id={complex.id}
+      name={complex.name}
+      location={formatLocation(complex.location)}
+      imgUrl={imageUrl}
+    >
+      Так падажжи
+    </Card>
+  );
+}
+
 class List extends Component {
   state = {
     items: [],
@@ -55,17 +69,12 @@ class List extends Component {
           <Intro />
           <Cards>
             <Grid>
-              {complexes.map(complex =>
-                (<Card
-                  key={complex.id}
-                  id={complex.id}
-                  name={complex.name}
-                  location={formatLocation(complex.location)}
-                  imgUrl={getImageUrl(complex.images[0].id)}
-                >
-                  Так падажжжи
-                </Card>),
-              )}
+              {complexes.map((complex) => {
+                if (complex.images.length > 0) {
+                  return createCard(complex, getImageUrl(complex.images[0].id));
+                }
+                return createCard(complex, 'http://via.placeholder.com/490x350');
+              })}
             </Grid>
           </Cards>
         </div>
