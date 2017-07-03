@@ -35,23 +35,29 @@ const Small = styled.small`
   margin-top: 10px;
 `;
 
-export default () =>
+type Props = {
+  units: number,
+  architect: string,
+  developer: string,
+};
+
+export default ({ units, architect, developer }: Props) =>
   (<Grid>
     <Summary>
       <Heading>
-        950
+        {units}
         <Small>
           предложений
         </Small>
       </Heading>
       <Heading>
-        John McAslan + Partners
+        {architect}
         <Small>
           архитектор
         </Small>
       </Heading>
       <Heading>
-        Группа «ПСН»
+        {developer}
         <Small>
           застройщик
         </Small>

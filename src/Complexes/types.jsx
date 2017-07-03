@@ -28,6 +28,11 @@ type Complex = {
     regionName: ?string,
   },
   state: string,
+  units: number,
+  details: {
+    architect: string,
+    developer: string,
+  },
   statistics: {
     resalePropertiesCount: number,
     price: {

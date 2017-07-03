@@ -36,15 +36,16 @@ class Show extends Component {
   }
 
   render() {
-    const { images = [], name, statistics = {}, location = {} } = this.state;
+    const { images = [], name, statistics = {}, location = {}, details = {}, units } = this.state;
     const { propertiesCount } = statistics;
+    const { architect, developer } = details;
 
     return (
       <BodyClassName className="complex">
         <div>
           <ApartmentHeader name={name} location={location} />
           <ImageCarousel imageIds={images.map(image => image.id)} />
-          <Summary />
+          <Summary units={units} architect={architect} developer={developer} />
           <Features propertiesCount={propertiesCount} />
           <Description />
           <Infrastructure />
