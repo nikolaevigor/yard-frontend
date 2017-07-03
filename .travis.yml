@@ -2,6 +2,17 @@ language: node_js
 node_js:
   - "7"
 
+install:
+  - yarn install
+  - yarn run flow-typed:install
+
 script:
-  - if [ "$TRAVIS_BRANCH" != "master" ]; then eslint --ext .jsx,.js src/; fi
-  - if [ "$TRAVIS_BRANCH" = "master" ]; then yarn build; now deploy --public; fi
+  - yarn run lint
+  - yarn run flow
+
+deploy:
+  on:
+    branch: master
+  provider: script
+  script:
+    - yarn build && now --public --token $NOW_TOKEN build && now alias --token $NOW_TOKEN
