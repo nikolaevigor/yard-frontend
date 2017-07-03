@@ -39,6 +39,6 @@ export default ({ imageIds }: Props) =>
       {imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
     </Images>
     <Grid>
-      <FavButton>41 фотография</FavButton>
+      <FavButton>{imageIds.length} фотография</FavButton>
     </Grid>
   </div>);
