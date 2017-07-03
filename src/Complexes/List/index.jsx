@@ -40,7 +40,7 @@ class List extends Component {
   };
 
   componentDidMount() {
-    get('/complexes?filter[state]=public').then(({ items = [] }) => {
+    get('/complexes').then(({ items = [] }) => {
       this.setState({ items });
     });
   }
