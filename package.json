@@ -23,6 +23,7 @@
     "flow-bin": "^0.49.1",
     "flow-typed": "^2.1.2",
     "husky": "^0.14.1",
+    "now": "^7.1.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.1",
