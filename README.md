@@ -24,7 +24,7 @@ Also project uses:
 
 Прогнать линтер
 
-    yarn run eslint src/ -- --ext .jsx,.js
+    yarn run lint
 
 Прогнать flow
 
