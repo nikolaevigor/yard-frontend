@@ -4,7 +4,7 @@ node_js:
 
 install:
   - yarn install
-  - yarn run flow-typed install
+  - yarn flow-typed install
 
 script:
   - yarn run lint
