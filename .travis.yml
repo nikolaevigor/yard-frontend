@@ -7,8 +7,8 @@ install:
   - yarn flow-typed install
 
 script:
-  - yarn run lint
-  - yarn run flow
+  - yarn lint
+  - yarn flow
 
 deploy:
   on:
