@@ -11,6 +11,7 @@ script:
   - yarn flow
 
 deploy:
+  skip_cleanup: true
   on:
     branch: master
   provider: script
