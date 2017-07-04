@@ -36,7 +36,15 @@ class Show extends Component {
   }
 
   render() {
-    const { images = [], name, statistics = {}, location = {}, details = {}, units } = this.state;
+    const {
+      images = [],
+      name,
+      statistics = {},
+      location = {},
+      details = {},
+      units,
+      fullDescription = '',
+    } = this.state;
     const { propertiesCount } = statistics;
     const { architect, developer } = details;
 
@@ -47,7 +55,7 @@ class Show extends Component {
           <ImageCarousel imageIds={images.map(image => image.id)} />
           <Summary units={units} architect={architect} developer={developer} />
           <Features propertiesCount={propertiesCount} />
-          <Description />
+          <Description fullDescription={fullDescription} />
           <Infrastructure />
           <Offers />
           <Nearby />

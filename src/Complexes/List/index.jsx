@@ -26,16 +26,10 @@ function formatLocation({ subLocalityName, street }: Location): string {
   return [subLocalityName, street].filter(item => !!item).join(', ');
 }
 
-function createCard(complex, imageUrl) {
+function createCard({ id, name, location, shortDescription }: ComplexType, imageUrl: string) {
   return (
-    <Card
-      key={complex.id}
-      id={complex.id}
-      name={complex.name}
-      location={formatLocation(complex.location)}
-      imgUrl={imageUrl}
-    >
-      Так падажжи
+    <Card key={id} id={id} name={name} location={formatLocation(location)} imgUrl={imageUrl}>
+      {shortDescription}
     </Card>
   );
 }
