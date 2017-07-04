@@ -14,6 +14,10 @@ Install dependencies:
 
     yarn install
 
+Install types libDefs for flow:
+
+    yarn flow-typed install
+
 Start local dev server:
 
     yarn start
