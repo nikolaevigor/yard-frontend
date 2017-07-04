@@ -10,22 +10,22 @@ Also project uses:
 
 # Setting up
 
-Установить зависимости
+Install dependencies:
 
     yarn install
 
-Запустить локальный сервер
+Start local dev server:
 
     yarn start
 
-Собрать проект
+Build project for production:
 
     yarn build
 
-Прогнать линтер
+Run linter:
 
     yarn run lint
 
-Прогнать flow
+Run flow:
 
     yarn flow
