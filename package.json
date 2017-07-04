@@ -34,7 +34,7 @@
     "prepush": "eslint --ext .jsx,.js src/",
     "precommit": "eslint --ext .jsx,.js src/",
     "flow": "flow",
-    "flow-typed:install": "flow-typed install",
+    "flow-typed": "flow-typed",
     "lint": "eslint --ext .jsx,.js src/"
   },
   "eslintConfig": {
@@ -49,7 +49,7 @@
     }
   },
   "now" : {
-    "name": "build",
+    "name": "yard",
     "alias": "nikolaevigor-yard"
   }
 }
