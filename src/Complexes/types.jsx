@@ -92,8 +92,8 @@ type Complex = {
     oralReservation: ?number,
   },
   commissioningQuarter: number,
-  fullDescription: ?string,
-  shortDescription: ?string,
+  fullDescription: string,
+  shortDescription: string,
   linkedContactIds: Array<string>,
   responsibleUser: {
     id: number,

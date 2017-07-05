@@ -27,7 +27,11 @@ const Text = styled.article`
   color: #3e4247;
 `;
 
-export default ({ fullDescription = '' }: string) =>
+type Props = {
+  fullDescription: string,
+};
+
+export default ({ fullDescription = '' }: Props) =>
   (<Description>
     <Grid>
       <Wrapper>
