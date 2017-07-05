@@ -4,7 +4,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
-import { getImageUrl, pluralize } from '../../utils';
+import Pluralizer from '../../components/Pluralizer';
+import { getImageUrl } from '../../utils';
 
 const Images = styled.div`
   display: flex;
@@ -40,7 +41,7 @@ export default ({ imageIds }: Props) =>
     </Images>
     <Grid>
       <FavButton>
-        {imageIds.length} {pluralize('фотограф', imageIds.length, ['ий', 'ия', 'ии'])}
+        <Pluralizer num={imageIds.length} forms={['фотографий', 'фотография', 'фотографии']} />
       </FavButton>
     </Grid>
   </div>);

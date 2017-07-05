@@ -48,7 +48,7 @@ export default ({ units, architect, developer }: Props) =>
       <Heading>
         {units}
         <Small>
-          {pluralize('предложен', units, ['ий', 'иe', 'ия'])}
+          {pluralize(units, ['предложений', 'предожениe', 'предложения'])}
         </Small>
       </Heading>
       <Heading>
