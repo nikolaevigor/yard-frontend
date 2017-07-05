@@ -49,7 +49,6 @@
     }
   },
   "now" : {
-    "name": "yard-frontend",
     "alias": "nikolaevigor-yard"
   }
 }
