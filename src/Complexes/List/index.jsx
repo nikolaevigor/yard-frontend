@@ -26,7 +26,7 @@ function formatLocation({ subLocalityName, street }: Location): string {
   return [subLocalityName, street].filter(item => !!item).join(', ');
 }
 
-function createCard({ id, name, location, shortDescription }: ComplexType, imageUrl: string) {
+function renderCard({ id, name, location, shortDescription }: ComplexType, imageUrl: string) {
   return (
     <Card key={id} id={id} name={name} location={formatLocation(location)} imgUrl={imageUrl}>
       {shortDescription}
@@ -48,7 +48,7 @@ class List extends Component {
   };
 
   componentDidMount() {
-    get('/complexes').then(({ items = [] }) => {
+    get('/complexes?filter[state]=public').then(({ items = [] }) => {
       this.setState({ items });
     });
   }
@@ -65,9 +65,9 @@ class List extends Component {
             <Grid>
               {complexes.map((complex) => {
                 if (complex.images.length > 0) {
-                  return createCard(complex, getImageUrl(complex.images[0].id));
+                  return renderCard(complex, getImageUrl(complex.images[0].id));
                 }
-                return createCard(complex, 'http://via.placeholder.com/490x350');
+                return renderCard(complex, 'http://via.placeholder.com/490x350');
               })}
             </Grid>
           </Cards>
