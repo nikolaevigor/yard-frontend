@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
 import Line from './SeparationLine';
+import { pluralize } from '../../utils';
 
 const Summary = styled.div`
   display: flex;
@@ -47,7 +48,7 @@ export default ({ units, architect, developer }: Props) =>
       <Heading>
         {units}
         <Small>
-          предложений
+          {pluralize('предложен', units, ['ий', 'иe', 'ия'])}
         </Small>
       </Heading>
       <Heading>

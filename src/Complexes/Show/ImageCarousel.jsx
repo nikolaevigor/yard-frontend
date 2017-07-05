@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
-import { getImageUrl } from '../../utils';
+import { getImageUrl, pluralize } from '../../utils';
 
 const Images = styled.div`
   display: flex;
@@ -39,6 +39,8 @@ export default ({ imageIds }: Props) =>
       {imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
     </Images>
     <Grid>
-      <FavButton>{imageIds.length} фотография</FavButton>
+      <FavButton>
+        {imageIds.length} {pluralize('фотограф', imageIds.length, ['ий', 'ия', 'ии'])}
+      </FavButton>
     </Grid>
   </div>);
