@@ -18,7 +18,7 @@ const Image = styled.img`
   height: 400px;
 `;
 
-const FavButton = styled.button`
+const Button = styled.button`
   position: absolute;
   padding: 0.5rem 1rem;
   margin-top: -42px;
@@ -40,8 +40,11 @@ export default ({ imageIds }: Props) =>
       {imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
     </Images>
     <Grid>
-      <FavButton>
-        <Pluralizer num={imageIds.length} forms={['фотографий', 'фотография', 'фотографии']} />
-      </FavButton>
+      <Button>
+        <span>
+          {imageIds.length}{' '}
+        </span>
+        <Pluralizer amount={imageIds.length} one="фотография" few="фотографии" other="фотографий" />
+      </Button>
     </Grid>
   </div>);

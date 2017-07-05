@@ -4,11 +4,13 @@ import React from 'react';
 import { pluralize } from './../utils';
 
 type Props = {
-  num: number,
-  forms: Array<string>,
+  amount: number,
+  one: string,
+  few: string,
+  other: string,
 };
 
-export default ({ num, forms }: Props) =>
+export default ({ amount, one, few, other }: Props) =>
   (<span>
-    {pluralize(num, forms)}
+    {pluralize(amount, one, few, other)}
   </span>);
