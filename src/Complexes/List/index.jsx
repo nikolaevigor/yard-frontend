@@ -48,7 +48,7 @@ class List extends Component {
   };
 
   componentDidMount() {
-    get('/complexes?filter[state]=public').then(({ items = [] }) => {
+    get(encodeURI('/complexes?filter[state]=public')).then(({ items = [] }) => {
       this.setState({ items });
     });
   }
