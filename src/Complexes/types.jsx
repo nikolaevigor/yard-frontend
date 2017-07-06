@@ -43,6 +43,10 @@ type Complex = {
     },
     parkings: number,
     maintenanceCosts: number,
+    propertyKind: string,
+    security: string,
+    undergroundGarages: string,
+    constructionKind: string,
   },
   statistics: {
     resalePropertiesCount: number,

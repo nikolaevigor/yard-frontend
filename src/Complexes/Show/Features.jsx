@@ -6,6 +6,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Title from './Title';
 import type { Complex as ComplexType } from '../types';
+import { quarters, kinds, securityKinds, constructionKinds } from '../dictionaries';
 
 const Features = styled.div`
   margin-top: 2rem;
@@ -49,6 +50,7 @@ function cutFloat(number, to = 2) {
 function formatCeilHeight({ from, to }) {
   const formattedFrom = cutFloat(from);
   const formattedTo = cutFloat(to);
+
   if (formattedFrom === formattedTo) {
     return `${formattedFrom}`;
   }
@@ -59,14 +61,11 @@ function formatPrice(price) {
   return cutFloat(price / 1000000, 1);
 }
 
-function formatQuarter(quarter) {
-  const mapping = {
-    first: 'I',
-    second: 'II',
-    third: 'III',
-    fourth: 'IV',
-  };
-  return `${mapping[quarter]}`;
+function formatGarages(garagesAmount) {
+  if (garagesAmount || garagesAmount === 0) {
+    return 'Нет';
+  }
+  return `${garagesAmount} м/м`;
 }
 
 type Props = {
@@ -84,6 +83,10 @@ export default ({ complex }: Props) => {
     commissioningYear,
     commissioningQuarter,
     maintenanceCosts,
+    propertyKind,
+    security,
+    undergroundGarages,
+    constructionKind,
   } = details;
   const { from = {}, to = {} } = price;
 
@@ -102,13 +105,13 @@ export default ({ complex }: Props) => {
             <Col lg={4}>
               <Feature>
                 <Name>Конструкция корпусов</Name>
-                <Value>Монолит</Value>
+                <Value>{constructionKinds[constructionKind]}</Value>
               </Feature>
             </Col>
             <Col lg={4}>
               <Feature>
                 <Name>Начало строительства</Name>
-                <Value>{formatQuarter(startQuarter)} квартал {startYear} года</Value>
+                <Value>{quarters[startQuarter]} квартал {startYear} года</Value>
               </Feature>
             </Col>
           </Row>
@@ -116,7 +119,7 @@ export default ({ complex }: Props) => {
             <Col lg={4}>
               <Feature>
                 <Name>Статус</Name>
-                <Value>Квартиры</Value>
+                <Value>{kinds[propertyKind]}</Value>
               </Feature>
             </Col>
             <Col lg={4}>
@@ -129,7 +132,7 @@ export default ({ complex }: Props) => {
               <Feature>
                 <Name>Конец строительства</Name>
                 <Value>
-                  {formatQuarter(commissioningQuarter)} квартал {commissioningYear} года
+                  {quarters[commissioningQuarter]} квартал {commissioningYear} года
                 </Value>
               </Feature>
             </Col>
@@ -137,7 +140,7 @@ export default ({ complex }: Props) => {
           <Row>
             <Col lg={4}>
               <Feature>
-                <Name>Цены:</Name>
+                <Name>Цены</Name>
                 <Value>от {formatPrice(from.rub)} до {formatPrice(to.rub)} млн</Value>
               </Feature>
             </Col>
@@ -150,7 +153,7 @@ export default ({ complex }: Props) => {
             <Col lg={4}>
               <Feature>
                 <Name>Наземная парковка</Name>
-                <Value>{parkings} м/м</Value>
+                <Value>{formatGarages(parkings)}</Value>
               </Feature>
             </Col>
           </Row>
@@ -158,7 +161,7 @@ export default ({ complex }: Props) => {
             <Col lg={4}>
               <Feature>
                 <Name>Безопасность</Name>
-                <Value>Охраняемая территория</Value>
+                <Value>{securityKinds[security]}</Value>
               </Feature>
             </Col>
             <Col lg={4}>
@@ -170,7 +173,7 @@ export default ({ complex }: Props) => {
             <Col lg={4}>
               <Feature>
                 <Name>Подземная парковка</Name>
-                <Value>Нет</Value>
+                <Value>{formatGarages(undergroundGarages)}</Value>
               </Feature>
             </Col>
           </Row>
