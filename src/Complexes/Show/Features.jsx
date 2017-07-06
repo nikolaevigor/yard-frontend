@@ -61,11 +61,11 @@ function formatPrice(price) {
   return cutFloat(price / 1000000, 1);
 }
 
-function formatGarages(garagesAmount) {
-  if (garagesAmount || garagesAmount === 0) {
+function formatParkings(parkingsAmount) {
+  if (parkingsAmount || parkingsAmount === 0) {
     return 'Нет';
   }
-  return `${garagesAmount} м/м`;
+  return `${parkingsAmount} м/м`;
 }
 
 type Props = {
@@ -153,7 +153,7 @@ export default ({ complex }: Props) => {
             <Col lg={4}>
               <Feature>
                 <Name>Наземная парковка</Name>
-                <Value>{formatGarages(parkings)}</Value>
+                <Value>{formatParkings(parkings)}</Value>
               </Feature>
             </Col>
           </Row>
@@ -173,7 +173,7 @@ export default ({ complex }: Props) => {
             <Col lg={4}>
               <Feature>
                 <Name>Подземная парковка</Name>
-                <Value>{formatGarages(undergroundGarages)}</Value>
+                <Value>{formatParkings(undergroundGarages)}</Value>
               </Feature>
             </Col>
           </Row>

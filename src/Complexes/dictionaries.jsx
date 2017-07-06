@@ -1,11 +1,8 @@
+// @flow
+
 export const offerKinds = {
   purchase: 'Покупка',
   rent: 'Аренда',
-};
-
-export const resaleKinds = {
-  [true]: 'Вторичка',
-  [false]: 'Первичка',
 };
 
 export const bathrooms = {
@@ -45,15 +42,6 @@ export const currencies = {
 export const categories = {
   city: 'Городская',
   country: 'Загородная',
-};
-
-export const deposits = {
-  0: 'Отсутствует',
-  1: '1 месяц',
-  2: '2 месяца',
-  3: '3 месяца',
-  6: '6 месяцев',
-  12: '12 месяцев',
 };
 
 export const periods = {
