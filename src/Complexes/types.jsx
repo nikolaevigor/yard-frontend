@@ -29,9 +29,20 @@ type Complex = {
   },
   state: string,
   units: number,
+  amenities: Array<string>,
   details: {
     architect: string,
     developer: string,
+    startYear: number,
+    startQuarter: string,
+    commissioningYear: number,
+    commissioningQuarter: string,
+    ceilHeight: {
+      to: number,
+      from: number,
+    },
+    parkings: number,
+    maintenanceCosts: number,
   },
   statistics: {
     resalePropertiesCount: number,

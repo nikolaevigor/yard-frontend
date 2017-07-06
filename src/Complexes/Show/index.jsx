@@ -39,13 +39,12 @@ class Show extends Component {
     const {
       images = [],
       name,
-      statistics = {},
       location = {},
       details = {},
       units,
       fullDescription = '',
+      amenities = {},
     } = this.state;
-    const { propertiesCount } = statistics;
     const { architect, developer } = details;
 
     return (
@@ -54,9 +53,19 @@ class Show extends Component {
           <ApartmentHeader name={name} location={location} />
           <ImageCarousel imageIds={images.map(image => image.id)} />
           <Summary units={units} architect={architect} developer={developer} />
-          <Features propertiesCount={propertiesCount} />
-          <Description fullDescription={fullDescription} />
-          <Infrastructure />
+          <Features complex={this.state} />
+          {() => {
+            if (fullDescription) {
+              return <Description fullDescription={fullDescription} />;
+            }
+            return <div />;
+          }}
+          {() => {
+            if (amenities) {
+              return <Infrastructure amenities={amenities} />;
+            }
+            return <div />;
+          }}
           <Offers />
           <Nearby />
           <Directions />
