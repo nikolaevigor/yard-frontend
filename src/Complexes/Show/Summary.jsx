@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
 import Line from './SeparationLine';
+import Pluralizer from '../../components/Pluralizer';
 
 const Summary = styled.div`
   display: flex;
@@ -35,23 +36,29 @@ const Small = styled.small`
   margin-top: 10px;
 `;
 
-export default () =>
+type Props = {
+  units: number,
+  architect: string,
+  developer: string,
+};
+
+export default ({ units, architect, developer }: Props) =>
   (<Grid>
     <Summary>
       <Heading>
-        950
+        {units}
         <Small>
-          предложений
+          <Pluralizer amount={units} one="предложение" few="предложения" other="предложений" />
         </Small>
       </Heading>
       <Heading>
-        John McAslan + Partners
+        {architect}
         <Small>
           архитектор
         </Small>
       </Heading>
       <Heading>
-        Группа «ПСН»
+        {developer}
         <Small>
           застройщик
         </Small>
