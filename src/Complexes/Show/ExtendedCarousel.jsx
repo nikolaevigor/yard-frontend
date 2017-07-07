@@ -29,7 +29,7 @@ class RenderInBody extends Component {
       top: 0,
       left: 0,
     };
-    return React.DOM.div(style);
+    return <div style={style} />;
   }
 }
 
