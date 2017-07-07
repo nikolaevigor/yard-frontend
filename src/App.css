@@ -16,3 +16,7 @@ body {
 .complex {
   background: #fff;
 }
+
+.carousel {
+  overflow-y: hidden;
+}

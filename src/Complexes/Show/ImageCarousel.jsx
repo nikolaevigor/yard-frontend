@@ -1,9 +1,10 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
+import ExtendedCarousel from './ExtendedCarousel';
 import { getImageUrl } from '../../utils';
 
 const Images = styled.div`
@@ -31,14 +32,49 @@ const FavButton = styled.button`
   color: #fff;
 `;
 
-type Props = { imageIds: Array<string> };
+class ImageCarousel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isOpen: false };
+    this.extendCarousel = this.extendCarousel.bind(this);
+    this.collapseCarousel = this.collapseCarousel.bind(this);
+    this.toggleCarousel = this.toggleCarousel.bind(this);
+  }
 
-export default ({ imageIds }: Props) =>
-  (<div>
-    <Images>
-      {imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
-    </Images>
-    <Grid>
-      <FavButton>41 фотография</FavButton>
-    </Grid>
-  </div>);
+  extendCarousel(e) {
+    console.log('extend');
+    console.log(e.which);
+    this.setState({ isOpen: true });
+  }
+
+  collapseCarousel(e) {
+    console.log('collapse');
+    console.log(e.which);
+    this.setState({ isOpen: false });
+  }
+
+  toggleCarousel(e) {
+    console.log('tr');
+    const { isOpen } = this.state;
+    this.setState({ isOpen: !isOpen });
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    return (
+      <div onKeyPress={this.collapseCarousel}>
+        <Images>
+          {this.props.imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
+        </Images>
+        <Grid>
+          <FavButton>
+            41 фотография
+          </FavButton>
+          {isOpen && <ExtendedCarousel />}
+        </Grid>
+      </div>
+    );
+  }
+}
+
+export default ImageCarousel;
