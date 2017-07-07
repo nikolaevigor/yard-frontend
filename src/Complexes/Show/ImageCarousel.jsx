@@ -33,44 +33,29 @@ const FavButton = styled.button`
 `;
 
 class ImageCarousel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isOpen: false };
-    this.extendCarousel = this.extendCarousel.bind(this);
-    this.collapseCarousel = this.collapseCarousel.bind(this);
-    this.toggleCarousel = this.toggleCarousel.bind(this);
-  }
-
-  extendCarousel(e) {
-    console.log('extend');
-    console.log(e.which);
+  state = { isOpen: false };
+  extendCarousel = () => {
     this.setState({ isOpen: true });
-  }
-
-  collapseCarousel(e) {
-    console.log('collapse');
-    console.log(e.which);
+  };
+  collapseCarousel = () => {
     this.setState({ isOpen: false });
-  }
-
-  toggleCarousel(e) {
-    console.log('tr');
-    const { isOpen } = this.state;
-    this.setState({ isOpen: !isOpen });
-  }
+  };
 
   render() {
     const { isOpen } = this.state;
     return (
-      <div onKeyPress={this.collapseCarousel}>
+      <div>
         <Images>
           {this.props.imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
         </Images>
         <Grid>
-          <FavButton>
+          <FavButton onClick={this.extendCarousel}>
             41 фотография
           </FavButton>
-          {isOpen && <ExtendedCarousel />}
+          {isOpen &&
+            <ExtendedCarousel escHandler={this.collapseCarousel}>
+              {this.props.imageIds}
+            </ExtendedCarousel>}
         </Grid>
       </div>
     );
