@@ -1,37 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import BodyClassName from 'react-body-classname';
-
-class RenderInBody extends Component {
-  componentDidMount() {
-    this.popup = document.createElement('div');
-    document.body.appendChild(this.popup);
-    this.renderLayer();
-  }
-
-  componentDidUpdate() {
-    this.renderLayer();
-  }
-
-  componentWillUnmount() {
-    ReactDOM.unmountComponentAtNode(this.popup);
-    document.body.removeChild(this.popup);
-  }
-
-  renderLayer() {
-    ReactDOM.render(this.props.children, this.popup);
-  }
-
-  render() {
-    const style = {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-    };
-    return <div style={style} />;
-  }
-}
+import RenderInBody from '../../components/RenderInBody';
 
 const Carousel = styled.div`
   display: flex;
@@ -80,11 +50,17 @@ const stopPropagation = (e) => {
   e.stopPropagation();
 };
 
+const style = {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+};
+
 /* eslint-disable */
 class ExtendedCarousel extends Component {
   render() {
     return (
-      <RenderInBody>
+      <RenderInBody style={style}>
         <BodyClassName className="carousel">
           <Carousel onClick={this.props.escHandler}>
             <Wrapper>
