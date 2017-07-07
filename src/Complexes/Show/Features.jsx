@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Title from './Title';
-import type { Complex as ComplexType } from '../types';
+import type { Complex as ComplexType, Details as DetailsType } from '../types';
 import { quarters, kinds, securityKinds, constructionKinds } from '../dictionaries';
 
 const Features = styled.div`
@@ -43,15 +43,15 @@ const Value = styled.dd`
   white-space:nowrap;
 `;
 
-function cutFloat(number, to = 2) {
+function cutFloat(number: number, to = 2):string {
   return Math.round(number).toFixed(to);
 }
 
-function round(number) {
+function round(number: number):number {
   return Math.round(Number(number));
 }
 
-function formatCeilHeight({ from, to }) {
+function formatCeilHeight({ from, to }:{ from: number, to: number }):string {
   const formattedFrom = cutFloat(from);
   const formattedTo = cutFloat(to);
 
@@ -61,11 +61,11 @@ function formatCeilHeight({ from, to }) {
   return `${formattedFrom} - ${formattedTo}`;
 }
 
-function formatPrice(price) {
+function formatPrice(price:number):string {
   return cutFloat(price / 1000000, 1);
 }
 
-function formatParkings(parkingsAmount) {
+function formatParkings(parkingsAmount:number):string {
   if (parkingsAmount || parkingsAmount === 0) {
     return 'Нет';
   }
@@ -77,10 +77,25 @@ type Props = {
 };
 
 export default ({ complex }: Props) => {
-  const { statistics = {}, details = {} } = complex;
+  const detailsDefaults = {
+    architect: '',
+    developer: '',
+    ceilHeight: { to: 0, from: 0 },
+    parkings: 0,
+    startYear: 0,
+    startQuarter: 'first',
+    commissioningYear: 0,
+    commissioningQuarter: 'first',
+    maintenanceCosts: 0,
+    propertyKind: 'flat',
+    security: 'guarded',
+    undergroundGarages: 0,
+    constructionKind: 'brick',
+  };
+  const { statistics = {}, details = detailsDefaults } = complex;
   const { propertiesCount = '', price = {}, totalArea = {} } = statistics;
   const {
-    ceilHeight = {},
+    ceilHeight,
     parkings,
     startYear,
     startQuarter,
@@ -91,7 +106,7 @@ export default ({ complex }: Props) => {
     security,
     undergroundGarages,
     constructionKind,
-  } = details;
+  }:DetailsType = details;
   const { from = {}, to = {} } = price;
 
   return (
