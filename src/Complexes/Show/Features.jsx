@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Title from './Title';
-import type { Complex as ComplexType, Details as DetailsType } from '../types';
+import type { Complex as ComplexType, Details as DetailsType, Range as RangeType } from '../types';
 import { quarters, kinds, securityKinds, constructionKinds } from '../dictionaries';
 
 const Features = styled.div`
@@ -43,15 +43,11 @@ const Value = styled.dd`
   white-space:nowrap;
 `;
 
-function cutFloat(number: number, to = 2):string {
+function cutFloat(number: number, to: number = 2): string {
   return Math.round(number).toFixed(to);
 }
 
-function round(number: number):number {
-  return Math.round(Number(number));
-}
-
-function formatCeilHeight({ from, to }:{ from: number, to: number }):string {
+function formatCeilHeight({ from, to }: RangeType): string {
   const formattedFrom = cutFloat(from);
   const formattedTo = cutFloat(to);
 
@@ -61,37 +57,38 @@ function formatCeilHeight({ from, to }:{ from: number, to: number }):string {
   return `${formattedFrom} - ${formattedTo}`;
 }
 
-function formatPrice(price:number):string {
+function formatPrice(price: number): string {
   return cutFloat(price / 1000000, 1);
 }
 
-function formatParkings(parkingsAmount:number):string {
-  if (parkingsAmount || parkingsAmount === 0) {
+function formatParkings(amount: number): string {
+  if (!amount || amount === 0) {
     return 'Нет';
   }
-  return `${parkingsAmount} м/м`;
+  return `${amount} м/м`;
 }
 
 type Props = {
   complex: ComplexType,
 };
 
+const detailsDefaults = {
+  architect: '',
+  developer: '',
+  ceilHeight: { to: 0, from: 0 },
+  parkings: 0,
+  startYear: 0,
+  startQuarter: 'first',
+  commissioningYear: 0,
+  commissioningQuarter: 'first',
+  maintenanceCosts: 0,
+  propertyKind: 'flat',
+  security: 'guarded',
+  undergroundGarages: 0,
+  constructionKind: 'brick',
+};
+
 export default ({ complex }: Props) => {
-  const detailsDefaults = {
-    architect: '',
-    developer: '',
-    ceilHeight: { to: 0, from: 0 },
-    parkings: 0,
-    startYear: 0,
-    startQuarter: 'first',
-    commissioningYear: 0,
-    commissioningQuarter: 'first',
-    maintenanceCosts: 0,
-    propertyKind: 'flat',
-    security: 'guarded',
-    undergroundGarages: 0,
-    constructionKind: 'brick',
-  };
   const { statistics = {}, details = detailsDefaults } = complex;
   const { propertiesCount = '', price = {}, totalArea = {} } = statistics;
   const {
@@ -106,7 +103,7 @@ export default ({ complex }: Props) => {
     security,
     undergroundGarages,
     constructionKind,
-  }:DetailsType = details;
+  }: DetailsType = details;
   const { from = {}, to = {} } = price;
 
   return (
@@ -144,7 +141,7 @@ export default ({ complex }: Props) => {
             <Col lg={4}>
               <Feature>
                 <Name>Площадь</Name>
-                <Value>от {round(totalArea.from)} до {round(totalArea.to)} м² </Value>
+                <Value>от {Math.round(totalArea.from)} до {Math.round(totalArea.to)} м² </Value>
               </Feature>
             </Col>
             <Col lg={4}>
