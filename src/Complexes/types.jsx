@@ -1,6 +1,27 @@
 /* eslint-disable import/prefer-default-export */
 // @flow
 
+type Range = {
+  to: number,
+  from: number
+}
+
+type Details = {
+  architect: string,
+  developer: string,
+  startYear: number,
+  startQuarter: string,
+  commissioningYear: number,
+  commissioningQuarter: string,
+  ceilHeight: Range,
+  parkings: number,
+  maintenanceCosts: number,
+  propertyKind: string,
+  security: string,
+  undergroundGarages: number,
+  constructionKind: string,
+}
+
 type Complex = {
   commissioningYear: number,
   adjacentTerritory: {
@@ -28,6 +49,9 @@ type Complex = {
     regionName: ?string,
   },
   state: string,
+  units: number,
+  amenities: Array<string>,
+  details: Details,
   statistics: {
     resalePropertiesCount: number,
     price: {
@@ -42,10 +66,7 @@ type Complex = {
         rub: number,
       },
     },
-    totalResaleArea: {
-      from: number,
-      to: number,
-    },
+    totalResaleArea: Range,
     resalePrice: {
       from: {
         usd: number,
@@ -59,10 +80,7 @@ type Complex = {
       },
     },
     propertiesCount: number,
-    totalPrimaryArea: {
-      from: number,
-      to: number,
-    },
+    totalPrimaryArea: Range,
     primaryPrice: {
       from: {
         usd: number,
@@ -76,10 +94,7 @@ type Complex = {
       },
     },
     primaryPropertiesCount: number,
-    totalArea: {
-      from: number,
-      to: number,
-    },
+    totalArea: Range,
   },
   keysIssueDate: string,
   purchaseTimeConditions: {
@@ -87,6 +102,8 @@ type Complex = {
     oralReservation: ?number,
   },
   commissioningQuarter: number,
+  fullDescription: string,
+  shortDescription: string,
   linkedContactIds: Array<string>,
   responsibleUser: {
     id: number,
@@ -103,4 +120,4 @@ type Complex = {
   accreditors: Array<number>,
 };
 
-export type { Complex };
+export type { Complex, Details, Range };

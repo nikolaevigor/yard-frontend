@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
 import ExtendedCarousel from './ExtendedCarousel';
+import Pluralizer from '../../components/Pluralizer';
 import { getImageUrl } from '../../utils';
 
 const Images = styled.div`
@@ -18,7 +19,7 @@ const Image = styled.img`
   height: 400px;
 `;
 
-const FavButton = styled.button`
+const Button = styled.button`
   position: absolute;
   padding: 0.5rem 1rem;
   margin-top: -42px;
@@ -49,9 +50,17 @@ class ImageCarousel extends Component {
           {this.props.imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
         </Images>
         <Grid>
-          <FavButton onClick={this.extendCarousel}>
-            41 фотография
-          </FavButton>
+          <Button onClick={this.extendCarousel}>
+            <span>
+              {this.props.imageIds.length}{' '}
+            </span>
+            <Pluralizer
+              amount={this.props.imageIds.length}
+              one="фотография"
+              few="фотографии"
+              other="фотографий"
+            />
+          </Button>
           {isOpen &&
             <ExtendedCarousel escHandler={this.collapseCarousel}>
               {this.props.imageIds}

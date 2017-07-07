@@ -26,6 +26,14 @@ function formatLocation({ subLocalityName, street }: Location): string {
   return [subLocalityName, street].filter(item => !!item).join(', ');
 }
 
+function renderCard({ id, name, location, shortDescription }: ComplexType, imageUrl: string) {
+  return (
+    <Card key={id} id={id} name={name} location={formatLocation(location)} imgUrl={imageUrl}>
+      {shortDescription}
+    </Card>
+  );
+}
+
 class List extends Component {
   state = {
     items: [],
@@ -55,17 +63,12 @@ class List extends Component {
           <Intro />
           <Cards>
             <Grid>
-              {complexes.map(complex =>
-                (<Card
-                  key={complex.id}
-                  id={complex.id}
-                  name={complex.name}
-                  location={formatLocation(complex.location)}
-                  imgUrl={getImageUrl(complex.images[0].id)}
-                >
-                  Так падажжжи
-                </Card>),
-              )}
+              {complexes.map((complex) => {
+                if (complex.images.length > 0) {
+                  return renderCard(complex, getImageUrl(complex.images[0].id));
+                }
+                return renderCard(complex, 'http://via.placeholder.com/490x350');
+              })}
             </Grid>
           </Cards>
         </div>
