@@ -47,6 +47,10 @@ function cutFloat(number, to = 2) {
   return Math.round(number).toFixed(to);
 }
 
+function round(number) {
+  return Math.round(Number(number));
+}
+
 function formatCeilHeight({ from, to }) {
   const formattedFrom = cutFloat(from);
   const formattedTo = cutFloat(to);
@@ -125,7 +129,7 @@ export default ({ complex }: Props) => {
             <Col lg={4}>
               <Feature>
                 <Name>Площадь</Name>
-                <Value>от {totalArea.from} до {totalArea.to} м² </Value>
+                <Value>от {round(totalArea.from)} до {round(totalArea.to)} м² </Value>
               </Feature>
             </Col>
             <Col lg={4}>
