@@ -15,9 +15,7 @@ const Images = styled.div`
   overflow: scroll;
 `;
 
-const Image = styled.img`
-  height: 400px;
-`;
+const Image = styled.img`height: 400px;`;
 
 const Button = styled.button`
   position: absolute;
@@ -35,11 +33,10 @@ const Button = styled.button`
 
 class ImageCarousel extends Component {
   state = { isOpen: false };
-  extendCarousel = () => {
-    this.setState({ isOpen: true });
-  };
-  collapseCarousel = () => {
-    this.setState({ isOpen: false });
+
+  toggleCarousel = () => {
+    const { isOpen } = this.state;
+    this.setState({ isOpen: !isOpen });
   };
 
   render() {
@@ -50,7 +47,7 @@ class ImageCarousel extends Component {
           {this.props.imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
         </Images>
         <Grid>
-          <Button onClick={this.extendCarousel}>
+          <Button onClick={this.toggleCarousel}>
             <span>
               {this.props.imageIds.length}{' '}
             </span>
@@ -62,7 +59,7 @@ class ImageCarousel extends Component {
             />
           </Button>
           {isOpen &&
-            <ExtendedCarousel escHandler={this.collapseCarousel}>
+            <ExtendedCarousel escHandler={this.toggleCarousel}>
               {this.props.imageIds}
             </ExtendedCarousel>}
         </Grid>
