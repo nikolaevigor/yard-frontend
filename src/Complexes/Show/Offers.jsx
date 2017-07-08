@@ -4,9 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const Offers = styled.div`
-  background-color: #f4f5f9;
-`;
+const Offers = styled.div`background-color: #f4f5f9;`;
 
 const Title = styled.h2`
   padding-top: 4rem;
@@ -77,10 +75,12 @@ const CardButton = styled.button`
   margin: 2rem 4rem 1.5rem 4rem;
 `;
 
-export default () =>
+export default ({ name }) =>
   (<Offers>
     <Grid>
-      <Title>Предложения в ЖК «Полянка/44»</Title>
+      <Title>
+        Предложения в ЖК «{name}»
+      </Title>
       <Cards>
         <Row>
           <Col lg={4}>

@@ -56,7 +56,7 @@ class Show extends Component {
           <Features complex={this.state} />
           {!!fullDescription && <Description fullDescription={fullDescription} />}
           {amenities.length > 0 && <Infrastructure amenities={amenities} />}
-          <Offers />
+          <Offers name={name} />
           <Nearby />
           <Directions />
         </div>
