@@ -75,7 +75,7 @@ const CardButton = styled.button`
   margin: 2rem 4rem 1.5rem 4rem;
 `;
 
-export default ({ name }) =>
+export default ({ name }: { name: string }) =>
   (<Offers>
     <Grid>
       <Title>
