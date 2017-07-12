@@ -29,25 +29,44 @@ const Button = styled.button`
   font-weight: 300;
   line-height: 1.0;
   color: #fff;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 class ImageCarousel extends Component {
-  state = { isOpen: false };
+  state = { isOpen: false, activeItemIdx: 0 };
 
-  toggleCarousel = () => {
+  toggleCarousel = (idx: number) => {
     const { isOpen } = this.state;
-    this.setState({ isOpen: !isOpen });
+    this.setState({ isOpen: !isOpen, activeItemIdx: idx || 0 });
   };
 
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, activeItemIdx } = this.state;
     return (
       <div>
         <Images>
-          {this.props.imageIds.map(id => <Image key={id} src={getImageUrl(id)} alt="Image" />)}
+          {this.props.imageIds.map((id, idx) =>
+            (<Image
+              onClick={(e) => {
+                e.stopPropagation();
+                this.toggleCarousel(idx);
+              }}
+              key={id}
+              src={getImageUrl(id)}
+              alt="Image"
+            />),
+          )}
         </Images>
         <Grid>
-          <Button onClick={this.toggleCarousel}>
+          <Button
+            onClick={(e) => {
+              e.stopPropagation();
+              this.toggleCarousel(0);
+            }}
+          >
             <span>
               {this.props.imageIds.length}{' '}
             </span>
@@ -59,7 +78,7 @@ class ImageCarousel extends Component {
             />
           </Button>
           {isOpen &&
-            <ExtendedCarousel escHandler={this.toggleCarousel}>
+            <ExtendedCarousel activeItemIdx={activeItemIdx || 0} escHandler={this.toggleCarousel}>
               {this.props.imageIds}
             </ExtendedCarousel>}
         </Grid>
