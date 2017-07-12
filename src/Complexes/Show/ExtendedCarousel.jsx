@@ -17,21 +17,15 @@ const Carousel = styled.div`
   background-color: rgba(17, 17, 17, .95);
 `;
 
-const Item = styled.img`
-  justify-content: center;
-  align-items: stretch;
-  flex: 1 0;
-  margin-left: 6rem;
-  margin-right: 6rem;
+const ItemsWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+  padding-top: 4rem;
+  width: 100%;
+  height: 100%;
 `;
 
-const ItemWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex: 0 0 100%;
-  height: 100%;
-  z-index: 100;
-`;
+const Item = styled.img`width: 100%;`;
 
 const Counter = styled.p`
   color: #a9afb6;
@@ -41,15 +35,6 @@ const Counter = styled.p`
   line-height: 1.38;
   margin-bottom: 54px;
   padding: 0;
-`;
-
-const ItemsWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  margin-top: 64px;
-  align-items: flex-end;
-  justify-content: flex-start;
 `;
 
 const modalWindowStyle = {
@@ -83,42 +68,33 @@ class ExtendedCarousel extends Component {
         return { idx: idx + idxDelta, imageId: imageId };
       }),
       activeItem: activeItem - idxDelta,
-      offset: offset - idxDelta * 100,
+      offset: offset + idxDelta,
     });
   };
 
   getWrapperTransformation(idx) {
     const { offset } = this.state;
+
     if (idx > 0) {
       return {
-        transform: `translate3d(calc(-2rem - ${offset}%), 0, 0)`,
+        'transform-origin': 'center bottom',
+        transform: `translateX(calc(${offset * 100}% + 4rem + 50vw - 50% )) scaleY(0.83)`,
         'transition-duration': animationDuration,
-        height: '80%',
+        'max-width': '1024px',
       };
     } else if (idx === 0) {
       return {
-        transform: `translate3d(${-offset}%, 0px, 0px)`,
+        'transform-origin': 'center bottom',
+        transform: `translateX(calc(${offset * 100}% + 50vw - 50% ))`,
         'transition-duration': animationDuration,
-        height: '100%',
-        'z-index': 0,
+        'max-width': '1024px',
       };
     } else {
       return {
-        transform: `translate3d(calc(2rem - ${offset}%), 0, 0)`,
+        'transform-origin': 'center bottom',
+        transform: `translateX(calc(${offset * 100}% - 4rem + 50vw - 50% )) scaleY(0.83)`,
         'transition-duration': animationDuration,
-        height: '80%',
-      };
-    }
-  }
-
-  getItemTransformation(idx) {
-    if (idx !== 0) {
-      return {
-        'justify-content': 'center',
-        'align-items': 'stretch',
-        flex: '1 0',
-        'margin-left': '0',
-        'margin-right': '0',
+        'max-width': '1024px',
       };
     }
   }
@@ -131,21 +107,19 @@ class ExtendedCarousel extends Component {
             <ItemsWrapper>
               {this.state.items.map(({ idx, imageId }) => {
                 return (
-                  <ItemWrapper style={this.getWrapperTransformation(idx)}>
-                    <Item
-                      style={this.getItemTransformation(idx)}
-                      src={getImageUrl(imageId)}
-                      onClick={e => {
-                        if (idx > 0) {
-                          this.slide(e, false);
-                        } else if (idx < 0) {
-                          this.slide(e, true);
-                        } else {
-                          e.stopPropagation();
-                        }
-                      }}
-                    />
-                  </ItemWrapper>
+                  <Item
+                    style={this.getWrapperTransformation(idx)}
+                    src={getImageUrl(imageId, 1024)}
+                    onClick={e => {
+                      if (idx > 0) {
+                        this.slide(e, false);
+                      } else if (idx < 0) {
+                        this.slide(e, true);
+                      } else {
+                        e.stopPropagation();
+                      }
+                    }}
+                  />
                 );
               })}
             </ItemsWrapper>
