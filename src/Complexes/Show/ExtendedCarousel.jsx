@@ -7,7 +7,7 @@ import { getImageUrl } from '../../utils';
 
 const Carousel = styled.div`
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   position: fixed;
   align-items: center;
   justify-content: center;
@@ -20,14 +20,16 @@ const Carousel = styled.div`
 
 const ItemsWrapper = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   padding-top: 4rem;
   width: 100%;
+  flex: 1 1 100%;
 `;
 
 const Item = styled.img`
+  display: flex;
   max-height: 100%;
-  max-width: 50%;
+  max-width: 80%;
 `;
 
 const Counter = styled.p`
@@ -38,6 +40,7 @@ const Counter = styled.p`
   line-height: 1.38;
   margin-bottom: 54px;
   padding: 0;
+  flex: 0 0 auto;
 `;
 
 const modalWindowStyle = {
@@ -104,7 +107,7 @@ class ExtendedCarousel extends Component {
       'transform-origin': 'center bottom',
       transform: getImageTransform(activeItemIdx, idx),
       'transition-duration': animationDuration,
-      width: '100%',
+      'max-height': '100%',
     };
   }
 
