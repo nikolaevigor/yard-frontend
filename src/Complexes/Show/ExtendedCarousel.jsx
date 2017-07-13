@@ -23,9 +23,30 @@ const ItemsWrapper = styled.div`
   padding-top: 4rem;
   width: 100%;
   height: 100%;
+  @media (max-width: 1200px) {
+    max-height: 40%;
+  }
+  @media (max-width: 992px) {
+    max-height: 20%;
+  }
+  @media (max-width: 768px) {
+    max-height: 20%;
+  }
 `;
 
-const Item = styled.img`width: 100%;`;
+const Item = styled.img`
+  max-height: 100%;
+  max-width: 80%;
+  @media (max-width: 1200px) {
+    max-width: 80%;
+  }
+  @media (max-width: 992px) {
+    max-width: 80%;
+  }
+  @media (max-width: 768px) {
+    max-width: 60%;
+  }
+`;
 
 const Counter = styled.p`
   color: #a9afb6;
@@ -101,7 +122,7 @@ class ExtendedCarousel extends Component {
       'transform-origin': 'center bottom',
       transform: getImageTransform(activeItemIdx, idx),
       'transition-duration': animationDuration,
-      'max-width': '1024px',
+      width: '100%',
     };
   }
 
