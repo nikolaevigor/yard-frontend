@@ -10,6 +10,7 @@ const Carousel = styled.div`
   flex-flow: column;
   position: fixed;
   align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -22,30 +23,11 @@ const ItemsWrapper = styled.div`
   align-items: flex-end;
   padding-top: 4rem;
   width: 100%;
-  height: 100%;
-  @media (max-width: 1200px) {
-    max-height: 40%;
-  }
-  @media (max-width: 992px) {
-    max-height: 20%;
-  }
-  @media (max-width: 768px) {
-    max-height: 20%;
-  }
 `;
 
 const Item = styled.img`
   max-height: 100%;
-  max-width: 80%;
-  @media (max-width: 1200px) {
-    max-width: 80%;
-  }
-  @media (max-width: 992px) {
-    max-width: 80%;
-  }
-  @media (max-width: 768px) {
-    max-width: 60%;
-  }
+  max-width: 50%;
 `;
 
 const Counter = styled.p`
