@@ -16,6 +16,7 @@ const Carousel = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(17, 17, 17, .95);
+  overflow: hidden;
 `;
 
 const ItemsWrapper = styled.div`
@@ -55,13 +56,15 @@ const modalWindowStyle = {
 
 const animationDuration = '0.25s';
 
-function getImageTransform(activeItemIdx, idx) {
+function getImageTransform(activeItemIdx, idx, sideImageOffset = '4rem') {
   if (idx > 0) {
-    return `translateX(calc(${-activeItemIdx * 100}% + 4rem + 50vw - 50% )) scaleY(0.83)`;
+    return `translateX(calc(${-activeItemIdx *
+      100}% + ${sideImageOffset} + 50vw - 50% )) scaleY(0.83)`;
   } else if (!idx) {
     return `translateX(calc(${-activeItemIdx * 100}% + 50vw - 50% ))`;
   }
-  return `translateX(calc(${-activeItemIdx * 100}% - 4rem + 50vw - 50% )) scaleY(0.83)`;
+  return `translateX(calc(${-activeItemIdx *
+    100}% - ${sideImageOffset} + 50vw - 50% )) scaleY(0.83)`;
 }
 
 /* eslint-disable */
@@ -119,6 +122,7 @@ class ExtendedCarousel extends Component {
     const { image } = items[activeItemIdx];
     const { width, height } = image;
     const aspectRatio = width / height;
+    const sideImageOffset = windowWidth > 768 ? '4rem' : '1rem';
 
     let elementWidth, elementHeight;
     if (windowWidth >= aspectRatio * windowHeight) {
@@ -131,7 +135,7 @@ class ExtendedCarousel extends Component {
 
     return {
       'transform-origin': 'center bottom',
-      transform: getImageTransform(activeItemIdx, idx),
+      transform: getImageTransform(activeItemIdx, idx, sideImageOffset),
       'transition-duration': animationDuration,
       'max-height': '100%',
       width: elementWidth,
