@@ -15,6 +15,7 @@ const Carousel = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  min-height: 450px;
   background-color: rgba(17, 17, 17, .95);
 `;
 
@@ -23,13 +24,24 @@ const ItemsWrapper = styled.div`
   align-items: flex-start;
   padding-top: 4rem;
   width: 100%;
-  flex: 1 1 100%;
 `;
 
 const Item = styled.img`
   display: flex;
   max-height: 100%;
   max-width: 80%;
+  @media (max-height: 1200px) {
+    max-width: 60%;
+  }
+  @media (max-height: 992px) {
+    max-width: 40%;
+  }
+  @media (max-height: 768px) {
+    max-width: 20%;
+  }
+  @media (max-width: 992px) {
+    max-width: 40%;
+  }
 `;
 
 const Counter = styled.p`
@@ -40,7 +52,6 @@ const Counter = styled.p`
   line-height: 1.38;
   margin-bottom: 54px;
   padding: 0;
-  flex: 0 0 auto;
 `;
 
 const modalWindowStyle = {
