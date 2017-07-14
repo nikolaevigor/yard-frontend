@@ -15,33 +15,23 @@ const Carousel = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  min-height: 450px;
   background-color: rgba(17, 17, 17, .95);
 `;
 
 const ItemsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  padding-top: 4rem;
   width: 100%;
+
+  @media (min-height: 600px) {
+    padding-top: 4rem;
+  }
 `;
 
 const Item = styled.img`
   display: flex;
   max-height: 100%;
   max-width: 80%;
-  @media (max-height: 1200px) {
-    max-width: 60%;
-  }
-  @media (max-height: 992px) {
-    max-width: 40%;
-  }
-  @media (max-height: 768px) {
-    max-width: 20%;
-  }
-  @media (max-width: 992px) {
-    max-width: 40%;
-  }
 `;
 
 const Counter = styled.p`
@@ -50,8 +40,11 @@ const Counter = styled.p`
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.38;
-  margin-bottom: 54px;
   padding: 0;
+
+  @media (min-height: 600px) {
+    margin-bottom: 54px;
+  }
 `;
 
 const modalWindowStyle = {
@@ -80,18 +73,28 @@ class ExtendedCarousel extends Component {
 
     this.state = {
       items: [...Array(children.length).keys()].map(idx => {
-        return { idx: initialIdxs[idx], imageId: children[idx] };
+        return { idx: initialIdxs[idx], image: children[idx] };
       }),
       activeItemIdx: activeItemIdx || 0,
+      width: '0',
+      height: '0',
     };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
     window.addEventListener('keydown', this.handleKeyDown);
   }
 
   componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
     window.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   slide = (e, direction) => {
@@ -101,8 +104,8 @@ class ExtendedCarousel extends Component {
     const newActiveItemIdx =
       activeItemIdx - idxDelta < 0 ? items.length - 1 : (activeItemIdx - idxDelta) % items.length;
     const newIdxs = [...Array(items.length).keys()].map(idx => idx - newActiveItemIdx);
-    const updatedItems = items.map(({ imageId }, idx) => {
-      return { idx: newIdxs[idx], imageId: imageId };
+    const updatedItems = items.map(({ image }, idx) => {
+      return { idx: newIdxs[idx], image: image };
     });
 
     this.setState({
@@ -112,13 +115,27 @@ class ExtendedCarousel extends Component {
   };
 
   getItemTransformation(idx) {
-    const { activeItemIdx } = this.state;
+    const { items, activeItemIdx, width: windowWidth, height: windowHeight } = this.state;
+    const { image } = items[activeItemIdx];
+    const { width, height } = image;
+    const aspectRatio = width / height;
+
+    let elementWidth, elementHeight;
+    if (windowWidth >= aspectRatio * windowHeight) {
+      elementHeight = 0.7 * windowHeight;
+      elementWidth = aspectRatio * elementHeight;
+    } else {
+      elementWidth = 0.7 * windowWidth;
+      elementHeight = elementWidth / aspectRatio;
+    }
 
     return {
       'transform-origin': 'center bottom',
       transform: getImageTransform(activeItemIdx, idx),
       'transition-duration': animationDuration,
       'max-height': '100%',
+      width: elementWidth,
+      height: elementHeight,
     };
   }
 
@@ -141,12 +158,12 @@ class ExtendedCarousel extends Component {
             }}
           >
             <ItemsWrapper>
-              {items.map(({ idx, imageId }) => {
+              {items.map(({ idx, image }) => {
                 return (
                   <Item
-                    key={imageId}
+                    key={image.id}
                     style={this.getItemTransformation(idx)}
-                    src={getImageUrl(imageId, 1024)}
+                    src={getImageUrl(image.id, 1024)}
                     onClick={e => {
                       if (idx > 0) {
                         this.slide(e, false);

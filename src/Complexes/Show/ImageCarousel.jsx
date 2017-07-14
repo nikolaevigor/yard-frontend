@@ -48,14 +48,14 @@ class ImageCarousel extends Component {
     return (
       <div>
         <Images>
-          {this.props.imageIds.map((id, idx) =>
+          {this.props.images.map((item, idx) =>
             (<Image
               onClick={(e) => {
                 e.stopPropagation();
                 this.toggleCarousel(idx);
               }}
-              key={id}
-              src={getImageUrl(id)}
+              key={item.id}
+              src={getImageUrl(item.id)}
               alt="Image"
             />),
           )}
@@ -68,10 +68,10 @@ class ImageCarousel extends Component {
             }}
           >
             <span>
-              {this.props.imageIds.length}{' '}
+              {this.props.images.length}{' '}
             </span>
             <Pluralizer
-              amount={this.props.imageIds.length}
+              amount={this.props.images.length}
               one="фотография"
               few="фотографии"
               other="фотографий"
@@ -79,7 +79,7 @@ class ImageCarousel extends Component {
           </Button>
           {isOpen &&
             <ExtendedCarousel activeItemIdx={activeItemIdx || 0} escHandler={this.toggleCarousel}>
-              {this.props.imageIds}
+              {this.props.images}
             </ExtendedCarousel>}
         </Grid>
       </div>

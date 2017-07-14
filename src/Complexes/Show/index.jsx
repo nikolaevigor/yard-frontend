@@ -51,7 +51,7 @@ class Show extends Component {
       <BodyClassName className="complex">
         <div>
           <ApartmentHeader name={name} location={location} />
-          <ImageCarousel imageIds={images.map(image => image.id)} />
+          <ImageCarousel images={images} />
           <Summary units={units} architect={architect} developer={developer} />
           <Features complex={this.state} />
           {!!fullDescription && <Description fullDescription={fullDescription} />}
