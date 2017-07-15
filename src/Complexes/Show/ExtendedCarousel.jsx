@@ -50,6 +50,13 @@ const Counter = styled.p`
   @media (min-height: 768px) {
     margin-bottom: 54px;
   }
+  @media (max-height: 500px) {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  @media (max-height: 332px) {
+    display: none;
+  }
 `;
 
 const modalWindowStyle = {
@@ -128,7 +135,7 @@ class ExtendedCarousel extends Component {
     const { width, height } = image;
     const aspectRatio = width / height;
     const sideImageOffset = windowWidth > 768 ? '4rem' : '1rem';
-    const scaleFactor = windowHeight > 768 ? 0.7 : 0.8;
+    const scaleFactor = windowHeight > 768 ? 0.7 : 0.9;
 
     let elementWidth, elementHeight;
     if (windowWidth >= aspectRatio * windowHeight) {
@@ -159,7 +166,6 @@ class ExtendedCarousel extends Component {
 
   render() {
     const { items, width: windowWidth, height: windowHeight } = this.state;
-    console.log('render', windowWidth, windowHeight);
     return (
       <RenderInBody style={modalWindowStyle}>
         <BodyClassName className="modal-opened">
