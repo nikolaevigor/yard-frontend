@@ -17,6 +17,10 @@ body {
   background: #fff;
 }
 
+.App {
+  overflow: hidden;
+}
+
 .modal-opened {
-  overflow-y: hidden;
+  overflow: hidden;
 }

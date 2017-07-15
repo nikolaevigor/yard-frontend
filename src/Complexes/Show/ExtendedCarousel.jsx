@@ -14,6 +14,8 @@ const Carousel = styled.div`
   top: 0;
   left: 0;
   width: 100%;
+  max-height: 100vh;
+  max-width: 100vw;
   height: 100%;
   background-color: rgba(17, 17, 17, .95);
   overflow: hidden;
@@ -24,7 +26,7 @@ const ItemsWrapper = styled.div`
   align-items: flex-start;
   width: 100%;
 
-  @media (min-height: 600px) {
+  @media (min-height: 768px) {
     padding-top: 4rem;
   }
 `;
@@ -42,14 +44,17 @@ const Counter = styled.p`
   font-weight: 300;
   line-height: 1.38;
   padding: 0;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 
-  @media (min-height: 600px) {
+  @media (min-height: 768px) {
     margin-bottom: 54px;
   }
 `;
 
 const modalWindowStyle = {
   position: 'absolute',
+  overflow: 'hidden',
   top: 0,
   left: 0,
 };
@@ -123,13 +128,14 @@ class ExtendedCarousel extends Component {
     const { width, height } = image;
     const aspectRatio = width / height;
     const sideImageOffset = windowWidth > 768 ? '4rem' : '1rem';
+    const scaleFactor = windowHeight > 768 ? 0.7 : 0.8;
 
     let elementWidth, elementHeight;
     if (windowWidth >= aspectRatio * windowHeight) {
-      elementHeight = 0.7 * windowHeight;
+      elementHeight = scaleFactor * windowHeight;
       elementWidth = aspectRatio * elementHeight;
     } else {
-      elementWidth = 0.7 * windowWidth;
+      elementWidth = scaleFactor * windowWidth;
       elementHeight = elementWidth / aspectRatio;
     }
 
@@ -137,6 +143,7 @@ class ExtendedCarousel extends Component {
       'transform-origin': 'center bottom',
       transform: getImageTransform(activeItemIdx, idx, sideImageOffset),
       'transition-duration': animationDuration,
+      opacity: !idx ? 1.0 : 0.5,
       'max-height': '100%',
       width: elementWidth,
       height: elementHeight,
@@ -151,8 +158,8 @@ class ExtendedCarousel extends Component {
   };
 
   render() {
-    const { items } = this.state;
-
+    const { items, width: windowWidth, height: windowHeight } = this.state;
+    console.log('render', windowWidth, windowHeight);
     return (
       <RenderInBody style={modalWindowStyle}>
         <BodyClassName className="modal-opened">
