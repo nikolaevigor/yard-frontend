@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 
 export default () =>
   (<Wrapper>
-    <Row center="lg">
+    <Row center="xs">
       <img src={CompassDevelopmentLogo} alt="Compass Development Logo" />
     </Row>
   </Wrapper>);
