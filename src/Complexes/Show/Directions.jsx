@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
-import Map from './MapBox';
+import MapBox from './MapBox';
 import SeparationLine from './SeparationLine';
 import type { Location as LocationType } from '../types';
 
@@ -57,7 +57,7 @@ export default ({ location }: Props) => {
   return (
     <Grid>
       <Wrapper>
-        <Map latitude={parseFloat(latitude)} longitude={parseFloat(longitude)} />
+        <MapBox latitude={parseFloat(latitude)} longitude={parseFloat(longitude)} />
         <Places>
           <Place>
             <PlaceName>Красный Октябрь</PlaceName>
