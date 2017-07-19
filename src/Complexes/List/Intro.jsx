@@ -12,6 +12,10 @@ const Title = styled.h2`
   line-height: 1.5;
   margin: 0;
   color: #3e4247;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const Text = styled.p`
@@ -53,6 +57,10 @@ const Content = styled.div`
 
 const Intro = styled.div`
   margin-top: 4rem;
+
+  @media (max-width: 768px) {
+    margin: 2rem 0.5rem 0 0.5rem;
+  }
 `;
 
 export default () =>
@@ -63,8 +71,8 @@ export default () =>
           <Title>Discover Our New Developments</Title>
           <Text>
             Compass brings a modern approach to new development marketing and sales. From boutique
-            rental conversions
-            to luxurious ground-up condominiums, browse our portfolio of current offerings.
+            rental conversions to luxurious ground-up condominiums, browse our portfolio of current
+            offerings.
           </Text>
           <ContactTeam>
             <Button>Contact The Team</Button>

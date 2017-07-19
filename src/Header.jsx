@@ -10,6 +10,10 @@ import logo from './img/compass-logo.svg';
 const Header = styled.header`
   background: #fff;
   border-bottom: solid 1px #e0e0e1;
+
+  @media (max-width: 768px) {
+    max-height: 3rem;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -24,6 +28,10 @@ const Nav = styled.nav`
   margin-bottom: 20px;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -50,6 +58,14 @@ const NavLink = styled(Link)`
 const CompassLogo = styled.img`
   margin-top: 20px;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    width: 7.5rem;
+    height: 1rem;
+  }
 `;
 
 export default () =>
