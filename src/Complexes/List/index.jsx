@@ -14,7 +14,11 @@ import { get } from '../../api';
 import type { Complex as ComplexType } from '../types';
 
 const Cards = styled.div`
-  margin: 4rem 8rem 6rem 8rem;
+  margin: 4rem 0 6rem 0;
+
+  @media (max-width: 1200px) {
+    margin: 2rem 0.5rem 4rem 0.5rem;
+  }
 `;
 
 type Location = {
@@ -60,17 +64,17 @@ class List extends Component {
       <BodyClassName className="complexes">
         <div>
           <CompassDevelopmentBlock />
-          <Intro />
-          <Cards>
-            <Grid>
+          <Grid>
+            <Intro />
+            <Cards>
               {complexes.map((complex) => {
                 if (complex.images.length > 0) {
                   return renderCard(complex, getImageUrl(complex.images[0].id));
                 }
                 return renderCard(complex, 'http://via.placeholder.com/490x350');
               })}
-            </Grid>
-          </Cards>
+            </Cards>
+          </Grid>
         </div>
       </BodyClassName>
     );

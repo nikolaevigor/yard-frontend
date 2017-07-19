@@ -9,6 +9,10 @@ const Wrapper = styled.div`
   padding: 80px 0;
   overflow: hidden;
   background-color: #000;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export default () =>

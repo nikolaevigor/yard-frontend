@@ -74,47 +74,57 @@ const Legal = styled.p`
   line-height: 16px;
   color: #a9afb6;
   margin-top: 96px;
+
+  @media (max-width: 768px) {
+    margin: 0 0.5rem;
+    margin-bottom: 20px;
+  }
 `;
 
-const ArrowImg = styled.img`
-  margin-left: 8px;
-`;
+const ArrowImg = styled.img`margin-left: 8px;`;
+
+const XsWrapper = styled.div`@media (max-width: 768px) {margin: 0 0.5rem 3rem 0.5rem;}`;
 
 export default () =>
   (<Footer>
     <Grid>
       <Row>
-        <Col lg={2}>
-          <CredentialsTitle>ООО «Ярд»</CredentialsTitle>
-          <Credentials>ОГРН 1175074002531</Credentials>
-          <Credentials>ИНН 5036165365</Credentials>
-          <Credentials>+7 (999) 821-14-88</Credentials>
+        <Col xs={12} lg={2}>
+          <XsWrapper>
+            <CredentialsTitle>ООО «Ярд»</CredentialsTitle>
+            <Credentials>ОГРН 1175074002531</Credentials>
+            <Credentials>ИНН 5036165365</Credentials>
+            <Credentials>+7 (999) 821-14-88</Credentials>
+          </XsWrapper>
         </Col>
-        <Col lgOffset={2} lg={2}>
-          <Line />
-          <Title>Жилые комплексы</Title>
-          <Link href="#">ВТБ Арена Парк</Link>
-          <Link href="#">Садовые кварталы</Link>
-          <Link href="#">Резиденция Монэ</Link>
-          <ArrowLink href="#">
-            Все ЖК Москвы
-            <ArrowImg src={ArrowImage} alt="Arrow" />
-          </ArrowLink>
+        <Col xs={12} lgOffset={2} lg={2}>
+          <XsWrapper>
+            <Line />
+            <Title>Жилые комплексы</Title>
+            <Link href="#">ВТБ Арена Парк</Link>
+            <Link href="#">Садовые кварталы</Link>
+            <Link href="#">Резиденция Монэ</Link>
+            <ArrowLink href="#">
+              Все ЖК Москвы
+              <ArrowImg src={ArrowImage} alt="Arrow" />
+            </ArrowLink>
+          </XsWrapper>
         </Col>
-        <Col lg={2}>
-          <Line />
-          <Title>Компания</Title>
-          <Link href="#">Команда</Link>
-          <Link href="#">О компании</Link>
+        <Col xs={12} lg={2}>
+          <XsWrapper>
+            <Line />
+            <Title>Компания</Title>
+            <Link href="#">Команда</Link>
+            <Link href="#">О компании</Link>
+          </XsWrapper>
         </Col>
       </Row>
       <Row>
-        <Col lgOffset={4} lg={8}>
+        <Col xs={12} lgOffset={4} lg={8}>
           <Legal>
             Любая информация, представленная на данном сайте, носит исключительно информационный
-            характер и ни при
-            каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК
-            РФ. © ООО «Ярд», 2017
+            характер и ни при каких условиях не является публичной офертой, определяемой положениями
+            статьи 437 ГК РФ. © ООО «Ярд», 2017
           </Legal>
         </Col>
       </Row>
