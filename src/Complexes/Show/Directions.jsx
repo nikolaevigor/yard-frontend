@@ -52,12 +52,12 @@ type Props = {
 };
 
 export default ({ location }: Props) => {
-  const { latitude = 50, longitude = 50 }: LocationType = location;
+  const { latitude = 55.75222, longitude = 37.61556 }: LocationType = location;
 
   return (
     <Grid>
       <Wrapper>
-        <Map latitude={Number(latitude)} longitude={Number(longitude)} />
+        <Map latitude={parseFloat(latitude)} longitude={parseFloat(longitude)} />
         <Places>
           <Place>
             <PlaceName>Красный Октябрь</PlaceName>

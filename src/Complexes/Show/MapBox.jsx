@@ -6,9 +6,8 @@ import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 
 import type { Location as LocationType } from '../types';
 
-const Map = ReactMapboxGl({
-  accessToken:
-    'pk.eyJ1IjoianVzdHVzZWJyYWluIiwiYSI6ImNpbHV1dWlmYTAwNmp2Zm02NjZkZmIybGkifQ.feSAgXjbU00mlAjBQyv1lQ',
+const MapBox = ReactMapboxGl({
+  accessToken: process.env.MAPBOX_TOKEN,
 });
 
 const containerStyle = {
@@ -19,9 +18,9 @@ const containerStyle = {
   'box-shadow': '0 0 30px 0 rgba(0, 0, 0, .5)',
 };
 
-export default ({ latitude = 0, longitude = 0 }: LocationType) =>
-  (<Map zoom={[16]} style="mapbox://styles/mapbox/streets-v9" containerStyle={containerStyle}>
+export default ({ latitude = 55.75222, longitude = 37.61556 }: LocationType) =>
+  (<MapBox zoom={[16]} style="mapbox://styles/mapbox/streets-v9" containerStyle={containerStyle}>
     <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
       <Feature coordinates={[latitude, longitude]} />
     </Layer>
-  </Map>);
+  </MapBox>);
