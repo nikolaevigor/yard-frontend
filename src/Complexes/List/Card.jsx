@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import type { Children } from 'react';
 
+import breakpoints from '../../breakpoints';
+
 const Card = styled(Link)`
   display: flex;
   flex: 1 0 100%;
@@ -21,14 +23,14 @@ const Card = styled(Link)`
     margin-top: 0;
   }
 
-  @media (max-width:992px) {
+  ${breakpoints.to.md`
     display: block;
-  }
+  `};
 
-  @media (max-width: 768px) {
+  ${breakpoints.to.sm`
     width: 100%;
     margin-bottom: 2rem;
-  }
+  `};
 `;
 
 const Geo = styled.p`
@@ -38,9 +40,9 @@ const Geo = styled.p`
   margin: 0;
   text-transform: uppercase;
 
-  @media (max-width: 768px) {
+  ${breakpoints.to.sm`
     font-size: 1rem;
-  }
+  `};
 `;
 
 const Title = styled.h3`
@@ -53,10 +55,10 @@ const Title = styled.h3`
   margin-top: 1.5rem;
   margin-bottom: 0;
 
-  @media (max-width: 768px) {
+  ${breakpoints.to.sm`
     font-size: 2rem;
     line-height: 40px;
-  }
+  `};
 `;
 
 const Info = styled.p`
@@ -81,10 +83,10 @@ const Thumbnail = styled.img`
   flex-shrink: 0;
   object-fit: cover;
 
-  @media (max-width: 992px) {
+  ${breakpoints.to.md`
     width: 100%;
     height: auto;
-  }
+  `};
 `;
 
 type CardProps = {

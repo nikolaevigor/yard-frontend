@@ -12,13 +12,14 @@ import Card from './Card';
 import { getImageUrl } from '../../utils';
 import { get } from '../../api';
 import type { Complex as ComplexType } from '../types';
+import breakpoints from '../../breakpoints';
 
 const Cards = styled.div`
   margin: 4rem 0 6rem 0;
 
-  @media (max-width: 1200px) {
+  ${breakpoints.to.lg`
     margin: 2rem 1rem 4rem 1rem;
-  }
+  `};
 `;
 
 type Location = {
