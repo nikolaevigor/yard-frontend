@@ -83,7 +83,7 @@ const Legal = styled.p`
 
 const ArrowImg = styled.img`margin-left: 8px;`;
 
-const XsWrapper = styled.div`@media (max-width: 768px) {margin: 0 0.5rem 3rem 0.5rem;}`;
+const XsWrapper = styled.div`@media (max-width: 768px) {margin: 0 1rem 3rem 1rem;}`;
 
 export default () =>
   (<Footer>

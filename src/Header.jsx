@@ -62,7 +62,7 @@ const CompassLogo = styled.img`
   @media (max-width: 768px) {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     width: 7.5rem;
     height: 1rem;
   }

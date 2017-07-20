@@ -17,7 +17,7 @@ const Cards = styled.div`
   margin: 4rem 0 6rem 0;
 
   @media (max-width: 1200px) {
-    margin: 2rem 0.5rem 4rem 0.5rem;
+    margin: 2rem 1rem 4rem 1rem;
   }
 `;
 
