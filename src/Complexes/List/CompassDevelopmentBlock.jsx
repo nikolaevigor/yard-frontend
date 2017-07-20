@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   overflow: hidden;
   background-color: #000;
 
-  ${breakpoints.to.sm`
+  ${breakpoints.toSm`
     display: none;
   `};
 `;

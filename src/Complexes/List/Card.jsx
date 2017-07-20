@@ -23,11 +23,11 @@ const Card = styled(Link)`
     margin-top: 0;
   }
 
-  ${breakpoints.to.md`
+  ${breakpoints.toMd`
     display: block;
   `};
 
-  ${breakpoints.to.sm`
+  ${breakpoints.toSm`
     width: 100%;
     margin-bottom: 2rem;
   `};
@@ -40,7 +40,7 @@ const Geo = styled.p`
   margin: 0;
   text-transform: uppercase;
 
-  ${breakpoints.to.sm`
+  ${breakpoints.toSm`
     font-size: 1rem;
   `};
 `;
@@ -55,7 +55,7 @@ const Title = styled.h3`
   margin-top: 1.5rem;
   margin-bottom: 0;
 
-  ${breakpoints.to.sm`
+  ${breakpoints.toSm`
     font-size: 2rem;
     line-height: 40px;
   `};
@@ -83,7 +83,7 @@ const Thumbnail = styled.img`
   flex-shrink: 0;
   object-fit: cover;
 
-  ${breakpoints.to.md`
+  ${breakpoints.toMd`
     width: 100%;
     height: auto;
   `};

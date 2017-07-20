@@ -1,7 +1,19 @@
-import { generateMedia } from 'styled-media-query';
+import { css } from 'styled-components';
 
-export default generateMedia({
-  sm: '768px',
-  md: '992px',
-  lg: '1200px',
-});
+export default {
+  toSm: (...args) => css`
+    @media (max-width: 768px) {
+      ${css(...args)}
+    }
+  `,
+  toMd: (...args) => css`
+    @media (max-width: 992px) {
+      ${css(...args)}
+    }
+  `,
+  toLg: (...args) => css`
+    @media (max-width: 1200px) {
+      ${css(...args)}
+    }
+  `,
+};

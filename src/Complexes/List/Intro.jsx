@@ -15,7 +15,7 @@ const Title = styled.h2`
   margin: 0;
   color: #3e4247;
 
-  ${breakpoints.to.sm`
+  ${breakpoints.toSm`
     font-size: 20px;
   `};
 `;
@@ -60,7 +60,7 @@ const Content = styled.div`
 const Intro = styled.div`
   margin-top: 4rem;
 
-  ${breakpoints.to.sm`
+  ${breakpoints.toSm`
     margin: 2rem 0.5rem 0 0.5rem;
   `};
 `;
