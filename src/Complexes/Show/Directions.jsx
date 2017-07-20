@@ -57,7 +57,7 @@ export default ({ location }: Props) => {
   return (
     <Grid>
       <Wrapper>
-        <MapBox latitude={parseFloat(latitude)} longitude={parseFloat(longitude)} />
+        <MapBox latitude={latitude} longitude={longitude} />
         <Places>
           <Place>
             <PlaceName>Красный Октябрь</PlaceName>

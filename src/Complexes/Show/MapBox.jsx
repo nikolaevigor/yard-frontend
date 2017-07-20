@@ -21,6 +21,6 @@ const containerStyle = {
 export default ({ latitude = 55.75222, longitude = 37.61556 }: LocationType) =>
   (<MapBox zoom={[16]} style="mapbox://styles/mapbox/streets-v9" containerStyle={containerStyle}>
     <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-      <Feature coordinates={[latitude, longitude]} />
+      <Feature coordinates={[parseFloat(latitude), parseFloat(longitude)]} />
     </Layer>
   </MapBox>);
