@@ -13,6 +13,7 @@ import { getImageUrl, media } from '../../utils';
 import { get } from '../../api';
 import type { Complex as ComplexType } from '../types';
 
+
 const Cards = styled.div`
   margin: 2rem 1rem 4rem 1rem;
 
@@ -22,8 +23,8 @@ const Cards = styled.div`
 `;
 
 type Location = {
-  subLocalityName: string,
-  street: string,
+  subLocalityName?: string,
+  street?: string,
 };
 
 function formatLocation({ subLocalityName, street }: Location): string {
