@@ -4,19 +4,19 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Col } from 'react-flexbox-grid';
 
-import breakpoints from '../../breakpoints';
+import { media } from '../../utils';
 
 const Title = styled.h2`
   text-align: center;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 20px;
   line-height: 1.5;
   margin: 0;
   color: #3e4247;
 
-  ${breakpoints.toSm`
-    font-size: 20px;
+  ${media.fromSm`
+    font-size: 1.5rem;
   `};
 `;
 
@@ -58,10 +58,10 @@ const Content = styled.div`
 `;
 
 const Intro = styled.div`
-  margin-top: 4rem;
+  margin: 2rem 0.5rem 0 0.5rem;
 
-  ${breakpoints.toSm`
-    margin: 2rem 0.5rem 0 0.5rem;
+  ${media.fromSm`
+    margin-top: 4rem;
   `};
 `;
 

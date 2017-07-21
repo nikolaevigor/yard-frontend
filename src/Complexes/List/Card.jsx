@@ -5,15 +5,16 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import type { Children } from 'react';
 
-import breakpoints from '../../breakpoints';
+import { media } from '../../utils';
 
 const Card = styled(Link)`
-  display: flex;
+  display: block;
   flex: 1 0 100%;
   background: #fff;
   text-decoration: none;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   border-bottom: solid 2px #646971;
+  width: 100%;
 
   &:hover {
     box-shadow: 0 0 20px rgba(0,0,0,.3);
@@ -23,14 +24,15 @@ const Card = styled(Link)`
     margin-top: 0;
   }
 
-  ${breakpoints.toMd`
-    display: block;
+  ${media.fromMd`
+    display: flex;
   `};
 
-  ${breakpoints.toSm`
-    width: 100%;
-    margin-bottom: 2rem;
+  ${media.fromSm`
+    width: auto;
+    margin-bottom: 3rem;
   `};
+
 `;
 
 const Geo = styled.p`
@@ -39,10 +41,7 @@ const Geo = styled.p`
   font-family: Monaco;
   margin: 0;
   text-transform: uppercase;
-
-  ${breakpoints.toSm`
-    font-size: 1rem;
-  `};
+  font-size: 1rem;
 `;
 
 const Title = styled.h3`
@@ -50,14 +49,14 @@ const Title = styled.h3`
   color: #000;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 56px;
+  font-size: 2rem;
+  line-height: 40px;
   margin-top: 1.5rem;
   margin-bottom: 0;
 
-  ${breakpoints.toSm`
-    font-size: 2rem;
-    line-height: 40px;
+  ${media.fromSm`
+    font-size: 40px;
+    line-height: 56px;
   `};
 `;
 
@@ -78,14 +77,14 @@ const Content = styled.div`
 `;
 
 const Thumbnail = styled.img`
-  width: 484px;
-  height: 350px;
+  width: 100%;
+  height: auto;
   flex-shrink: 0;
   object-fit: cover;
 
-  ${breakpoints.toMd`
-    width: 100%;
-    height: auto;
+  ${media.fromMd`
+    width: 484px;
+    height: 350px;
   `};
 `;
 

@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import ArrowImage from './img/arrow.svg';
 
+import { media } from './utils';
+
 const Footer = styled.footer`
   padding-top: 32px;
   padding-bottom: 28px;
@@ -73,12 +75,13 @@ const Legal = styled.p`
   font-size: 11px;
   line-height: 16px;
   color: #a9afb6;
-  margin-top: 96px;
+  margin: 0 0.5rem;
+  margin-bottom: 20px;
 
-  @media (max-width: 768px) {
-    margin: 0 0.5rem;
-    margin-bottom: 20px;
-  }
+  ${media.fromSm`
+    margin: 0;
+    margin-top: 96px;
+  `};
 `;
 
 const ArrowImg = styled.img`margin-left: 8px;`;

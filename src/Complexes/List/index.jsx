@@ -9,16 +9,15 @@ import BodyClassName from 'react-body-classname';
 import CompassDevelopmentBlock from './CompassDevelopmentBlock';
 import Intro from './Intro';
 import Card from './Card';
-import { getImageUrl } from '../../utils';
+import { getImageUrl, media } from '../../utils';
 import { get } from '../../api';
 import type { Complex as ComplexType } from '../types';
-import breakpoints from '../../breakpoints';
 
 const Cards = styled.div`
-  margin: 4rem 0 6rem 0;
+  margin: 2rem 1rem 4rem 1rem;
 
-  ${breakpoints.toLg`
-    margin: 2rem 1rem 4rem 1rem;
+  ${media.fromLg`
+    margin: 4rem 0 6rem 0;
   `};
 `;
 

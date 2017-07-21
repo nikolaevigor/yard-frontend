@@ -5,15 +5,16 @@ import styled from 'styled-components';
 import { Row } from 'react-flexbox-grid';
 import CompassDevelopmentLogo from '../../img/compass-development-logo.svg';
 
-import breakpoints from '../../breakpoints';
+import { media } from '../../utils';
 
 const Wrapper = styled.div`
+  display: none;
   padding: 80px 0;
   overflow: hidden;
   background-color: #000;
 
-  ${breakpoints.toSm`
-    display: none;
+  ${media.fromSm`
+    display: block;
   `};
 `;
 
