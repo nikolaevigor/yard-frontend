@@ -3,8 +3,8 @@
 
 type Range = {
   to: number,
-  from: number
-}
+  from: number,
+};
 
 type Details = {
   architect: string,
@@ -20,7 +20,23 @@ type Details = {
   security: string,
   undergroundGarages: number,
   constructionKind: string,
-}
+};
+
+type Location = {
+  latitude?: number,
+  localityId?: ?number,
+  subLocalityName?: string,
+  subwayIds?: Array<number>,
+  countryName?: ?string,
+  longitude?: number,
+  postalCode?: ?number,
+  countryId?: ?number,
+  house?: ?number,
+  localityName?: ?string,
+  street?: string,
+  regionId?: ?number,
+  regionName?: ?string,
+};
 
 type Complex = {
   commissioningYear: number,
@@ -33,21 +49,7 @@ type Complex = {
   },
   name: string,
   updatedAt: string,
-  location: {
-    latitude: ?number,
-    localityId: ?number,
-    subLocalityName: string,
-    subwayIds: Array<number>,
-    countryName: ?string,
-    longitude: ?number,
-    postalCode: ?number,
-    countryId: ?number,
-    house: ?number,
-    localityName: ?string,
-    street: string,
-    regionId: ?number,
-    regionName: ?string,
-  },
+  location: Location,
   state: string,
   units: number,
   amenities: Array<string>,
@@ -120,4 +122,4 @@ type Complex = {
   accreditors: Array<number>,
 };
 
-export type { Complex, Details, Range };
+export type { Complex, Details, Range, Location };

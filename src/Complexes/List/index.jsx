@@ -14,6 +14,7 @@ import { get } from '../../api';
 import type { Complex as ComplexType } from '../types';
 import breakpoints from '../../breakpoints';
 
+
 const Cards = styled.div`
   margin: 4rem 0 6rem 0;
 
@@ -23,8 +24,8 @@ const Cards = styled.div`
 `;
 
 type Location = {
-  subLocalityName: string,
-  street: string,
+  subLocalityName?: string,
+  street?: string,
 };
 
 function formatLocation({ subLocalityName, street }: Location): string {
