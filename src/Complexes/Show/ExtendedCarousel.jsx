@@ -172,6 +172,16 @@ class ExtendedCarousel extends Component {
     if (e.keyCode === 27) this.props.escHandler();
   };
 
+  onClick = (e, idx) => {
+    if (idx > 0) {
+      this.slide(e, false);
+    } else if (idx < 0) {
+      this.slide(e, true);
+    } else {
+      e.stopPropagation();
+    }
+  };
+
   render() {
     const { items, width: windowWidth, height: windowHeight } = this.state;
     return (
@@ -189,15 +199,7 @@ class ExtendedCarousel extends Component {
                     key={image.id}
                     style={this.getItemTransformation(idx)}
                     src={getImageUrl(image.id, 1024)}
-                    onClick={e => {
-                      if (idx > 0) {
-                        this.slide(e, false);
-                      } else if (idx < 0) {
-                        this.slide(e, true);
-                      } else {
-                        e.stopPropagation();
-                      }
-                    }}
+                    onClick={e => this.onClick(e, idx)}
                   />
                 );
               })}
