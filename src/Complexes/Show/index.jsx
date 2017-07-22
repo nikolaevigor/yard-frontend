@@ -58,7 +58,7 @@ class Show extends Component {
           {amenities.length > 0 && <Infrastructure amenities={amenities} />}
           <Offers name={name} />
           <Nearby />
-          <Directions />
+          <Directions location={location} />
         </div>
       </BodyClassName>
     );

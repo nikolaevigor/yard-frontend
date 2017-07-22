@@ -7,9 +7,16 @@ import { Link } from 'react-router-dom';
 
 import logo from './img/compass-logo.svg';
 
+import { media } from './utils';
+
 const Header = styled.header`
   background: #fff;
   border-bottom: solid 1px #e0e0e1;
+  max-height: 3rem;
+
+  ${media.fromSm`
+    max-height: none;
+  `};
 `;
 
 const Wrapper = styled.div`
@@ -18,12 +25,16 @@ const Wrapper = styled.div`
 `;
 
 const Nav = styled.nav`
-  display: flex;
+  display: none;
   line-height: 16px;
   margin-top: 20px;
   margin-bottom: 20px;
   justify-content: space-between;
   align-items: center;
+
+  ${media.fromSm`
+    display: flex;
+  `};
 `;
 
 const NavLink = styled(Link)`
@@ -48,8 +59,16 @@ const NavLink = styled(Link)`
 `;
 
 const CompassLogo = styled.img`
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  width: 7.5rem;
+  height: 1rem;
+
+  ${media.fromSm`
+    margin-top: 20px;
+    margin-bottom: 20px;
+  `};
 `;
 
 export default () =>

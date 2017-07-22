@@ -4,6 +4,7 @@ body {
   font-family: sans-serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .complexes {
