@@ -42,6 +42,7 @@ const Item = styled.img`
   max-height: 80vh;
   max-width: 80vw;
   will-change: contents;
+  cursor: pointer;
 `;
 
 const Counter = styled.p`

@@ -15,7 +15,14 @@ const Images = styled.div`
   overflow: scroll;
 `;
 
-const Image = styled.img`height: 400px;`;
+const Image = styled.img`
+  height: 400px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+`;
 
 const Button = styled.button`
   position: absolute;
