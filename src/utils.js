@@ -13,32 +13,32 @@ export function pluralize(amount: number, one: string, few: string, other: strin
 }
 
 export const media = {
-  toSm: (...args) => css`
+  toSm: (...args: any) => css`
     @media (max-width: 768px) {
       ${css(...args)}
     }
   `,
-  toMd: (...args) => css`
+  toMd: (...args: any) => css`
     @media (max-width: 992px) {
       ${css(...args)}
     }
   `,
-  toLg: (...args) => css`
+  toLg: (...args: any) => css`
     @media (max-width: 1200px) {
       ${css(...args)}
     }
   `,
-  fromSm: (...args) => css`
+  fromSm: (...args: any) => css`
     @media (min-width: 768px) {
       ${css(...args)}
     }
   `,
-  fromMd: (...args) => css`
+  fromMd: (...args: any) => css`
     @media (min-width: 992px) {
       ${css(...args)}
     }
   `,
-  fromLg: (...args) => css`
+  fromLg: (...args: any) => css`
     @media (min-width: 1200px) {
       ${css(...args)}
     }
