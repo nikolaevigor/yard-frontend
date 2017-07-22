@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BodyClassName from 'react-body-classname';
 import RenderInBody from '../../components/RenderInBody';
 
-import { getImageUrl } from '../../utils';
+import { getImageUrl, media } from '../../utils';
 
 const Carousel = styled.div`
   display: flex;
@@ -32,9 +32,9 @@ const ItemsWrapper = styled.div`
   width: 100%;
   will-change: contents;
 
-  @media (min-height: 768px) {
+  ${media.fromSm`
     padding-top: 4rem;
-  }
+  `};
 `;
 
 const Item = styled.img`
@@ -54,9 +54,9 @@ const Counter = styled.p`
   margin-bottom: 1rem;
   margin-top: 1rem;
 
-  @media (min-height: 768px) {
+  ${media.fromSm`
     margin-bottom: 54px;
-  }
+  `};
 `;
 
 const modalWindowStyle = {
