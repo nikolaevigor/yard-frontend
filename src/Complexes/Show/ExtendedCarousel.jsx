@@ -57,13 +57,6 @@ const Counter = styled.p`
   @media (min-height: 768px) {
     margin-bottom: 54px;
   }
-  @media (max-height: 500px) {
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-  }
-  @media (max-height: 332px) {
-    display: none;
-  }
 `;
 
 const modalWindowStyle = {
