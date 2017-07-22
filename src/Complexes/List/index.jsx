@@ -9,11 +9,18 @@ import BodyClassName from 'react-body-classname';
 import CompassDevelopmentBlock from './CompassDevelopmentBlock';
 import Intro from './Intro';
 import Card from './Card';
-import { getImageUrl } from '../../utils';
+import { getImageUrl, media } from '../../utils';
 import { get } from '../../api';
 import type { Complex as ComplexType } from '../types';
 
-const Cards = styled.div`margin: 4rem 8rem 6rem 8rem;`;
+
+const Cards = styled.div`
+  margin: 2rem 1rem 4rem 1rem;
+
+  ${media.fromLg`
+    margin: 4rem 0 6rem 0;
+  `};
+`;
 
 type Location = {
   subLocalityName?: string,
@@ -58,17 +65,17 @@ class List extends Component {
       <BodyClassName className="complexes">
         <div>
           <CompassDevelopmentBlock />
-          <Intro />
-          <Cards>
-            <Grid>
+          <Grid>
+            <Intro />
+            <Cards>
               {complexes.map((complex) => {
                 if (complex.images.length > 0) {
                   return renderCard(complex, getImageUrl(complex.images[0].id));
                 }
                 return renderCard(complex, 'http://via.placeholder.com/490x350');
               })}
-            </Grid>
-          </Cards>
+            </Cards>
+          </Grid>
         </div>
       </BodyClassName>
     );
