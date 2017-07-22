@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
 import Pluralizer from '../../components/Pluralizer';
-import { getImageUrl } from '../../utils';
+import { getImageUrl, media } from '../../utils';
 
 const Images = styled.div`
   display: flex;
@@ -14,9 +14,7 @@ const Images = styled.div`
   overflow: scroll;
 `;
 
-const Image = styled.img`
-  height: 400px;
-`;
+const Image = styled.img`height: 400px;`;
 
 const Button = styled.button`
   position: absolute;
@@ -30,6 +28,11 @@ const Button = styled.button`
   font-weight: 300;
   line-height: 1.0;
   color: #fff;
+  margin-left: 1rem;
+
+  ${media.fromSm`
+    margin-left: 0;
+  `};
 `;
 
 type Props = { imageIds: Array<string> };
