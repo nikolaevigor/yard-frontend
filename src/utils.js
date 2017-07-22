@@ -13,21 +13,6 @@ export function pluralize(amount: number, one: string, few: string, other: strin
 }
 
 export const media = {
-  toSm: (...args: any) => css`
-    @media (max-width: 768px) {
-      ${css(...args)}
-    }
-  `,
-  toMd: (...args: any) => css`
-    @media (max-width: 992px) {
-      ${css(...args)}
-    }
-  `,
-  toLg: (...args: any) => css`
-    @media (max-width: 1200px) {
-      ${css(...args)}
-    }
-  `,
   fromSm: (...args: any) => css`
     @media (min-width: 768px) {
       ${css(...args)}
