@@ -66,8 +66,7 @@ const CompassLogo = styled.img`
   height: 1rem;
 
   ${media.fromSm`
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
   `};
 `;
 
