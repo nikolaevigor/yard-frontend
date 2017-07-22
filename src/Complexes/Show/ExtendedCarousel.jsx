@@ -39,8 +39,8 @@ const ItemsWrapper = styled.div`
 
 const Item = styled.img`
   display: flex;
-  max-height: 100%;
-  max-width: 80%;
+  max-height: 80vh;
+  max-width: 80vw;
   will-change: contents;
 `;
 
@@ -140,26 +140,13 @@ class ExtendedCarousel extends Component {
     const { items, activeItemIdx, width: windowWidth, height: windowHeight } = this.state;
     const { image } = items[activeItemIdx];
     const { width, height } = image;
-    const aspectRatio = parseFloat((width / height).toFixed(2));
     const sideImageOffset = windowWidth > 768 ? '4rem' : '1rem';
-    const scaleFactor = windowHeight > 768 ? 0.7 : 0.9;
-
-    if (windowWidth >= aspectRatio * windowHeight) {
-      let elementHeight = scaleFactor * windowHeight;
-      let elementWidth = aspectRatio * elementHeight;
-    } else {
-      let elementWidth = scaleFactor * windowWidth;
-      let elementHeight = elementWidth / aspectRatio;
-    }
 
     return {
       'transform-origin': 'center bottom',
       transform: getImageTransform(activeItemIdx, idx, sideImageOffset),
       'transition-duration': animationDuration,
       opacity: !idx ? 1.0 : 0.5,
-      'max-height': '100%',
-      width: Math.round(elementWidth),
-      height: Math.round(elementHeight),
     };
   }
 
