@@ -13,18 +13,24 @@ const Carousel = styled.div`
   justify-content: center;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
   width: 100%;
   max-height: 100vh;
   max-width: 100vw;
   height: 100%;
   background-color: rgba(17, 17, 17, .95);
   overflow: hidden;
+  will-change: contents;
 `;
 
 const ItemsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   width: 100%;
+  will-change: contents;
 
   @media (min-height: 768px) {
     padding-top: 4rem;
@@ -35,6 +41,7 @@ const Item = styled.img`
   display: flex;
   max-height: 100%;
   max-width: 80%;
+  will-change: contents;
 `;
 
 const Counter = styled.p`
@@ -133,9 +140,10 @@ class ExtendedCarousel extends Component {
     const { items, activeItemIdx, width: windowWidth, height: windowHeight } = this.state;
     const { image } = items[activeItemIdx];
     const { width, height } = image;
-    const aspectRatio = width / height;
+    const aspectRatio = parseFloat((width / height).toFixed(2));
     const sideImageOffset = windowWidth > 768 ? '4rem' : '1rem';
     const scaleFactor = windowHeight > 768 ? 0.7 : 0.9;
+    console.log(aspectRatio);
 
     let elementWidth, elementHeight;
     if (windowWidth >= aspectRatio * windowHeight) {
@@ -152,8 +160,8 @@ class ExtendedCarousel extends Component {
       'transition-duration': animationDuration,
       opacity: !idx ? 1.0 : 0.5,
       'max-height': '100%',
-      width: elementWidth,
-      height: elementHeight,
+      width: Math.round(elementWidth),
+      height: Math.round(elementHeight),
     };
   }
 
