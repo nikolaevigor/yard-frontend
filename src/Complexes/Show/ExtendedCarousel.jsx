@@ -143,15 +143,13 @@ class ExtendedCarousel extends Component {
     const aspectRatio = parseFloat((width / height).toFixed(2));
     const sideImageOffset = windowWidth > 768 ? '4rem' : '1rem';
     const scaleFactor = windowHeight > 768 ? 0.7 : 0.9;
-    console.log(aspectRatio);
 
-    let elementWidth, elementHeight;
     if (windowWidth >= aspectRatio * windowHeight) {
-      elementHeight = scaleFactor * windowHeight;
-      elementWidth = aspectRatio * elementHeight;
+      let elementHeight = scaleFactor * windowHeight;
+      let elementWidth = aspectRatio * elementHeight;
     } else {
-      elementWidth = scaleFactor * windowWidth;
-      elementHeight = elementWidth / aspectRatio;
+      let elementWidth = scaleFactor * windowWidth;
+      let elementHeight = elementWidth / aspectRatio;
     }
 
     return {
@@ -189,7 +187,8 @@ class ExtendedCarousel extends Component {
         <BodyClassName className="modal-opened">
           <Carousel
             onClick={e => {
-              e.stopPropagation(), this.props.escHandler();
+              e.stopPropagation();
+              this.props.escHandler();
             }}
           >
             <ItemsWrapper>
