@@ -73,7 +73,11 @@ const Info = styled.p`
 const Content = styled.div`
   display: flex;
   flex-flow: column;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1rem;
+
+  ${media.fromMd`
+    padding: 1.5rem 2rem;
+  `};
 `;
 
 const Thumbnail = styled.img`
