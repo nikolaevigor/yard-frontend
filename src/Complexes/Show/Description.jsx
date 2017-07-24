@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
 import Title from './Title';
-import Line from './SeparationLine';
 
 import { media } from '../../utils';
 
@@ -105,6 +104,5 @@ export default ({ fullDescription = '' }: Props) =>
           <ReadFullButton>Прочитать описание</ReadFullButton>
         </ButtonWrapper>
       </Wrapper>
-      <Line />
     </Grid>
   </Description>);

@@ -47,13 +47,6 @@ const Col = styled.div`
   `};
   ${media.fromMd`
     flex: 1 1 33%;
-    margin: 0 1rem;
-    &:first-child {
-      margin-left: 0;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
   `};
 `;
 
