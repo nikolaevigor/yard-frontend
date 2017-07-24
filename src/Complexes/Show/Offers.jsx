@@ -2,26 +2,32 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid } from 'react-flexbox-grid';
 
-const Offers = styled.div`
-  background-color: #f4f5f9;
-`;
+import { media } from '../../utils';
+
+const Offers = styled.div`background-color: #f4f5f9;`;
 
 const Title = styled.h2`
-  padding-top: 4rem;
+  padding-top: 2rem;
   text-align: center;
   font-family: "Philosopher";
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.12;
   color: #3e4247;
   margin: 0 auto;
+
+  ${media.fromSm`
+    padding-top: 4rem;
+    font-size: 1.5rem;
+  `};
 `;
 
 const Cards = styled.div`
   padding-top: 1.5rem;
   padding-bottom: 4rem;
+  overflow: scroll;
 `;
 
 const Card = styled.div`
@@ -75,6 +81,39 @@ const CardButton = styled.button`
   border-radius: 2px;
   padding: 0.75rem 2rem;
   margin: 2rem 4rem 1.5rem 4rem;
+`;
+
+const Row = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+const Col = styled.div`
+  display: flex;
+  flex: 1 0 100%;
+  justify-content: space-between;
+  margin: 0 1rem;
+
+  ${media.fromSm`
+    flex: 1 0 50%;
+    margin: 0 1rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  `};
+  ${media.fromMd`
+    flex: 1 1 33%;
+    margin: 0 1rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  `};
 `;
 
 export default () =>
