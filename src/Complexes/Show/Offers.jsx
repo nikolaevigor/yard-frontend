@@ -26,8 +26,12 @@ const Title = styled.h2`
 
 const Cards = styled.div`
   padding-top: 1.5rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   overflow: scroll;
+
+  ${media.fromSm`
+    padding-bottom: 4rem;
+  `};
 `;
 
 const Card = styled.div`
@@ -79,8 +83,12 @@ const CardButton = styled.button`
   line-height: 1.0;
   border-style: none;
   border-radius: 2px;
-  padding: 0.75rem 2rem;
-  margin: 2rem 4rem 1.5rem 4rem;
+  padding: 0.75rem 1rem;
+  margin: 2rem 2rem 1.5rem 2rem;
+
+  ${media.fromSm`
+    margin: 2rem 4rem 1.5rem 4rem;
+  `};
 `;
 
 const Row = styled.div`
@@ -93,9 +101,11 @@ const Col = styled.div`
   flex: 1 0 100%;
   justify-content: space-between;
   margin: 0 1rem;
+  max-width: 304px;
 
   ${media.fromSm`
     flex: 1 0 50%;
+    max-width: none;
     margin: 0 1rem;
     &:first-child {
       margin-left: 0;
