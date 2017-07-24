@@ -28,4 +28,9 @@ export const media = {
       ${css(...args)}
     }
   `,
+  fromSmHeight: (...args: any) => css`
+    @media (min-height: 768px) {
+      ${css(...args)}
+    }
+  `,
 };

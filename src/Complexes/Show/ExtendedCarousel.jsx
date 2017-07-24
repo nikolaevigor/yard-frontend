@@ -32,8 +32,10 @@ const ItemsWrapper = styled.div`
   width: 100%;
   will-change: contents;
 
-  ${media.fromSm`
-    padding-top: 4rem;
+  ${media.fromSmHeight`
+    ${media.fromSm`
+      padding-top: 4rem;
+    `};
   `};
 `;
 
@@ -55,8 +57,10 @@ const Counter = styled.p`
   margin-bottom: 1rem;
   margin-top: 1rem;
 
-  ${media.fromSm`
-    margin-bottom: 54px;
+  ${media.fromSmHeight`
+    ${media.fromSm`
+      margin-bottom: 54px;
+    `};
   `};
 `;
 
