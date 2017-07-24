@@ -57,6 +57,8 @@ const PlaceValue = styled.dd`
   margin-top: 0.5rem;
 `;
 
+const Line = SeparationLine.extend`margin: 0;`;
+
 type Props = {
   location: LocationType,
 };
@@ -73,12 +75,12 @@ export default ({ location }: Props) => {
             <PlaceName>Красный Октябрь</PlaceName>
             <PlaceValue>24 минуты, 6 км</PlaceValue>
           </Place>
-          <SeparationLine />
+          <Line />
           <Place>
             <PlaceName>World Class</PlaceName>
             <PlaceValue>2 минуты, 300 м</PlaceValue>
           </Place>
-          <SeparationLine />
+          <Line />
           <Place>
             <PlaceName>Третьяковская галерея</PlaceName>
             <PlaceValue>14 минут, 4 км</PlaceValue>
