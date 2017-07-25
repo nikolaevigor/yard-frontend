@@ -92,6 +92,7 @@ const CardButton = styled.button`
   padding: 0.75rem 2.5rem;
   margin: 2rem 2.5rem 1.5rem 2.5rem;
   white-space: nowrap;
+  cursor: pointer;
 
   ${media.fromSm`
     margin: 2rem 4rem 1.5rem 4rem;

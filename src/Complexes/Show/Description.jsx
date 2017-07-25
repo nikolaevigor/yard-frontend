@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
@@ -8,7 +8,7 @@ import Title from './Title';
 
 import { media } from '../../utils';
 
-const Description = styled.div`
+const DescriptionWrapper = styled.div`
   margin-top: 2rem;
 
   ${media.fromSm`
@@ -70,13 +70,13 @@ const ReadFullButton = styled.button`
   margin-top: -1rem;
   padding: 0.5rem 1.5rem;
   border-radius: 2px;
-  border: solid 1px #e0e0e1;
+  border: none;
   font-family: "Fira Sans", sans-serif;
   font-size: 10px;
   line-height: 10px;
   color: #fff;
   font-weight: 300;
-
+  cursor: pointer;
   ${media.fromSm`
     display: block;
   `};
@@ -86,22 +86,43 @@ const ReadFullButton = styled.button`
   }
 `;
 
-type Props = {
+type PropsType = {
   fullDescription: string,
 };
 
-export default ({ fullDescription = '' }: Props) =>
-  (<Description>
-    <Grid>
-      <Wrapper>
-        <Title>Описание</Title>
-        <Text>
-          {fullDescription}
-        </Text>
-        <Shade />
-        <ButtonWrapper>
-          <ReadFullButton>Прочитать описание</ReadFullButton>
-        </ButtonWrapper>
-      </Wrapper>
-    </Grid>
-  </Description>);
+export default class Description extends Component {
+  constructor(props: PropsType) {
+    super(props);
+    const { fullDescription = '' } = props;
+    this.state = { isExtended: false, fullDescription };
+  }
+
+  state: { isExtended: boolean, fullDescription: string };
+
+  toggleState = () => {
+    const { isExtended = false } = this.state;
+    this.setState({ isExtended: !isExtended });
+  };
+
+  render() {
+    const { isExtended = false, fullDescription = '' } = this.state;
+
+    return (
+      <DescriptionWrapper>
+        <Grid>
+          <Wrapper>
+            <Title>Описание</Title>
+            <Text style={{ 'max-height': isExtended ? 'none' : '22rem' }}>
+              {fullDescription}
+            </Text>
+            {!isExtended && <Shade />}
+            {!isExtended &&
+              <ButtonWrapper>
+                <ReadFullButton onClick={this.toggleState}>Прочитать описание</ReadFullButton>
+              </ButtonWrapper>}
+          </Wrapper>
+        </Grid>
+      </DescriptionWrapper>
+    );
+  }
+}

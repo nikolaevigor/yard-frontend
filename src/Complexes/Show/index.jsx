@@ -54,7 +54,7 @@ class Show extends Component {
           <ImageCarousel imageIds={images.map(image => image.id)} />
           <Summary units={units} architect={architect} developer={developer} />
           <Features complex={this.state} />
-          {!!fullDescription && <Description fullDescription={fullDescription} />}
+          {!fullDescription && <Description fullDescription={fullDescription} />}
           {amenities.length > 0 && <Infrastructure amenities={amenities} />}
           <Offers />
           <Nearby />
