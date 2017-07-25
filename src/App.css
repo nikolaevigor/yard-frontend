@@ -17,3 +17,11 @@ body {
 .complex {
   background: #fff;
 }
+
+.App {
+  overflow: hidden;
+}
+
+.modal-opened {
+  overflow: hidden;
+}

@@ -134,10 +134,12 @@ const Col = styled.div`
   `};
 `;
 
-export default () =>
+export default ({ name }: { name: string }) =>
   (<Offers>
     <Grid>
-      <Title>Предложения в ЖК «Полянка/44»</Title>
+      <Title>
+        Предложения в ЖК «{name}»
+      </Title>
       <Cards>
         <Row>
           <Col lg={4}>
