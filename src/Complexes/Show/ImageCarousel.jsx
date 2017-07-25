@@ -45,7 +45,7 @@ const Button = styled.button`
 class ImageCarousel extends Component {
   state = { isOpen: false, activeItemIdx: 0 };
 
-  toggleCarousel = (idx: number) => {
+  toggleCarousel = (idx?: number) => {
     const { isOpen } = this.state;
     this.setState({ isOpen: !isOpen, activeItemIdx: idx || 0 });
   };

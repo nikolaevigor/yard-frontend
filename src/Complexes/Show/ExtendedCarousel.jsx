@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import BodyClassName from 'react-body-classname';
@@ -71,9 +73,11 @@ const modalWindowStyle = {
   left: 0,
 };
 
-const animationDuration = '0.25s';
+const animationDuration = 0.25;
 
-function getImageTransform(activeItemIdx, idx, sideImageOffset = '4rem') {
+function getImageTransform(activeItemIdx, idx) {
+  const sideImageOffset = window.innerWidth > 768 ? '4rem' : '1rem';
+
   if (idx > 0) {
     return `translateX(calc(${-activeItemIdx *
       100}% + ${sideImageOffset} + 50vw - 50% )) scaleY(0.83)`;
@@ -84,49 +88,88 @@ function getImageTransform(activeItemIdx, idx, sideImageOffset = '4rem') {
     100}% - ${sideImageOffset} + 50vw - 50% )) scaleY(0.83)`;
 }
 
-/* eslint-disable */
+type ImageType = {
+  height: number,
+  width: number,
+  id: string,
+};
+
+type ItemType = {
+  idx: number,
+  image: ImageType,
+};
+
+type PropsType = {
+  children: Array<ImageType>,
+  activeItemIdx: number,
+  escHandler: (idx?: number) => void,
+};
+
+type StateType = {
+  items: Array<ItemType>,
+  activeItemIdx: number,
+};
+
 class ExtendedCarousel extends Component {
-  constructor(props) {
+  constructor(props: PropsType) {
     super(props);
-    const { children, activeItemIdx } = props;
-    const initialIdxs = [...Array(children.length).keys()].map(idx => idx - activeItemIdx);
+    const { children = [], activeItemIdx } = props;
+    const initialIdxs = children.map((item, idx) => idx - activeItemIdx);
 
     this.state = {
-      items: [...Array(children.length).keys()].map(idx => {
-        return { idx: initialIdxs[idx], image: children[idx] };
-      }),
+      items: children.map((item, idx) => ({ idx: initialIdxs[idx], image: children[idx] })),
       activeItemIdx: activeItemIdx || 0,
-      width: '0',
-      height: '0',
     };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
+  state: StateType;
+
   componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
     window.addEventListener('keydown', this.handleKeyDown);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
     window.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  // eslint-disable-next-line
+  onCarouselClick = (e: SyntheticInputEvent) => {
+    e.stopPropagation();
+    const { escHandler = null } = this.props;
+    if (escHandler) {
+      this.props.escHandler();
+    }
+  };
+
+  // eslint-disable-next-line
+  onItemClick = (e: SyntheticInputEvent, idx: number) => {
+    e.stopPropagation();
+    if (idx > 0) {
+      this.slide(e, false);
+    } else if (idx < 0) {
+      this.slide(e, true);
+    }
+  };
+
+  getItemTransformation(idx: number) {
+    const { activeItemIdx } = this.state;
+
+    return {
+      'transform-origin': 'center bottom',
+      transform: getImageTransform(activeItemIdx, idx),
+      'transition-duration': `${animationDuration}s`,
+      opacity: !idx ? 1.0 : 0.5,
+    };
   }
 
-  slide = (e, direction) => {
-    e.stopPropagation();
+  // eslint-disable-next-line
+  slide = (e: SyntheticInputEvent, isRight: boolean) => {
     const { items, activeItemIdx } = this.state;
-    const idxDelta = direction ? 1 : -1;
+    const idxDelta = isRight ? 1 : -1;
     const newActiveItemIdx =
       activeItemIdx - idxDelta < 0 ? items.length - 1 : (activeItemIdx - idxDelta) % items.length;
-    const newIdxs = [...Array(items.length).keys()].map(idx => idx - newActiveItemIdx);
-    const updatedItems = items.map(({ image }, idx) => {
-      return { idx: newIdxs[idx], image: image };
-    });
+    const newIdxs = items.map((item, idx) => idx - newActiveItemIdx);
+    const updatedItems = items.map(({ image }, idx) => ({ idx: newIdxs[idx], image }));
 
     this.setState({
       items: updatedItems,
@@ -134,59 +177,28 @@ class ExtendedCarousel extends Component {
     });
   };
 
-  getItemTransformation(idx) {
-    const { items, activeItemIdx, width: windowWidth, height: windowHeight } = this.state;
-    const { image } = items[activeItemIdx];
-    const { width, height } = image;
-    const sideImageOffset = windowWidth > 768 ? '4rem' : '1rem';
-
-    return {
-      'transform-origin': 'center bottom',
-      transform: getImageTransform(activeItemIdx, idx, sideImageOffset),
-      'transition-duration': animationDuration,
-      opacity: !idx ? 1.0 : 0.5,
-    };
-  }
-
-  handleKeyDown = e => {
-    e.stopPropagation();
+  // eslint-disable-next-line
+  handleKeyDown = (e: SyntheticInputEvent) => {
     if (e.keyCode === 39) this.slide(e, false);
     if (e.keyCode === 37) this.slide(e, true);
     if (e.keyCode === 27) this.props.escHandler();
   };
 
-  onClick = (e, idx) => {
-    if (idx > 0) {
-      this.slide(e, false);
-    } else if (idx < 0) {
-      this.slide(e, true);
-    } else {
-      e.stopPropagation();
-    }
-  };
-
   render() {
-    const { items, width: windowWidth, height: windowHeight } = this.state;
+    const { items } = this.state;
     return (
       <RenderInBody style={modalWindowStyle}>
         <BodyClassName className="modal-opened">
-          <Carousel
-            onClick={e => {
-              e.stopPropagation();
-              this.props.escHandler();
-            }}
-          >
+          <Carousel onClick={this.onCarouselClick}>
             <ItemsWrapper>
-              {items.map(({ idx, image }) => {
-                return (
-                  <Item
-                    key={image.id}
-                    style={this.getItemTransformation(idx)}
-                    src={getImageUrl(image.id, 1024)}
-                    onClick={e => this.onClick(e, idx)}
-                  />
-                );
-              })}
+              {items.map(({ idx, image }) =>
+                (<Item
+                  key={image.id}
+                  style={this.getItemTransformation(idx)}
+                  src={getImageUrl(image.id, 1024)}
+                  onClick={e => this.onItemClick(e, idx)}
+                />),
+              )}
             </ItemsWrapper>
             <Counter>
               {`${(this.state.activeItemIdx + 1) % (this.state.items.length + 1)}/${this.state.items
