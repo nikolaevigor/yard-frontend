@@ -117,7 +117,7 @@ class ExtendedCarousel extends Component {
     const initialIdxs = children.map((item, idx) => idx - activeItemIdx);
 
     this.state = {
-      items: children.map((item, idx) => ({ idx: initialIdxs[idx], image: children[idx] })),
+      items: children.map((item, idx) => ({ idx: initialIdxs[idx], image: item })),
       activeItemIdx: activeItemIdx || 0,
     };
   }
@@ -145,9 +145,9 @@ class ExtendedCarousel extends Component {
   onItemClick = (e: SyntheticInputEvent, idx: number) => {
     e.stopPropagation();
     if (idx > 0) {
-      this.slide(e, false);
+      this.slide(e, 'right');
     } else if (idx < 0) {
-      this.slide(e, true);
+      this.slide(e, 'left');
     }
   };
 
@@ -163,9 +163,9 @@ class ExtendedCarousel extends Component {
   }
 
   // eslint-disable-next-line
-  slide = (e: SyntheticInputEvent, isRight: boolean) => {
+  slide = (e: SyntheticInputEvent, direction: string) => {
     const { items, activeItemIdx } = this.state;
-    const idxDelta = isRight ? 1 : -1;
+    const idxDelta = direction === 'left' ? 1 : -1;
     const newActiveItemIdx =
       activeItemIdx - idxDelta < 0 ? items.length - 1 : (activeItemIdx - idxDelta) % items.length;
     const newIdxs = items.map((item, idx) => idx - newActiveItemIdx);
@@ -179,8 +179,8 @@ class ExtendedCarousel extends Component {
 
   // eslint-disable-next-line
   handleKeyDown = (e: SyntheticInputEvent) => {
-    if (e.keyCode === 39) this.slide(e, false);
-    if (e.keyCode === 37) this.slide(e, true);
+    if (e.keyCode === 39) this.slide(e, 'right');
+    if (e.keyCode === 37) this.slide(e, 'left');
     if (e.keyCode === 27) this.props.escHandler();
   };
 
