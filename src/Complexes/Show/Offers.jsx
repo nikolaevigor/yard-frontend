@@ -16,9 +16,10 @@ const Title = styled.h2`
   font-weight: 700;
   line-height: 1.12;
   color: #3e4247;
-  margin: 0 auto;
+  margin: 0 1rem;
 
   ${media.fromSm`
+    margin: 0 auto;
     padding-top: 4rem;
     font-size: 1.5rem;
   `};
@@ -38,6 +39,11 @@ const Card = styled.div`
   display: flex;
   flex-flow: column;
   background-color: #fff;
+  width: 100%;
+
+  ${media.fromMd`
+    max-width: 390px;
+  `};
 `;
 
 const CardTitle = styled.h3`
@@ -83,8 +89,9 @@ const CardButton = styled.button`
   line-height: 1.0;
   border-style: none;
   border-radius: 2px;
-  padding: 0.75rem 1rem;
-  margin: 2rem 2rem 1.5rem 2rem;
+  padding: 0.75rem 2.5rem;
+  margin: 2rem 2.5rem 1.5rem 2.5rem;
+  white-space: nowrap;
 
   ${media.fromSm`
     margin: 2rem 4rem 1.5rem 4rem;
@@ -100,29 +107,29 @@ const Col = styled.div`
   display: flex;
   flex: 1 0 100%;
   justify-content: space-between;
-  margin: 0 1rem;
-  max-width: 304px;
+  padding: 0 0.5rem;
+  margin: 0;
+
+  &:first-child {
+    padding-left: 1rem;
+  }
+
+  &:last-child {
+    padding-right: 1rem;
+  }
 
   ${media.fromSm`
     flex: 1 0 50%;
-    max-width: none;
-    margin: 0 1rem;
+    padding: 0 0.5rem;
     &:first-child {
-      margin-left: 0;
+      padding-left: 0;
     }
     &:last-child {
-      margin-right: 0;
+      padding-right: 0;
     }
   `};
   ${media.fromMd`
     flex: 1 1 33%;
-    margin: 0 1rem;
-    &:first-child {
-      margin-left: 0;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
   `};
 `;
 

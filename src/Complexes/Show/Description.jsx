@@ -57,7 +57,7 @@ const Shade = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 92px;
+  margin: 0 1rem;
 
   ${media.fromSm`
     display: none;
@@ -68,7 +68,7 @@ const ReadFullButton = styled.button`
   display: block;
   background-color: #00779a;
   margin-top: -1rem;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 2px;
   border: solid 1px #e0e0e1;
   font-family: "Fira Sans", sans-serif;
@@ -76,7 +76,6 @@ const ReadFullButton = styled.button`
   line-height: 10px;
   color: #fff;
   font-weight: 300;
-  width: 100%;
 
   ${media.fromSm`
     display: block;
