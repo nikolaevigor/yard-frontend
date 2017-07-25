@@ -75,7 +75,7 @@ const Legal = styled.p`
   font-size: 11px;
   line-height: 16px;
   color: #a9afb6;
-  margin: 0 0.5rem;
+  margin: 0 1rem;
   margin-bottom: 20px;
 
   ${media.fromSm`
