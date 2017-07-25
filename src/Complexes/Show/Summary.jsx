@@ -60,20 +60,23 @@ type Props = {
 export default ({ units, architect, developer }: Props) =>
   (<Grid>
     <Summary>
-      <Heading>
-        {units}
-        <Small>
-          <Pluralizer amount={units} one="предложение" few="предложения" other="предложений" />
-        </Small>
-      </Heading>
-      <Heading>
-        {architect}
-        <Small>архитектор</Small>
-      </Heading>
-      <Heading>
-        {developer}
-        <Small>застройщик</Small>
-      </Heading>
+      {units &&
+        <Heading>
+          {units}
+          <Small>
+            <Pluralizer amount={units} one="предложение" few="предложения" other="предложений" />
+          </Small>
+        </Heading>}
+      {architect &&
+        <Heading>
+          {architect}
+          <Small>архитектор</Small>
+        </Heading>}
+      {developer &&
+        <Heading>
+          {developer}
+          <Small>застройщик</Small>
+        </Heading>}
     </Summary>
     <Line />
   </Grid>);

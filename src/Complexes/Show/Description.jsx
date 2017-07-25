@@ -93,19 +93,17 @@ type PropsType = {
 export default class Description extends Component {
   constructor(props: PropsType) {
     super(props);
-    const { fullDescription = '' } = props;
-    this.state = { isExtended: false, fullDescription };
+    this.state = { isExtended: false };
   }
 
-  state: { isExtended: boolean, fullDescription: string };
+  state: { isExtended: boolean };
 
   toggleState = () => {
-    const { isExtended = false } = this.state;
-    this.setState({ isExtended: !isExtended });
+    this.setState(prevState => ({ isExtended: !prevState.isExtended }));
   };
 
   render() {
-    const { isExtended = false, fullDescription = '' } = this.state;
+    const { isExtended = false } = this.state;
 
     return (
       <DescriptionWrapper>
@@ -113,7 +111,7 @@ export default class Description extends Component {
           <Wrapper>
             <Title>Описание</Title>
             <Text style={{ 'max-height': isExtended ? 'none' : '22rem' }}>
-              {fullDescription}
+              {this.props.fullDescription}
             </Text>
             {!isExtended && <Shade />}
             {!isExtended &&
