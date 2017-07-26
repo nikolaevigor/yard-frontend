@@ -7,26 +7,36 @@ import { Grid } from 'react-flexbox-grid';
 import MapBox from './MapBox';
 import SeparationLine from './SeparationLine';
 import type { Location as LocationType } from '../types';
+import { media } from '../../utils';
 
 const Wrapper = styled.div`
-  display: flex;
-  margin-top: -153px;
-  margin-bottom: 4rem;
+  ${media.fromSm`
+    display: flex;
+    margin-top: -153px;
+    margin-bottom: 4rem;
+  `};
 `;
 
 const Places = styled.div`
   display: flex;
   flex-flow: column;
   flex: 1 1 0;
-  margin-left: 0.5rem;
   border: solid 1px #e0e0e1;
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, .5);
   padding: 0;
+
+  ${media.fromSm`
+    margin-left: 0.5rem;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .5);
+  `};
 `;
 
 const Place = styled.div`
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: #fff;
+
+  ${media.fromSm`
+    padding: 1.5rem;
+  `};
 `;
 
 const PlaceName = styled.dt`
@@ -47,6 +57,8 @@ const PlaceValue = styled.dd`
   margin-top: 0.5rem;
 `;
 
+const Line = SeparationLine.extend`margin: 0;`;
+
 type Props = {
   location: LocationType,
 };
@@ -63,12 +75,12 @@ export default ({ location }: Props) => {
             <PlaceName>Красный Октябрь</PlaceName>
             <PlaceValue>24 минуты, 6 км</PlaceValue>
           </Place>
-          <SeparationLine />
+          <Line />
           <Place>
             <PlaceName>World Class</PlaceName>
             <PlaceValue>2 минуты, 300 м</PlaceValue>
           </Place>
-          <SeparationLine />
+          <Line />
           <Place>
             <PlaceName>Третьяковская галерея</PlaceName>
             <PlaceValue>14 минут, 4 км</PlaceValue>

@@ -13,9 +13,12 @@ import { getImageUrl, media } from '../../utils';
 import { get } from '../../api';
 import type { Complex as ComplexType } from '../types';
 
-
 const Cards = styled.div`
   margin: 2rem 1rem 4rem 1rem;
+
+  ${media.fromSm`
+    margin: 2rem 0 4rem 0;
+  `};
 
   ${media.fromLg`
     margin: 4rem 0 6rem 0;

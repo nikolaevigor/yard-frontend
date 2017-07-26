@@ -4,14 +4,19 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 
-const Header = styled.div`
-  background-color: #fff;
-`;
+import { media } from '../../utils';
+
+const Header = styled.div`background-color: #fff;`;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-left: 1rem;
+
+  ${media.fromSm`
+    margin-left: 0;
+  `};
 `;
 
 const Info = styled.div`
@@ -39,6 +44,7 @@ const Location = styled.p`
 `;
 
 const FavouritesButton = styled.button`
+  display: none;
   background-color: transparent;
   margin-top: 1.5rem;
   padding: 0.5rem 1rem;
@@ -49,6 +55,10 @@ const FavouritesButton = styled.button`
   line-height: 10px;
   color: #00779a;
   font-weight: 300;
+
+  ${media.fromSm`
+    display: block;
+  `};
 `;
 
 type ApartmentHeaderProps = {
@@ -70,8 +80,12 @@ export default ({ name, location }: ApartmentHeaderProps) =>
     <Grid>
       <Wrapper>
         <Info>
-          <Title>{name}</Title>
-          <Location>{formatLocation(location)}</Location>
+          <Title>
+            {name}
+          </Title>
+          <Location>
+            {formatLocation(location)}
+          </Location>
         </Info>
         <FavouritesButton>В избранное</FavouritesButton>
       </Wrapper>

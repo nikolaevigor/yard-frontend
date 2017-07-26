@@ -2,11 +2,13 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid } from 'react-flexbox-grid';
 
 import Title from './Title';
 import type { Complex as ComplexType, Details as DetailsType, Range as RangeType } from '../types';
 import { quarters, kinds, securityKinds, constructionKinds } from '../dictionaries';
+
+import { media } from '../../utils';
 
 const Features = styled.div`
   margin-top: 2rem;
@@ -15,12 +17,47 @@ const Features = styled.div`
 
 const Records = styled.div`
   margin-top: 0.5rem;
+  overflow: scroll;
+
+  ${media.fromSm`
+    overflow: auto;
+  `};
 `;
+
+const Row = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+const Col = styled.div`
+  display: flex;
+  flex: 1 0 100%;
+  justify-content: space-between;
+  margin: 0 1rem;
+
+  ${media.fromSm`
+    flex: 1 0 50%;
+    margin: 0 1rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  `};
+  ${media.fromMd`
+    flex: 1 1 33%;
+  `};
+`;
+
+const ColWrapper = styled.div`width: 100%;`;
 
 const Feature = styled.dl`
   display: flex;
   margin-top: 0.5rem;
   margin-bottom: 0;
+  justify-content: space-around;
+  flex: 1 0 100%;
 `;
 
 const Name = styled.dt`
@@ -37,10 +74,10 @@ const Value = styled.dd`
   font-family: "Fira Sans", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1.56;
+  line-height: 1.38;
   color: #3e4247;
-  margin-left: 2rem;
-  white-space:nowrap;
+  margin-left: 1rem;
+  white-space: nowrap;
 `;
 
 function cutFloat(number: number, to: number = 2): string {
@@ -112,85 +149,104 @@ export default ({ complex }: Props) => {
         <Title>Характеристики</Title>
         <Records>
           <Row>
-            <Col lg={4}>
-              <Feature>
-                <Name>Количество квартир</Name>
-                <Value>{propertiesCount}</Value>
-              </Feature>
+            <Col>
+              <ColWrapper>
+                {propertiesCount &&
+                  <Feature>
+                    <Name>Количество квартир</Name>
+                    <Value>
+                      {propertiesCount}
+                    </Value>
+                  </Feature>}
+                {kinds[propertyKind] &&
+                  <Feature>
+                    <Name>Статус</Name>
+                    <Value>
+                      {kinds[propertyKind]}
+                    </Value>
+                  </Feature>}
+                {from.rub &&
+                  to.rub &&
+                  <Feature>
+                    <Name>Цены</Name>
+                    <Value>
+                      от {formatPrice(from.rub)} до {formatPrice(to.rub)} млн
+                    </Value>
+                  </Feature>}
+                {securityKinds[security] &&
+                  <Feature>
+                    <Name>Безопасность</Name>
+                    <Value>
+                      {securityKinds[security]}
+                    </Value>
+                  </Feature>}
+              </ColWrapper>
             </Col>
-            <Col lg={4}>
-              <Feature>
-                <Name>Конструкция корпусов</Name>
-                <Value>{constructionKinds[constructionKind]}</Value>
-              </Feature>
+            <Col>
+              <ColWrapper>
+                {constructionKinds[constructionKind] &&
+                  <Feature>
+                    <Name>Конструкция корпусов</Name>
+                    <Value>
+                      {constructionKinds[constructionKind]}
+                    </Value>
+                  </Feature>}
+                {totalArea.from &&
+                  totalArea.to &&
+                  <Feature>
+                    <Name>Площадь</Name>
+                    <Value>
+                      от {Math.round(totalArea.from)} до {Math.round(totalArea.to)} м²{' '}
+                    </Value>
+                  </Feature>}
+                {ceilHeight &&
+                  <Feature>
+                    <Name>Высота потолков</Name>
+                    <Value>
+                      {formatCeilHeight(ceilHeight)} м
+                    </Value>
+                  </Feature>}
+                {maintenanceCosts &&
+                  <Feature>
+                    <Name>Обслуживание</Name>
+                    <Value>
+                      {maintenanceCosts} руб / м² / месяц
+                    </Value>
+                  </Feature>}
+              </ColWrapper>
             </Col>
-            <Col lg={4}>
-              <Feature>
-                <Name>Начало строительства</Name>
-                <Value>{quarters[startQuarter]} квартал {startYear} года</Value>
-              </Feature>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={4}>
-              <Feature>
-                <Name>Статус</Name>
-                <Value>{kinds[propertyKind]}</Value>
-              </Feature>
-            </Col>
-            <Col lg={4}>
-              <Feature>
-                <Name>Площадь</Name>
-                <Value>от {Math.round(totalArea.from)} до {Math.round(totalArea.to)} м² </Value>
-              </Feature>
-            </Col>
-            <Col lg={4}>
-              <Feature>
-                <Name>Конец строительства</Name>
-                <Value>
-                  {quarters[commissioningQuarter]} квартал {commissioningYear} года
-                </Value>
-              </Feature>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={4}>
-              <Feature>
-                <Name>Цены</Name>
-                <Value>от {formatPrice(from.rub)} до {formatPrice(to.rub)} млн</Value>
-              </Feature>
-            </Col>
-            <Col lg={4}>
-              <Feature>
-                <Name>Высота потолков</Name>
-                <Value>{formatCeilHeight(ceilHeight)} м</Value>
-              </Feature>
-            </Col>
-            <Col lg={4}>
-              <Feature>
-                <Name>Наземная парковка</Name>
-                <Value>{formatParkings(parkings)}</Value>
-              </Feature>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={4}>
-              <Feature>
-                <Name>Безопасность</Name>
-                <Value>{securityKinds[security]}</Value>
-              </Feature>
-            </Col>
-            <Col lg={4}>
-              <Feature>
-                <Name>Обслуживание</Name>
-                <Value>{maintenanceCosts} руб / м² / месяц</Value>
-              </Feature>
-            </Col>
-            <Col lg={4}>
-              <Feature>
-                <Name>Подземная парковка</Name>
-                <Value>{formatParkings(undergroundGarages)}</Value>
-              </Feature>
+            <Col>
+              <ColWrapper>
+                {quarters[startQuarter] &&
+                  startYear &&
+                  <Feature>
+                    <Name>Начало строительства</Name>
+                    <Value>
+                      {quarters[startQuarter]} квартал {startYear} года
+                    </Value>
+                  </Feature>}
+                {quarters[commissioningQuarter] &&
+                  commissioningYear &&
+                  <Feature>
+                    <Name>Конец строительства</Name>
+                    <Value>
+                      {quarters[commissioningQuarter]} квартал {commissioningYear} года
+                    </Value>
+                  </Feature>}
+                <Feature>
+                  <Name>Наземная парковка</Name>
+                  <Value>
+                    {formatParkings(parkings)}
+                  </Value>
+                </Feature>
+                {undergroundGarages &&
+                  <Feature>
+                    <Name>Подземная парковка</Name>
+                    <Value>
+                      {formatParkings(undergroundGarages)}
+                    </Value>
+                  </Feature>}
+              </ColWrapper>
             </Col>
           </Row>
         </Records>
